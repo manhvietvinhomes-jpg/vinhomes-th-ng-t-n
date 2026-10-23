@@ -1,0 +1,89 @@
+HƯỚNG DẪN CÀI ĐẶT WEBSITE VINHOMES OLYMPIC CÓ TRANG QUẢN TRỊ
+=============================================================
+Website: https://vinhomesthuongtin.vn
+Trang quản trị sau khi xuất bản: https://vinhomesthuongtin.vn/admin/
+Dự án Cloudflare đang sử dụng: royal-snow-1e06
+
+QUAN TRỌNG: Đây là bản nâng cấp có máy chủ và lưu dữ liệu thực sự.
+KHÔNG chỉ kéo thả ZIP như website HTML trước đây. Nếu chỉ tải ZIP vào
+"Upload your static files" thì trang quản trị KHÔNG lưu được nội dung.
+Cần thiết lập kho dữ liệu Cloudflare KV và mật khẩu ADMIN_PASSWORD.
+
+TRƯỚC KHI CÀI
+-------------
+1. Sao lưu website cũ nếu đã tự chỉnh sửa trước đây.
+2. Trên máy tính Windows, cài Node.js LTS: https://nodejs.org/
+3. Giải nén file ZIP này thành một thư mục bình thường.
+4. Đăng nhập vào đúng tài khoản Cloudflare đang có Worker royal-snow-1e06.
+
+CÁCH TẠO KHO DỮ LIỆU MIỄN PHÍ (CLOUDFLARE KV)
+----------------------------------------------
+1. Vào https://dash.cloudflare.com/
+2. Mục Storage & databases (Lưu trữ & cơ sở dữ liệu) -> KV.
+   Nếu menu thay đổi, dùng thanh tìm kiếm Cloudflare tìm "KV".
+3. Chọn Create namespace / Tạo không gian tên.
+4. Đặt tên: vinhomes-olympic-data
+5. Mở namespace vừa tạo, tìm và SAO CHÉP "Namespace ID" gồm 32 ký tự.
+   Namespace ID không phải mật khẩu, nhưng đừng nhầm với API Token.
+
+CÀI ĐẶT BẰNG CÔNG CỤ TRONG FILE
+-------------------------------
+1. Nháy đúp file CAI-DAT-WINDOWS.cmd trong thư mục đã giải nén.
+2. Công cụ yêu cầu đăng nhập Cloudflare: cho phép trên trình duyệt.
+3. Khi được hỏi "KV Namespace ID": DÁN ID đã sao chép rồi Enter.
+4. Khi được hỏi ADMIN_PASSWORD: TẠO MẬT KHẨU RIÊNG MẠNH >= 12 ký tự.
+   Không chia sẻ mật khẩu qua tin nhắn; mật khẩu được lưu dưới dạng Secret
+   trên tài khoản Cloudflare, không được ghi trong bộ mã nguồn.
+5. Gõ đúng DEPLOY khi sẵn sàng cập nhật Worker royal-snow-1e06.
+6. Chờ Cloudflare thông báo triển khai thành công.
+
+Hoặc chạy thủ công trong cửa sổ Terminal của thư mục:
+    npm install
+    npx wrangler login
+    node scripts/prepare.js ID_NAMESPACE_VUA_TAO
+    npx wrangler secret put ADMIN_PASSWORD
+    npm run deploy
+
+LƯU Ý: Nếu Cloudflare yêu cầu chọn tài khoản, chọn tài khoản đã có
+royal-snow-1e06. Lệnh deploy dùng ĐÚNG tên Worker cũ để cập nhật phiên bản.
+Không đổi nameserver tại Nhân Hòa nữa.
+
+DÙNG TRANG QUẢN TRỊ
+-------------------
+1. Truy cập https://vinhomesthuongtin.vn/admin/
+2. Đăng nhập bằng mật khẩu riêng đã đặt.
+3. Chọn một trong các mục:
+   - Nội dung trang chủ: tiêu đề, banner, giới thiệu, vị trí, tiện ích.
+   - Sản phẩm: thêm / sửa / xóa các sản phẩm và hình ảnh.
+   - Thư viện ảnh: quản lý album ảnh.
+   - Tin tức / Bài viết: tạo bài viết, lưu bản nháp, xuất bản.
+   - Kho hình ảnh: tải ảnh JPG/PNG/WebP từ máy tính, tự nén thành WebP.
+   - Khách đăng ký: đọc thông tin khách, gọi khách, xóa hoặc xuất CSV.
+   - Liên hệ & SEO: số điện thoại, Zalo, Facebook, ảnh chân dung, SEO.
+4. Sau khi sửa, NHỚ bấm "LƯU THAY ĐỔI" ở góc trên bên phải.
+5. Mở website, F5/Ctrl+F5 để xem cập nhật.
+
+LƯU Ý VỀ BẢO MẬT VÀ GIỚI HẠN MIỄN PHÍ
+------------------------------------
+- Quản trị viên đăng nhập bằng cookie ký số, HttpOnly và HTTPS; không có
+  mật khẩu mẫu viết sẵn trong HTML. Phải tự cài secret trước khi dùng.
+- Không có hệ thống gửi email tự động: khách điền form sẽ hiển thị trong
+  mục "Khách đăng ký" của trang quản trị. Thỉnh thoảng hãy vào xem.
+- KV miễn phí có giới hạn dung lượng, lượt đọc/ghi theo chính sách Cloudflare.
+  Ảnh tải lên được tối ưu tối đa 1,6 MB/ảnh; không dành cho video lớn.
+- Dữ liệu trên KV có thể cần một khoảng ngắn để đồng bộ toàn cầu.
+- Nếu site có nhiều khách và bài viết phức tạp, nên chuyển sang D1/R2 hoặc
+  hệ quản trị chuyên nghiệp có sao lưu và hạn chế spam nâng cao.
+- Nên bật xác thực hai yếu tố (2FA) cho tài khoản Cloudflare.
+- Không gửi tài khoản, mật khẩu hay mã OTP cho người lạ.
+- Hình concept AI chỉ minh họa, không phải phối cảnh chính thức Vinhomes.
+
+KHẮC PHỤC
+---------
+- Không đăng nhập được: kiểm tra secret ADMIN_PASSWORD đã cài chưa.
+- Báo chưa cấu hình kho dữ liệu: kiểm tra KV binding tên OLYMPIC_KV.
+- Trắng ảnh: kiểm tra ảnh đã tải lên và website mở https.
+- Tên miền không vào web: vào Workers & Pages -> royal-snow-1e06 -> Domains,
+  xác nhận vinhomesthuongtin.vn vẫn gắn với Production.
+
+Bộ mã này được xây riêng cho website tư vấn độc lập của Mạnh Việt.

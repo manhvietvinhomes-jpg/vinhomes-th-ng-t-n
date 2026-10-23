@@ -1,0 +1,73 @@
+{
+  "updated": "2026-10-21",
+  "researchNote": "Thông tin dự án theo nguồn chính quyền; chưa xác minh quyền đăng lại phối cảnh hoặc bảng giá chính thức.",
+  "sources": [
+    {
+      "name": "municipal",
+      "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm"
+    },
+    {
+      "name": "investor",
+      "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf"
+    },
+    {
+      "name": "consult",
+      "url": "https://ngochoi.hanoi.gov.vn/tin-tuc-su-kien/lay-y-kien-cong-dong-dan-cu-doi-voi-do-an-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-phan-khu-a-b-c-d-2724260210151416024.htm"
+    },
+    {
+      "name": "planning",
+      "url": "https://chuongduong.hanoi.gov.vn/thong-bao/thong-bao-ve-viec-niem-yet-cong-khai-lay-y-kien-co-quan-quan-ly-nha-nuoc-to-chuc-chuyen-gia-va-cong-dong-dan-cu-co-lien-quan-doi-voi-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-khu-c-2799260206161359492.htm"
+    },
+    {
+      "name": "compensate",
+      "url": "https://thanhoai.hanoi.gov.vn/chi-tiet-van-ban/quyet-dinh-ve-viec-phe-duyet-phuong-an-boi-thuong-ho-tro-tai-dinh-cu-khi-nha-nuoc-thu-hoi-dat-de-th-253884"
+    }
+  ],
+  "pages": [
+    {
+      "slug": "tong-quan",
+      "status": "confirmed",
+      "source": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm"
+    },
+    {
+      "slug": "vi-tri",
+      "status": "confirmed",
+      "source": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf"
+    },
+    {
+      "slug": "quy-hoach",
+      "status": "confirmed",
+      "source": "https://ngochoi.hanoi.gov.vn/tin-tuc-su-kien/lay-y-kien-cong-dong-dan-cu-doi-voi-do-an-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-phan-khu-a-b-c-d-2724260210151416024.htm"
+    },
+    {
+      "slug": "san-pham",
+      "status": "needs-verification",
+      "source": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm"
+    },
+    {
+      "slug": "gia-ban",
+      "status": "pending",
+      "source": ""
+    },
+    {
+      "slug": "mat-bang",
+      "status": "needs-verification",
+      "source": "https://chuongduong.hanoi.gov.vn/thong-bao/thong-bao-ve-viec-niem-yet-cong-khai-lay-y-kien-co-quan-quan-ly-nha-nuoc-to-chuc-chuyen-gia-va-cong-dong-dan-cu-co-lien-quan-doi-voi-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-khu-c-2799260206161359492.htm"
+    },
+    {
+      "slug": "tien-do",
+      "status": "confirmed",
+      "source": "https://thanhoai.hanoi.gov.vn/chi-tiet-van-ban/quyet-dinh-ve-viec-phe-duyet-phuong-an-boi-thuong-ho-tro-tai-dinh-cu-khi-nha-nuoc-thu-hoi-dat-de-th-253884"
+    },
+    {
+      "slug": "phap-ly",
+      "status": "confirmed",
+      "source": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf"
+    },
+    {
+      "slug": "so-sanh",
+      "status": "needs-verification",
+      "source": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm"
+    }
+  ]
+}

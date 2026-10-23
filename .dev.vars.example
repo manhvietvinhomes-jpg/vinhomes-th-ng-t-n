@@ -1,0 +1,2 @@
+# Rename to .dev.vars ONLY for local testing. Never share or upload .dev.vars.
+ADMIN_PASSWORD=CHANGE_THIS_TO_A_LONG_PRIVATE_PASSWORD
