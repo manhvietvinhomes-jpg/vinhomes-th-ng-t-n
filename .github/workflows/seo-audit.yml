@@ -1,0 +1,40 @@
+name: SEO audit
+on:
+  push:
+    branches: [main]
+    paths: ['src/**', 'content/**', 'public/**', 'scripts/**', 'tests/**', 'package*.json', 'wrangler.jsonc']
+  schedule:
+    - cron: '15 23 * * *'
+  workflow_dispatch:
+    inputs:
+      check_live:
+        description: 'Crawl production after the 100-URL release is deployed'
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run check
+      - run: npx wrangler deploy --dry-run --outdir dist/worker
+        env:
+          WRANGLER_SEND_METRICS: 'false'
+      - name: Crawl production only when explicitly requested
+        if: github.event_name == 'workflow_dispatch' && inputs.check_live
+        run: node scripts/audit-seo.js --base=https://vinhomesthuongtin.vn
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: seo-audit
+          path: |
+            dist/seo-audit.json
+            dist/build-report.json
+            dist/100-urls.txt

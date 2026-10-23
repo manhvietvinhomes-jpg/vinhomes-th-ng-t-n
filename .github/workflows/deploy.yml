@@ -13,10 +13,14 @@ jobs:
           node-version: '22'
       - name: Install and validate
         run: |
-          npm install --no-audit --no-fund
+          npm ci --no-audit --no-fund
           npm run check
       - name: Deploy existing Worker
-        run: npx wrangler deploy
+        run: |
+          node scripts/prepare.js "$CLOUDFLARE_KV_NAMESPACE_ID"
+          node scripts/deploy-guard.js
+          npx wrangler deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_KV_NAMESPACE_ID: ${{ vars.CLOUDFLARE_KV_NAMESPACE_ID }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

@@ -9,7 +9,7 @@ const env={
   ADMIN_PASSWORD:'PrivatePass123456789',
   OLYMPIC_KV:{async get(){return null}},
   ASSETS:{async fetch(r){
-    const u=new URL(r.url), p=u.pathname==='/index.html'?'public/index.html':'public'+u.pathname;
+    const u=new URL(r.url), p=(u.pathname==='/'||u.pathname==='/index.html')?'public/index.html':'public'+u.pathname;
     return new Response(await readFile(new URL('../'+p,import.meta.url), 'utf8'),{headers:{'content-type':'text/html; charset=utf-8'}});
   }}
 };

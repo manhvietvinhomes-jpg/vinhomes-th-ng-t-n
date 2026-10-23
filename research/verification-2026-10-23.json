@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-10-23T07:36:59.398376+00:00",
+  "note": "Metadata checks only. An HTTP 200 or matching title does not verify every claim in an article. New guides add general buyer advice, not project prices or legal conclusions.",
+  "sources": [
+    {
+      "name": "municipal",
+      "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
+      "finalUrl": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "title": "XÃ DÂN HOÀ QUYẾT TÂM HOÀN THÀNH TIẾN ĐỘ GIẢI PHÓNG MẶT BẰNG KHU ĐÔ THỊ THỂ THAO OLYMPIC",
+      "mentionsOlympic": true,
+      "sha256": "98a43c3974c3d962ded35959f81f897a7910bd69fb2867a4654750cf1b2d1ec2"
+    },
+    {
+      "name": "investor",
+      "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+      "finalUrl": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "title": null,
+      "mentionsOlympic": false,
+      "sha256": "798f79164868a0abcf1c77bf6fe1f814436fb40ae3e73f263edf5b563316d431"
+    },
+    {
+      "name": "consult",
+      "url": "https://ngochoi.hanoi.gov.vn/tin-tuc-su-kien/lay-y-kien-cong-dong-dan-cu-doi-voi-do-an-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-phan-khu-a-b-c-d-2724260210151416024.htm",
+      "finalUrl": "https://ngochoi.hanoi.gov.vn/tin-tuc-su-kien/lay-y-kien-cong-dong-dan-cu-doi-voi-do-an-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-phan-khu-a-b-c-d-2724260210151416024.htm",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "title": "LẤY Ý KIẾN CỘNG ĐỒNG DÂN CƯ ĐỐI VỚI ĐỒ ÁN QUY HOẠCH CHI TIẾT TỶ LỆ 1/500 KHU ĐÔ THỊ THỂ THAO OLYMPIC (PHÂN KHU A, B, C, D)",
+      "mentionsOlympic": true,
+      "sha256": "e1d0f5a493e73ac058791cbf29157275ff4e2d61f8570e5cb178b3206072f816"
+    },
+    {
+      "name": "planning",
+      "url": "https://chuongduong.hanoi.gov.vn/thong-bao/thong-bao-ve-viec-niem-yet-cong-khai-lay-y-kien-co-quan-quan-ly-nha-nuoc-to-chuc-chuyen-gia-va-cong-dong-dan-cu-co-lien-quan-doi-voi-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-khu-c-2799260206161359492.htm",
+      "finalUrl": "https://chuongduong.hanoi.gov.vn/thong-bao/thong-bao-ve-viec-niem-yet-cong-khai-lay-y-kien-co-quan-quan-ly-nha-nuoc-to-chuc-chuyen-gia-va-cong-dong-dan-cu-co-lien-quan-doi-voi-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-khu-c-2799260206161359492.htm",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "title": "THÔNG BÁO Về việc niêm yết công khai, lấy ý kiến cơ quan quản lý nhà nước, tổ chức, chuyên gia và cộng đồng dân cư có liên quan đối với Quy hoạch chi tiết tỷ lệ 1/500 Khu đô thị thể thao Olympic – Khu C",
+      "mentionsOlympic": true,
+      "sha256": "5997d98cb204ffdfdcc806058f82bf15354f48c6cc2587ec9b71014eb70c5dbe"
+    },
+    {
+      "name": "compensate",
+      "url": "https://thanhoai.hanoi.gov.vn/chi-tiet-van-ban/quyet-dinh-ve-viec-phe-duyet-phuong-an-boi-thuong-ho-tro-tai-dinh-cu-khi-nha-nuoc-thu-hoi-dat-de-th-253884",
+      "finalUrl": "https://thanhoai.hanoi.gov.vn/chi-tiet-van-ban/quyet-dinh-ve-viec-phe-duyet-phuong-an-boi-thuong-ho-tro-tai-dinh-cu-khi-nha-nuoc-thu-hoi-dat-de-th-253884",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "title": "Quyết định 1416/QĐ-UBND QUYẾT ĐỊNH Về việc phê duyệt phương án bồi thường, hỗ trợ, tái định cư khi Nhà nước thu hồi đất để thực hiện dự án: Đầu tư xây dựng Khu đô thị thể thao Olympic (Khu đô thị thể thao Quốc tế Hà Nội) (trên địa bàn thôn Văn Quán, xã Thanh Oai) đợt 5",
+      "mentionsOlympic": true,
+      "sha256": "bdc0db68cd69bc4e452eecb149d45f86f8565a13d43a91f338db7881d4f1f3fd"
+    }
+  ]
+}

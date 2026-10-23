@@ -1,47 +1,52 @@
-# VINHOMES OLYMPIC • MẠNH VIỆT REAL ESTATE | CMS + SEO V2
+# Vinhomes Olympic — V3, CMS và 100 URL
 
-**Trạng thái ngày 21/10/2026:** Đã xây dựng mã nguồn, 17 bài kiểm thử và preflight build chạy đạt. **Chưa triển khai bản V2 lên tài khoản Cloudflare, chưa xác nhận DNS/SSL/trang live của bản mới, chưa liên kết GitHub hoặc Google Search Console.**
+Website tư vấn độc lập của Mạnh Việt Real Estate tại `https://vinhomesthuongtin.vn`, Worker `royal-snow-1e06`.
 
-Tên miền dự kiến: `https://vinhomesthuongtin.vn` • Worker đã sử dụng ở các bước trước: `royal-snow-1e06`.
+Bản V3 giữ 9 trang chuyên đề, 10 bài bàn giao và 4 trang loại hình; thêm 74 bài cẩm nang có tình huống áp dụng. Tổng dữ liệu khởi tạo: **100 URL** gồm trang chủ, chuyên đề, bài viết, loại hình, danh mục tin và chính sách bảo mật. Số URL trên production phụ thuộc dữ liệu KV đang lưu; không tự ghi đè KV bằng dữ liệu khởi tạo.
 
-## Phiên bản V2 + 10 bài Marketing (22/10/2026)
+## Phát triển
 
-Đã tích hợp 10 bài biên soạn từ Word, 10 ảnh WebP và các nguồn tham khảo được trích trong Word. Bản này có **26 URL** trong sitemap trên dữ liệu khởi tạo (bao gồm 10 bài mới). Bài tin mặc định cũ đã chuyển thành bản nháp, không bị xóa. Chưa triển khai vào Cloudflare, GitHub hay Google Search Console. Xem `NHAP-10-BAI-VA-PHAT-HANH.md` để nhận biết rõ việc cập nhật khi dữ liệu KV đã được quản trị.
+Node.js 22 trở lên, npm và Chromium nếu chạy kiểm thử giao diện.
 
-## Có gì mới trong V2?
+```sh
+cd /workspace/vinhomes-th-ng-t-n
+npm ci --no-audit --no-fund
+npm run dev:prepare
+npm run check
+npm run dev -- --local --ip 127.0.0.1 --port 8787
+```
 
-- Trang chủ responsive, ảnh concept AI được đánh dấu là ảnh minh họa.
-- 9 trang SEO có nội dung máy chủ (SSR): `/tong-quan/`, `/vi-tri/`, `/quy-hoach/`, `/san-pham/`, `/gia-ban/`, `/mat-bang/`, `/tien-do/`, `/phap-ly/`, `/so-sanh/`.
-- Bài viết ` /tin-tuc/<slug>/ ` và chi tiết sản phẩm minh họa ` /san-pham/<slug>/ ` có URL riêng, title, description, canonical, OG và JSON-LD.
-- Sitemap XML tự tạo từ các bài và trang công khai; robots.txt; noindex cho bản xem thử Workers.dev; HTML có liên kết nội bộ.
-- Trang `/admin/` có mật khẩu riêng (Cloudflare Secret): sửa banner/chữ, ảnh, trang SEO, trạng thái nguồn, bài viết, sản phẩm, bảng giá và nhận khách đăng ký; có xuất CSV khách và JSON nội dung.
-- Bảng giá chỉ hiện công khai nếu người quản trị đánh dấu **đã có văn bản xác minh** và gắn URL nguồn. Mặc định không có giá và giỏ hàng được khẳng định.
-- Form có yêu cầu đồng ý liên hệ, honeypot, giới hạn số yêu cầu cơ bản, lưu nguồn trang và `utm_source`/`utm_campaign`.
-- Chính sách bảo mật tại `/chinh-sach-bao-mat/`.
+`dev:prepare` chỉ tạo `.dev.vars` ngẫu nhiên cho local khi chưa có, giữ file cũ, không in mật khẩu. File này được Git bỏ qua; không dùng nó để đặt lại mật khẩu production. Dùng checkout hiện có, không cần tạo worktree.
 
-## Bắt đầu
+Trong terminal khác, khi Wrangler đã báo sẵn sàng:
 
-1. Đọc **`HUONG-DAN-CLOUDFLARE.txt`** và **`PHAT-HANH-VA-SEARCH-CONSOLE.md`**.
-2. Tải ZIP về máy và giải nén. Chạy `CAI-DAT-WINDOWS.cmd` sau khi đã tạo KV và sao lưu site cũ; hoặc dùng npm/wrangler theo hướng dẫn.
-3. Trong thư mục mã: `npm run check` để chạy kiểm thử và preflight build; `npm run deploy` để cập nhật Worker thực khi đã cấu hình chính xác.
-4. Sau khi triển khai có xác nhận: website `/`, quản trị `/admin/`, sitemap `/sitemap.xml`.
+```sh
+npm run test:browser
+node scripts/audit-seo.js --base=http://127.0.0.1:8787
+npx wrangler deploy --dry-run --outdir dist/worker
+```
 
-**Lưu ý:** Không được đăng bản V2 bằng cách kéo thả ZIP tĩnh. Worker có backend lưu trữ và cần binding `OLYMPIC_KV` cùng Cloudflare Secret `ADMIN_PASSWORD`. Mã này **không kèm mật khẩu mặc định**. Không gửi mật khẩu hoặc API token qua chat.
+Kiểm thử trình duyệt dùng Chromium tại `/usr/bin/chromium`; đặt `CHROMIUM_PATH` nếu máy khác. Nó chỉ cho phép chạy trên localhost, tạo lead giả, kiểm tra qua CMS rồi xóa lead giả. Không chạy smoke ghi dữ liệu trên production.
 
-## Hạn chế và thông tin cần xác minh
+## Nội dung và audit
 
-- Các giấy tờ bán hàng, phân khu và quỹ căn cần bổ sung tài liệu gốc trước khi khẳng định điều kiện mở bán.
-- Thông tin trong trang `/gia-ban/` là hướng dẫn kiểm tra giá, không phải bảng hàng đã được xác nhận.
-- Hình ảnh đi kèm là concept AI, không phải phối cảnh được chủ đầu tư phê duyệt. Việc tự sửa ảnh của bên khác **không** tạo quyền sử dụng ảnh.
-- KV Free có giới hạn, tính nhất quán cuối cùng (eventual consistency); lượng lớn lead nên cân nhắc Cloudflare D1 và hệ thống cảnh báo/backup độc lập. Hiện không gửi email/Zalo tự động.
-- Không có tài khoản GitHub/Search Console được thao tác trong quá trình tạo mã; cần cấp quyền để thực hiện kết nối và phát hành ngoài môi trường này.
+- Biên tập 74 bài mới tại `content/guides/74-bai-cam-nang.json`; 10 bài cũ ở `src/articles.js`.
+- `npm run content:sync` tạo `src/guides.js`, bộ nhập CMS `public/noi-dung-seo.json` và seed đồng nhất. Lệnh không kết nối hoặc ghi KV.
+- `npm run check` đồng bộ nội dung, chạy 24 kiểm thử, preflight build và audit 100 URL.
+- Báo cáo tại `dist/seo-audit.json`, danh sách URL tại `dist/100-urls.txt`, ảnh kiểm tra ở `dist/screenshots/`.
+- Workflow `SEO audit` chạy khi push, chạy hằng ngày lúc **06:15 giờ Việt Nam**, hoặc chạy thủ công. Đây là kiểm tra và xuất báo cáo; không tự xuất bản hay sửa dữ kiện dự án. Audit production được bật riêng sau khi đã phát hành.
+- Audit kiểm tra HTTP, title/description duy nhất, H1, canonical, JSON-LD, ảnh, liên kết và khả năng truy cập từ trang chủ. Đây không phải chứng nhận xếp hạng hoặc bằng chứng Google đã lập chỉ mục.
 
-## Tài liệu đi kèm
+Nội dung công khai dùng chú thích “hình minh họa”, không nhận là phối cảnh chính thức. Các đường dẫn đối chiếu được giữ trong dữ liệu nghiên cứu nội bộ; bảng liệt kê nguồn không hiển thị trong trang bài viết. Không tự tạo giá, ngày mở bán, quyền sở hữu hoặc cam kết lợi nhuận.
 
-- `PHAT-HANH-VA-SEARCH-CONSOLE.md` – checklist cài đặt, QA, Cloudflare, Search Console.
-- `KIEM-KE-NGUON-VA-SEO.md` – nguồn tài liệu, keyword map, kế hoạch 7 giai đoạn.
-- `DEPLOY-GITHUB.md` – cách tạo repo GitHub, workflow deploy thủ công.
-- `research/SOURCE-INVENTORY.json` – danh sách nguồn và độ tin cậy.
-- `tests/*.test.js` – kiểm thử tự động (17 bài), `scripts/build.js` – kiểm tra preflight.
+## CMS và dữ liệu hiện có
 
-Trang này là trang tư vấn bất động sản độc lập của Mạnh Việt, không phải website chính thức của Vingroup/Vinhomes.
+KV binding: `OLYMPIC_KV`. Đăng nhập dùng Cloudflare secret `ADMIN_PASSWORD` tối thiểu 12 ký tự. Không có mật khẩu mặc định.
+
+CMS có nút **Nhập bộ 84 bài SEO**: chỉ thêm slug còn thiếu, giữ bài đã sửa và bài đã ẩn; cần bấm lưu sau khi nhập. Có thể có hơn hoặc ít hơn 100 URL nếu dữ liệu production có nội dung riêng. Không xóa bài riêng để ép số URL.
+
+## Phát hành
+
+Đọc [RELEASE-V3.md](RELEASE-V3.md). Mã nguồn đã chuẩn bị không đồng nghĩa đã phát hành lên domain. Cần xác thực Cloudflare, xác nhận đúng Worker/domain, sao lưu Worker và KV, cấu hình namespace thật, kiểm tra secret trước khi deploy. Không đổi nameserver.
+
+Các tài liệu bàn giao còn lại được giữ để tra lịch sử V2; số URL, số kiểm thử và nhãn nút cũ trong các tài liệu đó không đại diện V3.

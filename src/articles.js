@@ -31,7 +31,7 @@ export const TEN_POSTS = [
     ],
     "status": "needs-verification",
     "published": true,
-    "articleNote": "Ảnh minh họa AI/đồ họa biên tập; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
+    "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
   },
   {
     "id": "olympic-guide-02",
@@ -64,7 +64,7 @@ export const TEN_POSTS = [
     ],
     "status": "needs-verification",
     "published": true,
-    "articleNote": "Ảnh minh họa AI/đồ họa biên tập; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
+    "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
   },
   {
     "id": "olympic-guide-03",
@@ -74,7 +74,7 @@ export const TEN_POSTS = [
     "excerpt": "Phân biệt phạm vi nghiên cứu 16.093 ha và quy mô dự án khoảng 9.171 ha; tìm hiểu 4 phân khu A, B, C, D và cách kiểm tra hồ sơ quy hoạch.",
     "content": "Quy hoạch là nền tảng quan trọng nhất khi đánh giá một đại đô thị. Với Vinhomes Olympic, khách hàng dễ gặp những con số lớn, tên phân khu và sơ đồ lan truyền trên mạng nhưng không phải bản nào cũng thể hiện cùng một phạm vi. Đọc đúng tài liệu quy hoạch sẽ giúp hiểu dự án hướng đến điều gì và phần nào còn phụ thuộc các bước triển khai tiếp theo.\n\n## Vì sao xuất hiện hai con số 16.093 ha và 9.171 ha?\n\nTài liệu công bố quy hoạch phân khu tỷ lệ 1/2.000 cuối năm 2025 đề cập phạm vi nghiên cứu khoảng 16.093 ha để bảo đảm liên kết đồng bộ không gian, giao thông và hạ tầng. Trong khi đó, tài liệu triển khai dự án đầu tư tại địa phương nêu quy mô khoảng 9.171 ha. Hai con số phản ánh hai phạm vi công việc, không phải thông tin mâu thuẫn nếu đặt đúng bối cảnh. Khi sử dụng trên website, cần ghi rõ “phạm vi nghiên cứu” hay “quy mô dự án đầu tư”.\n\n## Bốn phân khu không đồng nghĩa bốn đợt mở bán\n\nHồ sơ quy hoạch được công bố gồm các phân khu thành phần A, B, C, D. Phân khu A được giới thiệu với định hướng đô thị gắn TOD và đầu mối giao thông; phân khu B trong hồ sơ môi trường có không gian đô thị cùng khu liên hợp thể thao. Những thông tin định hướng ở các phân khu khác phải đối chiếu riêng với bản vẽ và quyết định tương ứng. Không thể từ ký hiệu A/B/C/D suy ra thứ tự chào bán, giá bán hay thời điểm bàn giao.\n\n## Từ bản vẽ 1/2.000 đến thông tin một căn nhà\n\nBản quy hoạch phân khu 1/2.000 giúp hiểu cấu trúc lớn về dân cư, giao thông và chức năng đất. Để xem một sản phẩm cụ thể, người mua cần tài liệu chi tiết hơn: bản vẽ 1/500 có hiệu lực, vị trí lô đất, chỉ tiêu xây dựng, đường tiếp giáp, diện tích và các điều kiện kinh doanh. Quy hoạch được phê duyệt cũng có thể được điều chỉnh theo thủ tục; vì vậy phải đối chiếu phiên bản và ngày ban hành.\n\n## Người mua nên đọc quy hoạch bằng câu hỏi\n\nĐất ở nằm ở đâu so với trục giao thông chính? Khu thể thao có tách biệt luồng sự kiện và luồng cư dân? Không gian xanh – mặt nước là công cộng hay nội khu? Mật độ xây dựng và hạ tầng xã hội có phù hợp gia đình nhiều thế hệ? Trả lời được những câu này sẽ có giá trị hơn việc chỉ nhìn phối cảnh hoành tráng, vì nó chuyển quy hoạch từ thông tin đẹp thành tiêu chí chọn nhà.\n\n## Nhận thông tin và tư vấn\n\nCần đối chiếu sơ đồ phân khu và đọc chỉ tiêu quy hoạch cho một vị trí cụ thể? Liên hệ Mạnh Việt để nhận danh mục tài liệu cần kiểm tra trước khi quyết định.",
     "image": "/assets/posts/03_quy-hoach-vinhomes-olympic-a-b-c-d.webp",
-    "seoTitle": "Quy hoạch Vinhomes Olympic: Phân khu A, B, C, D và những con số cần đọc đúng",
+    "seoTitle": "Quy hoạch Vinhomes Olympic: đọc phân khu A, B, C, D",
     "seoDescription": "Phân biệt phạm vi nghiên cứu 16.093 ha và quy mô dự án khoảng 9.171 ha; tìm hiểu 4 phân khu A, B, C, D và cách kiểm tra hồ sơ quy hoạch.",
     "keyword": "quy hoạch Vinhomes Olympic",
     "sources": [
@@ -101,7 +101,7 @@ export const TEN_POSTS = [
     ],
     "status": "needs-verification",
     "published": true,
-    "articleNote": "Ảnh minh họa AI/đồ họa biên tập; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
+    "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
   },
   {
     "id": "olympic-guide-04",
@@ -130,7 +130,7 @@ export const TEN_POSTS = [
     ],
     "status": "needs-verification",
     "published": true,
-    "articleNote": "Ảnh minh họa AI/đồ họa biên tập; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
+    "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
   },
   {
     "id": "olympic-guide-05",
@@ -159,7 +159,7 @@ export const TEN_POSTS = [
     ],
     "status": "needs-verification",
     "published": true,
-    "articleNote": "Ảnh minh họa AI/đồ họa biên tập; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
+    "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
   },
   {
     "id": "olympic-guide-06",
@@ -169,7 +169,7 @@ export const TEN_POSTS = [
     "excerpt": "Theo dõi tiến độ Vinhomes Olympic năm 2026 theo các nhóm thủ tục, giải phóng mặt bằng, giao thông và khu thể thao; cập nhật có nguồn, tránh nhầm hạng mục.",
     "content": "Một hình ảnh công trường có thể thu hút hàng nghìn lượt xem, nhưng người mua cần nhiều hơn một bức ảnh. Tiến độ Vinhomes Olympic phải được nhìn theo từng lớp: hồ sơ quy hoạch, công tác đất đai, hạ tầng kết nối và tiến độ từng công trình. Chính cách tách lớp này giúp bạn đánh giá điều gì đã diễn ra, điều gì đang làm và điều gì mới ở mức dự kiến.\n\n## Giai đoạn nền tảng về thủ tục và quy hoạch\n\nCuối năm 2025, Hà Nội công bố quy hoạch phân khu tỷ lệ 1/2.000 đối với bốn khu A, B, C, D. Đầu năm 2026, nhiều địa phương công khai việc lấy ý kiến hồ sơ quy hoạch chi tiết và phối hợp giải phóng mặt bằng. Hồ sơ môi trường phân khu B công bố trên cổng cơ quan chuyên môn là một nguồn quan trọng để nhận biết chức năng dự kiến và phạm vi các hạng mục. Các mốc này là bước chuẩn bị pháp lý, chưa đồng nghĩa với một khu dân cư đã hoàn thành.\n\n## Hoạt động giải phóng mặt bằng tại địa phương\n\nTháng 4/2026, UBND xã Dân Hòa đăng thông tin về công tác đo đạc, bồi thường và triển khai giải phóng mặt bằng trên địa bàn. Tháng 5/2026, lãnh đạo thành phố kiểm tra và làm việc với đơn vị liên quan về tiến độ dự án. Đây là các dữ kiện phản ánh hoạt động quản lý và tổ chức triển khai; tình trạng bàn giao mặt bằng của một vị trí cụ thể cần được hỏi lại theo địa bàn và cập nhật mới nhất.\n\n## Hạ tầng và sân vận động là hai mảng riêng\n\nThông tin đăng trên cơ quan thuộc Hà Nội tháng 9/2026 ghi nhận đại lộ rộng 120 m, dài hơn 8 km đang dần định hình để kết nối khu liên hợp thể thao với các trục giao thông. Trong khi đó, Vingroup công bố kế hoạch phát triển khu Hùng Vương và sân VinFast – Trống Đồng, với mốc hoàn thành theo kế hoạch của doanh nghiệp. Đó không phải cam kết toàn bộ khu nhà ở và tiện ích đô thị sẽ cùng hoàn thành vào một ngày.\n\n## Cách cập nhật tiến độ đáng tin cậy\n\nVới mỗi thông tin mới, hãy ghi ngày, nguồn công bố, hạng mục, phạm vi và điều gì thực sự được xác nhận. Nếu xem ảnh chụp flycam, cần biết vị trí chụp, ngày chụp và quyền sử dụng ảnh. Nếu nghe mốc “80%”, hãy hỏi 80% của công việc nào. Đến lúc khách hàng mua một căn cụ thể, tiến độ hữu ích nhất là công trình liên quan trực tiếp đến đường vào, hạ tầng kỹ thuật, pháp lý và bàn giao căn đó.\n\n## Nhận thông tin và tư vấn\n\nNhận bản cập nhật tiến độ theo mốc có nguồn và được phân loại từng khu vực từ Mạnh Việt. Khách quan tâm thực sự sẽ có dữ liệu để theo dõi thay vì phải tự lọc tin mỗi ngày.",
     "image": "/assets/posts/06_tien-do-vinhomes-olympic-2026.webp",
-    "seoTitle": "Tiến độ Vinhomes Olympic 2026: Những mốc nào đã được công bố? | Mạnh Việt Real Estate",
+    "seoTitle": "Tiến độ Vinhomes Olympic 2026: cập nhật và cách kiểm tra",
     "seoDescription": "Theo dõi tiến độ Vinhomes Olympic năm 2026 theo các nhóm thủ tục, giải phóng mặt bằng, giao thông và khu thể thao; cập nhật có nguồn, tránh nhầm hạng mục.",
     "keyword": "tiến độ Vinhomes Olympic 2026",
     "sources": [
@@ -200,7 +200,7 @@ export const TEN_POSTS = [
     ],
     "status": "needs-verification",
     "published": true,
-    "articleNote": "Ảnh minh họa AI/đồ họa biên tập; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
+    "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
   },
   {
     "id": "olympic-guide-07",
@@ -233,7 +233,7 @@ export const TEN_POSTS = [
     ],
     "status": "needs-verification",
     "published": true,
-    "articleNote": "Ảnh minh họa AI/đồ họa biên tập; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
+    "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
   },
   {
     "id": "olympic-guide-08",
@@ -262,7 +262,7 @@ export const TEN_POSTS = [
     ],
     "status": "needs-verification",
     "published": true,
-    "articleNote": "Ảnh minh họa AI/đồ họa biên tập; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
+    "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
   },
   {
     "id": "olympic-guide-09",
@@ -272,7 +272,7 @@ export const TEN_POSTS = [
     "excerpt": "Tìm hiểu các loại hình nhà ở nêu trong hồ sơ phân khu B: liền kề, biệt thự, chung cư; cách chọn phù hợp với nhu cầu ở, kinh doanh và đầu tư.",
     "content": "Nhiều khách tìm đến Vinhomes Olympic với một câu hỏi trực tiếp: “Có liền kề, biệt thự hay căn hộ không?” Hồ sơ môi trường phân khu B có đề cập các nhóm nhà ở liền kề, biệt thự và chung cư trong tổng thể chức năng đất ở. Đây là cơ sở để tìm hiểu định hướng sản phẩm, nhưng chưa đủ để khẳng định mã căn, diện tích, giá, số lượng hay quỹ hàng đang mở bán.\n\n## Liền kề: xem xét công năng và nhịp sống\n\nNhóm sản phẩm nhà ở liền kề thường được khách hàng cân nhắc khi cần không gian sống nhiều tầng hoặc vừa ở vừa sử dụng một phần cho hoạt động phù hợp pháp luật và quy định vận hành. Khi so sánh, nên quan sát mặt tiền, đường trước nhà, diện tích sử dụng thực, chỗ đỗ xe, mật độ dân cư và khoảng cách đến tiện ích thiết yếu. Đừng mặc định mọi căn liền kề đều có khả năng kinh doanh hoặc cho thuê tốt như nhau.\n\n## Biệt thự: ưu tiên riêng tư và khả năng sử dụng dài hạn\n\nVới nhóm biệt thự, các tiêu chí quan trọng là diện tích đất, khoảng lùi, không gian ngoài trời, môi trường xung quanh và chi phí duy trì. Giá trị của biệt thự không chỉ đến từ tên phân khu hay thiết kế mặt đứng mà còn ở chất lượng đường tiếp cận, cảnh quan, an ninh và hệ thống dịch vụ sau khi cư dân về ở. Người mua nên kiểm tra quy hoạch và hợp đồng để biết thông số được phép xây dựng, tiêu chuẩn bàn giao và các nghĩa vụ phát sinh.\n\n## Chung cư: đánh giá bài toán tiện ích – chi phí\n\nSản phẩm căn hộ thường phù hợp với khách chú trọng công năng, quản lý vận hành và mức vốn theo từng diện tích. Các câu hỏi cần có gồm phí dịch vụ dự kiến, chỗ để xe, thang máy, phòng cháy chữa cháy, diện tích thông thủy, hướng căn và kết nối tới nơi làm việc. Nếu mua để cho thuê, nên phân tích nhu cầu khách thuê thực thay vì mặc định dự án gần sân vận động sẽ luôn có tỷ lệ lấp đầy cao.\n\n## Không nên chọn loại hình chỉ vì kỳ vọng tăng giá\n\nMột căn nhà phù hợp phải nằm trong ngân sách, có hồ sơ rõ ràng và phục vụ mục tiêu mua. Danh mục trong tài liệu quy hoạch là điểm khởi đầu tốt để nghiên cứu, không phải lời mời bán hàng. Khi chủ đầu tư công bố một giai đoạn kinh doanh, cần so sánh căn cụ thể bằng bảng thống nhất các thông số về vị trí, diện tích, giá, phí và điều kiện hợp đồng.\n\n## Nhận thông tin và tư vấn\n\nBạn muốn nhận bảng so sánh liền kề – biệt thự – chung cư theo ngân sách và mục tiêu sử dụng? Liên hệ Mạnh Việt để được tư vấn khi có thông tin sản phẩm đủ kiểm chứng.",
     "image": "/assets/posts/09_san-pham-vinhomes-olympic-lien-ke-biet-thu-chung-cu.webp",
-    "seoTitle": "Vinhomes Olympic có những loại hình bất động sản nào? Chọn liền kề, biệt thự hay căn hộ",
+    "seoTitle": "Sản phẩm Vinhomes Olympic: liền kề, biệt thự và căn hộ",
     "seoDescription": "Tìm hiểu các loại hình nhà ở nêu trong hồ sơ phân khu B: liền kề, biệt thự, chung cư; cách chọn phù hợp với nhu cầu ở, kinh doanh và đầu tư.",
     "keyword": "sản phẩm Vinhomes Olympic",
     "sources": [
@@ -287,7 +287,7 @@ export const TEN_POSTS = [
     ],
     "status": "needs-verification",
     "published": true,
-    "articleNote": "Ảnh minh họa AI/đồ họa biên tập; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
+    "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
   },
   {
     "id": "olympic-guide-10",
@@ -297,7 +297,7 @@ export const TEN_POSTS = [
     "excerpt": "Giá Vinhomes Olympic và quỹ căn cập nhật thế nào? Hướng dẫn phân biệt giá đồn đoán và bảng giá có nguồn, kiểm tra chiết khấu, tiến độ thanh toán.",
     "content": "Giá Vinhomes Olympic là từ khóa có thể thu hút lượng tìm kiếm lớn, nhưng cũng là nơi thông tin dễ nhiễu nhất. Một mức giá truyền miệng, hình chụp bảng tính không có ngày hoặc lời chào “hàng nội bộ” không đủ để xác định giá giao dịch. Ở thời điểm biên soạn 21/10/2026, những nguồn chính thức đã rà soát chưa cung cấp bảng giá và quỹ căn toàn dự án có thể xác nhận để trích đăng. Vì vậy, thay vì điền số chưa rõ, người mua nên nắm phương pháp đọc và đối chiếu bảng giá.\n\n## Giá bán không chỉ là một con số\n\nHai căn có cùng diện tích có thể khác nhau vì vị trí, mặt đường, hướng, chiều sâu, tiêu chuẩn hoàn thiện, điều kiện thanh toán và thời điểm áp dụng. Khi được báo giá, hãy yêu cầu ghi đầy đủ mã căn, vị trí trên mặt bằng, diện tích đất, diện tích sàn nếu có, giá trước ưu đãi và số tiền sau từng điều kiện chiết khấu. Chỉ so sánh các phương án khi biết rõ cơ sở tính toán.\n\n## Quỹ căn cần cập nhật theo thời gian thực\n\nMột bảng hàng đáng tin phải thể hiện đơn vị phát hành, ngày cập nhật, tình trạng có thể giao dịch và quy định giữ căn. Quỹ căn là dữ liệu biến động, nên bản chụp cũ không chứng minh một sản phẩm còn bán. Với phân khu quy mô lớn, thông tin quỹ căn phải gắn đúng dự án thành phần và giai đoạn; tránh dùng một danh sách chung để giới thiệu cho tất cả người mua.\n\n## Kiểm tra chiết khấu và phương án vay bằng dòng tiền thật\n\nƯu đãi chỉ có ý nghĩa khi người mua hiểu điều kiện áp dụng: thời hạn, hình thức thanh toán, tư cách khách hàng, loại sản phẩm và các khoản không được cộng gộp. Nếu sử dụng vốn vay, hãy tính kịch bản khi giai đoạn hỗ trợ lãi suất kết thúc, nghĩa vụ trả nợ mỗi tháng và khả năng duy trì nắm giữ. Khoản giảm giá công bố không tự động là lợi nhuận đầu tư.\n\n## Cách nhận bảng giá an toàn và hiệu quả\n\nBạn nên gửi nhu cầu về ngân sách, mục tiêu, diện tích, vị trí và nguồn vốn để chuyên viên tư vấn lọc đúng nhóm căn khi có thông tin chính thức. Đồng thời yêu cầu lưu vết bằng file có ngày và các điều khoản. Nếu không có bảng giá hợp lệ, việc thông báo “chưa có dữ liệu xác minh” là cách phục vụ khách hàng nghiêm túc hơn một con số hấp dẫn nhưng không kiểm chứng được.\n\n## Nhận thông tin và tư vấn\n\nCần nhận thông tin giá/quỹ căn Vinhomes Olympic khi được phát hành và kiểm chứng? Đăng ký với Mạnh Việt để được đối chiếu từng phương án, không sử dụng bảng giá tin đồn.",
     "image": "/assets/posts/10_gia-vinhomes-olympic-quy-can.webp",
-    "seoTitle": "Giá Vinhomes Olympic và quỹ căn: Xem gì trước khi nhận bảng hàng? | Mạnh Việt Real Estate",
+    "seoTitle": "Giá Vinhomes Olympic và quỹ căn: những điểm cần kiểm tra",
     "seoDescription": "Giá Vinhomes Olympic và quỹ căn cập nhật thế nào? Hướng dẫn phân biệt giá đồn đoán và bảng giá có nguồn, kiểm tra chiết khấu, tiến độ thanh toán.",
     "keyword": "giá Vinhomes Olympic",
     "sources": [
@@ -312,6 +312,6 @@ export const TEN_POSTS = [
     ],
     "status": "needs-verification",
     "published": true,
-    "articleNote": "Ảnh minh họa AI/đồ họa biên tập; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
+    "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
   }
 ];

@@ -1,4 +1,5 @@
 import { TEN_POSTS } from './articles.js';
+import { GUIDE_POSTS } from './guides.js';
 // Starter content only. The administrator edits persistent values in Workers KV.
 export const INITIAL_CONTENT = {
   siteName: 'VINHOMES OLYMPIC',
@@ -8,22 +9,22 @@ export const INITIAL_CONTENT = {
   heroAccent: 'OLYMPIC',
   heroSubtitle: 'Biểu tượng sống mới phía Nam Hà Nội',
   heroImage: '/assets/olympic-concept.webp',
-  heroNote: 'Hình concept AI minh họa, không phải phối cảnh chính thức của chủ đầu tư.',
+  heroNote: 'Hình minh họa, không phải phối cảnh chính thức của chủ đầu tư.',
   overviewTitle: 'Một tầm nhìn đô thị mới',
   overviewText: 'Khám phá thông tin tham khảo về khu đô thị thể thao Quốc tế Hà Nội và các định hướng phát triển đô thị tại phía Nam Thủ đô. Website do Mạnh Việt vận hành để hỗ trợ khách hàng tiếp cận nguồn tin, hình ảnh minh họa và cập nhật mới nhất. Thông tin về quy hoạch, sản phẩm và giá bán cần được đối chiếu với các thông báo chính thức.',
   locationTitle: 'Kết nối khu vực phía Nam Hà Nội',
   locationText: 'Khám phá các yếu tố vị trí, liên kết khu vực và định hướng phát triển hạ tầng. Nội dung chỉ phục vụ tham khảo và sẽ được cập nhật khi có công bố chính thức.',
   stats: [
-    { number: '~9.171 ha', label: 'Quy mô dự án tổng thể theo UBND Dân Hòa' },
+    { number: '~9.171 ha', label: 'Quy mô dự án tổng thể' },
     { number: '04 phân khu', label: 'Theo thông tin quy hoạch công khai' },
     { number: '02/2026', label: 'Thông tin lấy ý kiến quy hoạch' },
-    { number: 'Nguồn rõ ràng', label: 'Phân biệt đã xác nhận và chờ xác minh' }
+    { number: 'Tư vấn riêng', label: 'Chọn thông tin theo nhu cầu của bạn' }
   ],
   products: [
     { id: 'p-villa', title: 'Biệt thự', type: 'Biệt thự', short: 'Ý tưởng không gian sống riêng tư và cảnh quan xanh.', image: '/assets/waterfront.webp', detail: 'Nội dung mang tính minh họa ý tưởng, chưa phải thông tin mở bán chính thức.' },
     { id: 'p-town', title: 'Liền kề', type: 'Liền kề', short: 'Khám phá hình dung về những dãy nhà phố hiện đại.', image: '/assets/city.webp', detail: 'Loại hình minh họa, vui lòng kiểm tra thông báo từ chủ đầu tư.' },
     { id: 'p-shop', title: 'Shophouse', type: 'Shophouse', short: 'Ý tưởng không gian thương mại trong đô thị.', image: '/assets/sport.webp', detail: 'Không xác nhận nguồn cung hoặc chính sách kinh doanh.' },
-    { id: 'p-urban', title: 'Không gian đô thị', type: 'Khác', short: 'Cảm hứng cho nhịp sống đô thị thể thao mới.', image: '/assets/olympic-concept.webp', detail: 'Hình ảnh minh họa AI độc lập.' }
+    { id: 'p-urban', title: 'Không gian đô thị', type: 'Khác', short: 'Cảm hứng cho nhịp sống đô thị thể thao mới.', image: '/assets/olympic-concept.webp', detail: 'Hình ảnh minh họa độc lập.' }
   ],
   amenities: [
     { icon: '✧', title: 'Không gian thể thao', description: 'Định hướng hệ sinh thái thể thao trong quy hoạch đô thị.' },
@@ -133,7 +134,7 @@ export const INITIAL_CONTENT = {
     "title": "Tiến độ thực hiện khu đô thị thể thao Olympic",
     "keyword": "tiến độ vinhomes olympic 2026",
     "summary": "Những mốc đã công khai về quy hoạch, giải phóng mặt bằng và cách theo dõi diễn biến tiếp theo.",
-    "body": "## Những mốc có thể đối chiếu\nTháng 02/2026, các địa phương đã thông tin về hoạt động lấy ý kiến quy hoạch chi tiết 1/500. Tháng 04/2026, UBND xã Dân Hòa công bố công tác giải phóng mặt bằng đang được triển khai trên địa bàn. Tháng 06/2026, UBND xã Thanh Oai công bố các quyết định bồi thường, hỗ trợ, tái định cư theo từng đợt.\n\n## Tiến độ phải gắn với hạng mục\nBồi thường, xây dựng hạ tầng, triển khai công trình thể thao, phát triển nhà ở và nghiệm thu không phải một mốc duy nhất. Khi đọc tin tiến độ cần hỏi “ở phân khu nào, công trình nào, nguồn nào và ngày nào”.\n\n## Ảnh thực địa\nWebsite hiện sử dụng hình concept AI thay vì ảnh hiện trạng; chỉ bổ sung ảnh công trường nếu chúng tôi sở hữu ảnh hoặc được quyền sử dụng, có ngày chụp và mô tả rõ.\n\n## Theo dõi cập nhật\nƯu tiên quyết định của cơ quan có thẩm quyền và thông báo chủ đầu tư, sau đó mới đến báo chí và các kênh tư vấn.",
+    "body": "## Những mốc có thể đối chiếu\nTháng 02/2026, các địa phương đã thông tin về hoạt động lấy ý kiến quy hoạch chi tiết 1/500. Tháng 04/2026, UBND xã Dân Hòa công bố công tác giải phóng mặt bằng đang được triển khai trên địa bàn. Tháng 06/2026, UBND xã Thanh Oai công bố các quyết định bồi thường, hỗ trợ, tái định cư theo từng đợt.\n\n## Tiến độ phải gắn với hạng mục\nBồi thường, xây dựng hạ tầng, triển khai công trình thể thao, phát triển nhà ở và nghiệm thu không phải một mốc duy nhất. Khi đọc tin tiến độ cần hỏi “ở phân khu nào, công trình nào, nguồn nào và ngày nào”.\n\n## Ảnh thực địa\nWebsite hiện sử dụng hình concept thay vì ảnh hiện trạng; chỉ bổ sung ảnh công trường nếu chúng tôi sở hữu ảnh hoặc được quyền sử dụng, có ngày chụp và mô tả rõ.\n\n## Theo dõi cập nhật\nƯu tiên quyết định của cơ quan có thẩm quyền và thông báo chủ đầu tư, sau đó mới đến báo chí và các kênh tư vấn.",
     "sourceLabel": "UBND xã Thanh Oai – quyết định bồi thường đợt 5 (05/06/2026)",
     "sourceUrl": "https://thanhoai.hanoi.gov.vn/chi-tiet-van-ban/quyet-dinh-ve-viec-phe-duyet-phuong-an-boi-thuong-ho-tro-tai-dinh-cu-khi-nha-nuoc-thu-hoi-dat-de-th-253884",
     "status": "confirmed",
@@ -175,7 +176,7 @@ export const INITIAL_CONTENT = {
   }
 ],
   posts: [
-    ...TEN_POSTS,
+    ...TEN_POSTS, ...GUIDE_POSTS,
     { id: 'news-intro', title: 'Tìm hiểu tầm nhìn đô thị thể thao phía Nam Hà Nội', date: '2026-10-16', excerpt: 'Giải thích cách đọc tài liệu quy hoạch, thông tin triển khai và dữ liệu chưa được xác thực.', content: 'Khi tìm hiểu một khu đô thị quy mô lớn, khách hàng nên ưu tiên hồ sơ quy hoạch, công bố chính thức, kết nối hạ tầng và tiến độ thực tế.\n\nChỉ sử dụng bảng giá và chính sách bán hàng khi có văn bản áp dụng hợp lệ.', image: '/assets/olympic-concept.webp', published: false }
   ],
   advisorName: 'Mạnh Việt',
@@ -194,5 +195,5 @@ export const INITIAL_CONTENT = {
   formConsentText: 'Tôi đồng ý để Mạnh Việt liên hệ theo thông tin đã cung cấp.',
   formQuestions: [],
   seoDescription: 'Thông tin tham khảo Vinhomes Olympic và đô thị thể thao phía Nam Hà Nội. Liên hệ tư vấn Mạnh Việt 0986 091 222.',
-  independentDisclaimer: 'Trang thông tin và tư vấn độc lập do Mạnh Việt vận hành, không phải website chính thức của Vingroup/Vinhomes. Hình concept AI chỉ mang tính minh họa.'
+  independentDisclaimer: 'Trang thông tin và tư vấn độc lập do Mạnh Việt vận hành, không phải website chính thức của Vingroup/Vinhomes. Hình concept chỉ mang tính minh họa.'
 };

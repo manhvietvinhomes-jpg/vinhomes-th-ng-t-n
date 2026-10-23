@@ -34,16 +34,17 @@ test('all 10 Word articles have distinct posts, canonical URLs, evidence and opt
     assert.ok(html.includes('rel="canonical" href="'+domain+route+'"'));
     assert.ok(html.includes(post.image));
     assert.ok(html.includes('"@type":"Article"'));
-    assert.ok(html.includes(post.sources[0].url.replaceAll('&','&amp;')));
+    assert.ok(!html.includes('Nguồn đối chiếu:'));
+    assert.ok(post.sources[0].url.startsWith('https://')); // Provenance retained in editorial data.
     assert.ok(html.includes('KHÔNG PHẢI PHỐI CẢNH CHÍNH THỨC'));
   }
 });
-test('news archive links to 10 posts and sitemap contains all 10',async()=>{
+test('news archive links to all 84 posts and sitemap contains the original 10',async()=>{
   const res=await worker.fetch(new Request(domain+'/tin-tuc/'),env);
   assert.equal(res.status,200);
   const html=await res.text();
   assert.ok(!html.includes('undefined'));
-  assert.equal((html.match(/guide-card-image/g)||[]).length,10);
+  assert.equal((html.match(/guide-card-image/g)||[]).length,84);
   const xml=await (await worker.fetch(new Request(domain+'/sitemap.xml'),env)).text();
   for(const post of recent)assert.ok(xml.includes(domain+'/tin-tuc/'+post.slug+'/'));
   assert.ok(visibleUrls(INITIAL_CONTENT).length>=26);

@@ -4,7 +4,7 @@ import { DOMAIN, slugify, renderSeo, sitemap, robots, injectHome } from './seo.j
 const enc = new TextEncoder();
 const SESSION_COOKIE = 'mv_admin_session';
 const SESSION_AGE = 8 * 60 * 60;
-const MAX_JSON_BYTES = 1_200_000;
+const MAX_JSON_BYTES = 3_000_000;
 const MAX_IMAGE_BYTES = 1_700_000;
 
 function reply(data, status = 200, extraHeaders = {}) {
@@ -54,12 +54,13 @@ function normalize(source) {
     short:str(x?.short,450),detail:str(x?.detail,5000),image:cleanUrl(x?.image),slug:slugify(x?.slug||x?.title),published:x?.published!==false
   }));
   if (Array.isArray(obj.gallery)) out.gallery = obj.gallery.slice(0,100).map(x=>({id:str(x?.id,70)||crypto.randomUUID(),title:str(x?.title,160),image:cleanUrl(x?.image)}));
-  if (Array.isArray(obj.posts)) out.posts = obj.posts.slice(0,100).map(x=>({
+  if (Array.isArray(obj.posts)) out.posts = obj.posts.slice(0,500).map(x=>({
     id:str(x?.id,70)||crypto.randomUUID(),title:str(x?.title,200),date:str(x?.date,30),
     excerpt:str(x?.excerpt,700),content:str(x?.content,8500),image:cleanUrl(x?.image),slug:slugify(x?.slug||x?.title),published:x?.published!==false,
     seoTitle:str(x?.seoTitle,200),seoDescription:str(x?.seoDescription,300),keyword:str(x?.keyword,130),
     status:['confirmed','needs-verification','pending'].includes(x?.status)?x.status:'needs-verification',
-    articleNote:str(x?.articleNote,380),
+    articleNote:str(x?.articleNote,380),topic:str(x?.topic,60),category:str(x?.category,100),
+    relatedSlugs:Array.isArray(x?.relatedSlugs)?[...new Set(x.relatedSlugs.map(slugify))].slice(0,8):[],
     sources:Array.isArray(x?.sources)?x.sources.slice(0,8).map(r=>({label:str(r?.label,280),url:cleanUrl(r?.url)})).filter(r=>r.label&&r.url):[]
   }));
   return out;
@@ -174,6 +175,7 @@ async function api(request,env) {
   if(p==='/api/admin/content'&&method==='GET')return good({content:await site(env)});
   if(p==='/api/admin/content'&&method==='PUT') {
     const body=await readJson(request);
+    if(Array.isArray(body.posts)&&body.posts.length>500)return fail('Tối đa 500 bài viết. Hãy lưu trữ bớt bản nháp trước khi thêm.',413);
     const clean=normalize(body);
     await env.OLYMPIC_KV.put('site:content',JSON.stringify(clean));
     return good({content:clean,message:'Đã lưu nội dung.'});
@@ -219,7 +221,7 @@ async function apiWithCookies(req,env){
     const identity=await hashedIp(req,env), keyName='limit:auth:'+identity;
     if(Number(await env.OLYMPIC_KV.get(keyName)||'0')>=10)return fail('Bạn đã thử nhiều lần. Vui lòng đợi khoảng một giờ.',429);
     const password=str(body.password,300);
-    const ok=equalStr(await signature(env.ADMIN_PASSWORD,'verify'),await signature(password,'verify'));
+    const ok=password.length>0&&equalStr(await signature(env.ADMIN_PASSWORD,'verify'),await signature(password,'verify'));
     if(!ok){await rateLimit(env,keyName,10,3600);return fail('Mật khẩu không đúng.',401);}
     await env.OLYMPIC_KV.delete(keyName);
     const expiry=Date.now()+SESSION_AGE*1000;
@@ -238,28 +240,30 @@ async function apiWithCookies(req,env){
 export default {
   async fetch(request,env) {
     const url=new URL(request.url);
+    if(url.hostname==='www.vinhomesthuongtin.vn'||(url.hostname==='vinhomesthuongtin.vn'&&url.protocol==='http:'))return Response.redirect(DOMAIN+url.pathname+url.search,301);
     if(url.pathname.startsWith('/api/'))return apiWithCookies(request,env);
+    if(url.pathname==='/admin'||url.pathname==='/admin/'){
+      const response=await env.ASSETS.fetch(request);
+      const copy=new Response(response.body,response);
+      copy.headers.set('x-robots-tag','noindex, nofollow');copy.headers.set('cache-control','no-store');return copy;
+    }
     // Public pages are rendered on the server, so search engines receive readable text without JS.
     if((request.method==='GET'||request.method==='HEAD') && (/^\/[a-z0-9-]+\/$/.test(url.pathname)||url.pathname==='/'||url.pathname==='/sitemap.xml'||url.pathname==='/robots.txt'||/^\/(tin-tuc|san-pham)\/[a-z0-9-]+\/$/.test(url.pathname))) {
       const content=env.OLYMPIC_KV ? await site(env) : normalize(INITIAL_CONTENT);
-      const noindex=url.hostname.endsWith('.workers.dev')?'noindex, nofollow':'index, follow';
+      const noindex=url.hostname!=='vinhomesthuongtin.vn'?'noindex, nofollow':'index, follow';
       const headers={'x-content-type-options':'nosniff','x-robots-tag':noindex,'cache-control':'public,max-age=120'};
       if(url.pathname==='/robots.txt')return new Response(request.method==='HEAD'?null:robots(),{headers:{...headers,'content-type':'text/plain; charset=utf-8'}});
       if(url.pathname==='/sitemap.xml')return new Response(request.method==='HEAD'?null:sitemap(content),{headers:{...headers,'content-type':'application/xml; charset=utf-8'}});
       if(url.pathname==='/') {
-        const asset=await env.ASSETS.fetch(new Request(new URL('/index.html',request.url),request));
+        const asset=await env.ASSETS.fetch(new Request(new URL('/',request.url),request));
+        if(!asset.ok)return new Response('Chưa tải được trang chủ',{status:503,headers:{'x-robots-tag':'noindex'}});
         const html=injectHome(await asset.text(),content);
         return new Response(request.method==='HEAD'?null:html,{headers:{...headers,'content-type':'text/html; charset=utf-8'}});
       }
       const html=renderSeo(url.pathname,content);
       return html?new Response(request.method==='HEAD'?null:html,{headers:{...headers,'content-type':'text/html; charset=utf-8'}}):new Response('Không tìm thấy trang',{status:404,headers:{'content-type':'text/plain; charset=utf-8','x-robots-tag':'noindex'}});
     }
-    if(url.pathname==='/admin'||url.pathname==='/admin/'){
-      const response=await env.ASSETS.fetch(request);
-      const copy=new Response(response.body,response);
-      copy.headers.set('x-robots-tag','noindex, nofollow');copy.headers.set('cache-control','no-store');return copy;
-    }
-    if(/^\/tin-tuc\/[a-z0-9-]+$/.test(url.pathname)||/^\/(tong-quan|vi-tri|quy-hoach|san-pham|gia-ban|mat-bang|tien-do|phap-ly|so-sanh|chinh-sach-bao-mat)$/.test(url.pathname)){
+    if(/^\/(tin-tuc|san-pham)\/[a-z0-9-]+$/.test(url.pathname)||url.pathname==='/tin-tuc'||/^\/(tong-quan|vi-tri|quy-hoach|san-pham|gia-ban|mat-bang|tien-do|phap-ly|so-sanh|chinh-sach-bao-mat)$/.test(url.pathname)){
       return Response.redirect(new URL(url.pathname+'/',DOMAIN),301);
     }
     if(url.pathname.startsWith('/media/')){
