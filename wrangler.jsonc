@@ -6,9 +6,31 @@
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",
-    "run_worker_first": ["/api/*", "/media/*", "/", "/robots.txt", "/sitemap.xml", "/admin/*", "/tong-quan/*", "/vi-tri/*", "/quy-hoach/*", "/san-pham/*", "/gia-ban/*", "/mat-bang/*", "/tien-do/*", "/phap-ly/*", "/so-sanh/*", "/tin-tuc/*", "/chinh-sach-bao-mat/*"]
+    "run_worker_first": [
+      "/api/*",
+      "/media/*",
+      "/",
+      "/robots.txt",
+      "/sitemap.xml",
+      "/admin/*",
+      "/tong-quan/*",
+      "/vi-tri/*",
+      "/quy-hoach/*",
+      "/san-pham/*",
+      "/gia-ban/*",
+      "/mat-bang/*",
+      "/tien-do/*",
+      "/phap-ly/*",
+      "/so-sanh/*",
+      "/tin-tuc/*",
+      "/chinh-sach-bao-mat/*"
+    ]
   },
   "kv_namespaces": [
-    {"binding": "OLYMPIC_KV", "id": "DIEN_ID_KV_CUA_BAN_VAO_DAY"}
-  ]
+    {
+      "binding": "OLYMPIC_KV",
+      "id": "696ba460fa564addb78e097ff35b2553"
+    }
+  ],
+  "account_id": "7f108a2514f542b5a8ee9da952730816"
 }

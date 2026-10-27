@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "npm run check && node scripts/deploy-guard.js && wrangler deploy",
+    "deploy": "npm run check && node scripts/deploy-guard.js && node scripts/cloudflare-command.js deploy",
     "test": "node --test tests/*.test.js",
     "build": "node scripts/build.js",
     "check": "npm run content:sync && node --test tests/*.test.js && node scripts/build.js && npm run audit:seo",
@@ -14,7 +14,8 @@
     "audit:seo": "node scripts/audit-seo.js",
     "dev:prepare": "node scripts/prepare-local.js",
     "test:browser": "node scripts/browser-smoke.js",
-    "release:backup": "node scripts/cloudflare-backup.js"
+    "release:backup": "node scripts/cloudflare-command.js backup",
+    "audit:live": "node scripts/cloudflare-command.js audit"
   },
   "devDependencies": {
     "playwright-core": "1.64.1",
