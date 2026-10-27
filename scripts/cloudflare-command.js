@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import {spawnSync} from 'node:child_process';
 const config=JSON.parse(fs.readFileSync('wrangler.jsonc','utf8'));
 const mode=process.argv[2];
-const targets={'seo-migrate':['scripts/migrate-seo-content.js',...process.argv.slice(3)],backup:['scripts/cloudflare-backup.js'],deploy:['node_modules/wrangler/bin/wrangler.js','deploy'],audit:['scripts/audit-seo.js','--base=https://vinhomesthuongtin.vn']};
+const targets={'seo-migrate':['scripts/migrate-seo-content.js',...process.argv.slice(3)],backup:['scripts/cloudflare-backup.js'],deploy:['node_modules/wrangler/bin/wrangler.js','deploy'],audit:['scripts/audit-seo.js','--base=https://vinhomesthuongtin.vn',...process.argv.slice(3)]};
 if(!targets[mode])throw Error('Expected backup, deploy or audit.');
 const account=config.account_id||process.env.CLOUDFLARE_ACCOUNT_ID;
 if(!/^[a-f0-9]{32}$/i.test(account||''))throw Error('Configure the verified Cloudflare account ID first.');

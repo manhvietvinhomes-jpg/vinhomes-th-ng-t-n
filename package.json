@@ -10,7 +10,7 @@
     "build": "node scripts/build.js",
     "check": "npm run content:sync && node --test tests/*.test.js && node scripts/build.js && npm run audit:seo",
     "preview": "node tests/preview-server.mjs",
-    "content:sync": "node scripts/sync-content.js",
+    "content:sync": "node scripts/build-page-content.js && node scripts/sync-content.js",
     "audit:seo": "node scripts/audit-seo.js",
     "dev:prepare": "node scripts/prepare-local.js",
     "test:browser": "node scripts/browser-smoke.js",

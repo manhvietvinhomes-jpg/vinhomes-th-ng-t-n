@@ -24,10 +24,15 @@ function cleanUrl(value) {
   try { const u = new URL(v); return ['https:', 'http:'].includes(u.protocol) ? u.href : ''; }
   catch { return ''; }
 }
+function editorialFields(x){
+ return {intro:str(x?.intro,850),searchIntent:str(x?.searchIntent,220),imageAlt:str(x?.imageAlt,450),imageCaption:str(x?.imageCaption,400),
+  faqs:Array.isArray(x?.faqs)?x.faqs.slice(0,5).map(f=>({question:str(f?.question,250),answer:str(f?.answer,1500),sources:Array.isArray(f?.sources)?f.sources.slice(0,4).map(s=>({label:str(s?.label,300),url:typeof s?.url==='string'&&/^\/(?:[a-z0-9-]+\/)*(?:#[a-z0-9-]+)?$/.test(s.url)?s.url:cleanUrl(s?.url),kind:s?.kind==='document'?'document':'editorial'})).filter(s=>s.label&&s.url):[]})).filter(f=>f.question&&f.answer):[],
+  relatedLinks:Array.isArray(x?.relatedLinks)?x.relatedLinks.slice(0,5).map(l=>({href:typeof l?.href==='string'&&/^\/(?:[a-z0-9-]+\/)*$/.test(l.href)?l.href:'',anchor:str(l?.anchor,220)})).filter(l=>l.href&&l.anchor):[]};
+}
 function normalize(source) {
   const obj = source && typeof source === 'object' && !Array.isArray(source) ? source : {};
   const out = structuredClone(INITIAL_CONTENT);
-  const fields = ['siteName','brand','badge','heroTitle','heroAccent','heroSubtitle','heroNote','overviewTitle','overviewText','locationTitle','locationText','advisorName','advisorTitle','advisorBio','phone','contactTitle','contactText','formNameLabel','formPhoneLabel','formNoteLabel','formSubmitText','formConsentText','seoDescription','seoTitle','heroHeadingDetail','independentDisclaimer'];
+  const fields = ['siteName','brand','badge','heroTitle','heroAccent','heroSubtitle','heroNote','overviewTitle','overviewText','locationTitle','locationText','advisorName','advisorTitle','advisorBio','phone','contactTitle','contactText','formNameLabel','formPhoneLabel','formNoteLabel','formSubmitText','formConsentText','seoDescription','seoTitle','heroHeadingDetail','homeIntro','independentDisclaimer'];
   for (const field of fields) if (Object.hasOwn(obj,field)) out[field] = str(obj[field], field.endsWith('Text') || field.endsWith('Disclaimer') ? 4000 : 380);
   for (const field of ['heroImage','advisorPhoto','zalo','facebook']) if (Object.hasOwn(obj,field)) out[field] = cleanUrl(obj[field]);
   if (Array.isArray(obj.formQuestions)) out.formQuestions = obj.formQuestions.slice(0,5).map(x=>({id:str(x?.id,70)||crypto.randomUUID(),label:str(x?.label,150),placeholder:str(x?.placeholder,160),required:!!x?.required}));
@@ -40,7 +45,7 @@ function normalize(source) {
   if (Array.isArray(obj.pages)) {
     const slugs=new Set();
     out.pages=obj.pages.slice(0,25).map(x=>({
-      slug:str(x?.slug,80).toLowerCase().replace(/[^a-z0-9-]/g,''),
+      ...editorialFields(x),slug:str(x?.slug,80).toLowerCase().replace(/[^a-z0-9-]/g,''),
       title:str(x?.title,180),summary:str(x?.summary,850),keyword:str(x?.keyword,130),
       body:str(x?.body,16000),image:cleanUrl(x?.image),status:['confirmed','needs-verification','pending'].includes(x?.status)?x.status:'pending',
       sourceLabel:str(x?.sourceLabel,250),sourceUrl:cleanUrl(x?.sourceUrl),updated:str(x?.updated,30),
@@ -56,7 +61,7 @@ function normalize(source) {
   }));
   if (Array.isArray(obj.gallery)) out.gallery = obj.gallery.slice(0,100).map(x=>({id:str(x?.id,70)||crypto.randomUUID(),title:str(x?.title,160),image:cleanUrl(x?.image)}));
   if (Array.isArray(obj.posts)) out.posts = obj.posts.slice(0,500).map(x=>({
-    id:str(x?.id,70)||crypto.randomUUID(),title:str(x?.title,200),date:str(x?.date,30),
+    ...editorialFields(x),id:str(x?.id,70)||crypto.randomUUID(),title:str(x?.title,200),date:str(x?.date,30),
     updated:str(x?.updated,30),excerpt:str(x?.excerpt,700),content:str(x?.content,8500),image:cleanUrl(x?.image),slug:slugify(x?.slug||x?.title),published:x?.published!==false,
     seoTitle:str(x?.seoTitle,200),seoDescription:str(x?.seoDescription,300),keyword:str(x?.keyword,130),
     status:['confirmed','needs-verification','pending'].includes(x?.status)?x.status:'needs-verification',
@@ -178,6 +183,15 @@ async function api(request,env) {
     const body=await readJson(request);
     if(Array.isArray(body.posts)&&body.posts.length>500)return fail('Tối đa 500 bài viết. Hãy lưu trữ bớt bản nháp trước khi thêm.',413);
     const clean=normalize(body);
+    for(const item of [...clean.pages,...clean.posts].filter(x=>x.published!==false)){
+      const title=item.seoTitle||item.title,description=item.seoDescription||item.summary||item.excerpt||'';
+      if([...title].length>60||[...description].length>160)return fail('Tiêu đề SEO tối đa 60 ký tự, mô tả tối đa 160 ký tự: '+item.slug);
+      const leadSentences=(item.intro||'').split(/(?<=[.!?])\s+/).filter(Boolean);
+      if(leadSentences.length<2||leadSentences.length>3||!item.searchIntent)return fail('Cần ý định riêng và mở đầu trả lời trực tiếp bằng 2–3 câu: '+item.slug);
+      if(!item.image||!item.imageAlt)return fail('Cần ảnh minh họa và mô tả ảnh: '+item.slug);
+      if(item.faqs?.length<3||item.faqs?.length>5||item.faqs.some(f=>!f.sources.length))return fail('Mỗi nội dung xuất bản cần 3–5 FAQ có căn cứ: '+item.slug);
+      if(item.relatedLinks?.length<3||item.relatedLinks?.length>5)return fail('Mỗi nội dung xuất bản cần 3–5 liên kết mô tả: '+item.slug);
+    }
     await env.OLYMPIC_KV.put('site:content',JSON.stringify(clean));
     return good({content:clean,message:'Đã lưu nội dung.'});
   }

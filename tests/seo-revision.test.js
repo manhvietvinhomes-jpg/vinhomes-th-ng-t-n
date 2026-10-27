@@ -9,7 +9,7 @@ test('home has searchable H1 text, original document links and gallery without J
  for(const source of VERIFIED_SOURCES)assert.ok(html.includes(source.url));
  assert.ok(!html.includes('16.093'));assert.ok(!/href="#"/.test(html));
  const faq=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'].find(x=>x['@type']==='FAQPage');
- assert.equal(faq.mainEntity.length,2);for(const item of faq.mainEntity)assert.ok(html.includes(item.acceptedAnswer.text));
+ assert.equal(faq.mainEntity.length,3);for(const item of faq.mainEntity)assert.ok(html.includes(item.acceptedAnswer.text));
 });
 test('concept product URLs redirect once and are excluded from the sitemap',async()=>{
  const urls=visibleUrls(INITIAL_CONTENT);assert.equal(urls.length,96);

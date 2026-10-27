@@ -1,7 +1,8 @@
 // One-time, idempotent migration. Keeps unrelated content and refuses field conflicts.
 import fs from 'node:fs/promises';import {createHash} from 'node:crypto';
 const base='https://vinhomesthuongtin.vn',apply=process.argv.includes('--apply');
-const patch=JSON.parse(await fs.readFile('content/seo-revision-patch.json','utf8'));
+const patchFile=process.argv.find(x=>x.startsWith('--patch='))?.slice(8)||'content/seo-revision-patch.json';
+const patch=JSON.parse(await fs.readFile(patchFile,'utf8'));
 const password=(await fs.readFile('/workspace/deployment-secrets/royal-snow-1e06-admin-password.txt','utf8')).trim();
 const headers={'Content-Type':'application/json',Origin:base};
 const login=await fetch(base+'/api/admin/login',{method:'POST',headers,body:JSON.stringify({password})});if(!login.ok)throw Error('CMS login failed.');
@@ -13,7 +14,7 @@ for(const operation of patch.operations){
  const target=operation.array?content[operation.array]?.find(x=>(operation.array==='pages'?x.slug:x.id)===operation.id):content;
  if(!target){conflicts.push(`${operation.array}/${operation.id}: missing item`);continue;}
  const current=target[operation.field];if(equal(current,operation.value))continue;
- const isOld=operation.oldMissing?[null,undefined,''].includes(current):equal(current,operation.oldValue);
+ const isOld=operation.oldMissing?([null,undefined,''].includes(current)||Array.isArray(current)&&current.length===0):equal(current,operation.oldValue);
  if(!isOld){conflicts.push([operation.array,operation.id,operation.field].filter(Boolean).join('/'));continue;}
  target[operation.field]=operation.value;changes.push([operation.array,operation.id,operation.field].filter(Boolean).join('/'));
 }
@@ -24,6 +25,6 @@ if(apply&&changes.length){
  for(const operation of patch.operations){const target=operation.array?returned[operation.array]?.find(x=>(operation.array==='pages'?x.slug:x.id)===operation.id):returned;if(!equal(target?.[operation.field],operation.value))throw Error('Saved content differs from intended patch. Inspect backup before continuing.');}
 }
 const report={checkedAt:new Date().toISOString(),revision:patch.revision,mode:apply?'apply':'dry-run',changedFields:changes,publishedPostCount:content.posts.filter(p=>p.published).length,unrelatedItemsPreserved:true};
-await fs.mkdir('dist',{recursive:true});await fs.writeFile('dist/seo-migration.json',JSON.stringify(report,null,2)+'\n');
+await fs.mkdir('dist',{recursive:true});await fs.writeFile('dist/'+patch.revision+'-'+(apply?'applied':'dry-run')+'.json',JSON.stringify(report,null,2)+'\n');
 console.log(`${report.mode}: ${changes.length} fields, no conflicts, ${report.publishedPostCount} published posts retained. No leads touched.`);
 await fetch(base+'/api/admin/logout',{method:'POST',headers:auth});

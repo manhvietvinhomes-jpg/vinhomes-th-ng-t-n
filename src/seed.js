@@ -1,3 +1,4 @@
+import { PAGE_CONTENT } from './page-content.js';
 import { TEN_POSTS } from './articles.js';
 import { GUIDE_POSTS } from './guides.js';
 // Starter content only. The administrator edits persistent values in Workers KV.
@@ -238,3 +239,14 @@ for(const p of INITIAL_CONTENT.products){
  p.short={Biệt_thự:'Kiểm tra sân vườn, riêng tư, công năng và chi phí bảo trì.',Liền_kề:'Đọc mặt tiền, chiều sâu, ánh sáng và chi phí hoàn thiện.',Shophouse:'Đánh giá dòng khách, khả năng khai thác và dòng tiền sau chi phí.'}[p.title.replaceAll(' ','_')]||p.short;
 }
 INITIAL_CONTENT.gallery=INITIAL_CONTENT.gallery.map(g=>({...g,title:{g1:'Toàn cảnh đô thị và sân vận động (minh họa)',g2:'Mặt nước và các khối căn hộ (minh họa)',g3:'Không gian đô thị và đường giao thông (minh họa)',g4:'Sân vận động và quảng trường (minh họa)'}[g.id]||g.title}));
+
+// Apply the reviewed editorial profiles to seed data; live KV is migrated separately.
+for(const [collection,prefix] of [['pages','/'],['posts','/tin-tuc/']])for(const item of INITIAL_CONTENT[collection]){
+ const profile=PAGE_CONTENT[prefix+item.slug+'/'];if(!profile)continue;
+ Object.assign(item,{title:profile.heading,seoTitle:profile.seoTitle,seoDescription:profile.seoDescription,intro:profile.intro,searchIntent:profile.intent,image:profile.image,imageAlt:profile.imageAlt,imageCaption:profile.imageCaption,faqs:profile.faqs,relatedLinks:profile.links,updated:'2026-10-27'});
+ if(collection==='pages'){item.summary=profile.intro;item.body=profile.body}else{item.excerpt=profile.intro;item.content=profile.body}
+}
+INITIAL_CONTENT.homeIntro=PAGE_CONTENT['/'].intro;
+
+INITIAL_CONTENT.badge='THÔNG TIN DỰ ÁN VÀ HƯỚNG DẪN CHO NGƯỜI MUA';
+INITIAL_CONTENT.independentDisclaimer='Trang thông tin và tư vấn độc lập do Mạnh Việt vận hành, không phải website chính thức của Vingroup/Vinhomes. Hình minh họa không phải tài liệu chính thức.';

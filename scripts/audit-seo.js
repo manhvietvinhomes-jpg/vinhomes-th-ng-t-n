@@ -22,8 +22,10 @@ const sitemapResponse=await get('/sitemap.xml');
 check(sitemapResponse.status===200,'/sitemap.xml','Sitemap HTTP status');
 const xml=await sitemapResponse.text();
 const urls=[...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(x=>decode(x[1]));
-const expectedCount=visibleUrls(INITIAL_CONTENT).length;
-check(urls.length===expectedCount,'/sitemap.xml',`Expected ${expectedCount} indexable URLs, got ${urls.length}`);
+const explicitCount=process.argv.find(x=>x.startsWith('--expected-count='))?.split('=')[1];
+const expectedCount=explicitCount?Number(explicitCount):base?null:visibleUrls(INITIAL_CONTENT).length;
+check(urls.length>0,'/sitemap.xml','Empty sitemap does not validate the website');
+if(expectedCount!==null)check(urls.length===expectedCount,'/sitemap.xml',`Expected ${expectedCount} indexable URLs, got ${urls.length}`);
 check(new Set(urls).size===urls.length,'/sitemap.xml','Duplicate URL');
 for(const url of urls){
  const route=new URL(url).pathname;
@@ -37,8 +39,8 @@ for(const url of urls){
  check(Boolean(title),route,'Missing title');check(Boolean(description),route,'Missing description');
  check(!titles.has(title),route,'Duplicate title: '+titles.get(title));titles.set(title,route);
  check(!descriptions.has(description),route,'Duplicate description: '+descriptions.get(description));descriptions.set(description,route);
- if(title.length>75)warnings.push({route,message:`Long title (${title.length})`});
- if(description.length>180)warnings.push({route,message:`Long description (${description.length})`});
+ check([...title].length<=60,route,`Title exceeds 60 characters (${[...title].length})`);
+ check([...description].length<=160,route,`Description exceeds 160 characters (${[...description].length})`);
  check((html.match(/<h1(?:\s|>)/g)||[]).length===1,route,'Must have exactly one H1');
  check(html.includes(`rel="canonical" href="${url}"`),route,'Incorrect canonical');
  check(!/\bAI\b/.test(html),route,'Outdated illustration wording');
@@ -47,7 +49,12 @@ for(const url of urls){
  check(!/content="noindex/.test(html),route,'Noindex URL included in sitemap');
  const schemas=[...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
  check(schemas.length>0,route,'Missing structured data');
- for(const schema of schemas){try{JSON.parse(schema[1])}catch{fail(route,'Invalid JSON-LD')}}
+ const graphs=[];for(const schema of schemas){try{const json=JSON.parse(schema[1]);graphs.push(...(json['@graph']||[json]))}catch{fail(route,'Invalid JSON-LD')}}
+ const faq=graphs.find(x=>x['@type']==='FAQPage');check(faq&&faq.mainEntity?.length>=3&&faq.mainEntity?.length<=5,route,'Requires 3–5 FAQ answers');
+ if(faq)for(const q of faq.mainEntity)check(decode(html).includes(q.name)&&decode(html).includes(q.acceptedAnswer.text),route,'FAQ schema differs from visible content');
+ const lead=decode((html.match(/<p class="(?:hero-description|seo-deck)"[^>]*>([\s\S]*?)<\/p>/)||[])[1]||'').replace(/<[^>]+>/g,'');const leadSentences=lead.split(/(?<=[.!?])\s+/).filter(Boolean);check(leadSentences.length>=2&&leadSentences.length<=3,route,'Lead must answer in 2–3 sentences');
+ check(html.includes('Trang thông tin độc lập của Mạnh Việt. Hình ảnh là minh họa; cần đối chiếu thông báo'),route,'Missing editorial notice');
+ const core=(html.match(/<article class="seo-article">([\s\S]*?)<\/article>/)||[])[1]||'';const contentDestinations=new Set([...core.matchAll(/href="(\/[^"]+)"/g)].map(m=>new URL(decode(m[1]),DOMAIN).pathname).filter(p=>p!==route));check(contentDestinations.size>=3&&contentDestinations.size<=5,route,`Needs 3–5 content links, got ${contentDestinations.size}`);
  for(const m of html.matchAll(/href="(\/[^"]*)"/g)){
   const target=new URL(decode(m[1]),DOMAIN);
   if(target.pathname==='/admin/'||/\.(css|svg)$/.test(target.pathname))continue;
@@ -60,7 +67,7 @@ for(const url of urls){
   check(/alt="[^"]+"/.test(image[0]),route,'Missing image alt');
   const src=decode(image[1]);if(src.startsWith('/'))links.set('asset:'+src,new Set([src]));
  }
- pages.push({route,title,description,internalLinks:links.get(route)?.size||0});
+ pages.push({route,title,description,leadSentences:leadSentences.length,faqCount:faq?.mainEntity?.length||0,contentLinks:contentDestinations.size,images:images.length,internalLinks:links.get(route)?.size||0});
 }
 const known=new Set(urls.map(x=>new URL(x).pathname)),checkedAssets=new Map();
 for(const [from,targets] of links){

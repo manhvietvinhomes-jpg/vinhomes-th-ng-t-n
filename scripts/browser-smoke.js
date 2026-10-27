@@ -44,6 +44,12 @@ try{
  await page.locator('#formStatus').filter({hasText:'Đã nhận'}).waitFor();
  await page.goto(base+'/admin/');await page.locator('#adminPassword').fill(password);
  await page.locator('#loginForm button').click();await page.locator('#adminApp').waitFor({state:'visible'});
+ await page.locator('[data-tab="posts"]').click();
+ const faqAnswer=page.locator('textarea[data-faq-array="posts"][data-faq-key="answer"]').first();await faqAnswer.waitFor();
+ const originalAnswer=await faqAnswer.inputValue();
+ await faqAnswer.fill(originalAnswer+' Kiểm thử lưu FAQ nội bộ.');
+ const faqSaved=page.waitForResponse(r=>r.url().endsWith('/api/admin/content')&&r.request().method()==='PUT');await page.locator('#saveAllBtn').click();assert.equal((await faqSaved).status(),200);
+ await faqAnswer.fill(originalAnswer);const faqRestored=page.waitForResponse(r=>r.url().endsWith('/api/admin/content')&&r.request().method()==='PUT');await page.locator('#saveAllBtn').click();assert.equal((await faqRestored).status(),200);
  const before=await context.request.get(base+'/api/admin/content');assert.equal(before.status(),200);
  const data=(await before.json()).content;
  assert.equal(data.posts.filter(x=>x.published).length,84);

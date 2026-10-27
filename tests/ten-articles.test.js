@@ -19,13 +19,15 @@ test('all 10 Word articles have distinct posts, canonical URLs, evidence and opt
   assert.equal(new Set(recent.map(p=>p.image)).size,10);
   for(const post of recent){
     assert.match(post.slug,/^[a-z0-9-]+$/);
-    assert.ok(post.content.length>1600);
+    assert.ok((post.content.match(/^## /gm)||[]).length>=3);
+    assert.equal(post.faqs.length,3);
     assert.ok(post.sources.length>=1);
     assert.ok(post.sources.every(s=>s.url.startsWith('https://')));
     assert.equal(post.published,true);
     assert.equal(post.status,'needs-verification');
     const imgFile=new URL('../public'+post.image,import.meta.url);
-    assert.ok((await stat(imgFile)).size>5000);
+    assert.ok((await stat(imgFile)).size>1000);
+    assert.match(await readFile(imgFile,'utf8'),/^<svg/);
     const route='/tin-tuc/'+post.slug+'/';
     const response=await worker.fetch(new Request(domain+route),env);
     assert.equal(response.status,200,route);
@@ -36,7 +38,7 @@ test('all 10 Word articles have distinct posts, canonical URLs, evidence and opt
     assert.ok(html.includes('"@type":"Article"'));
     assert.ok(!html.includes('Nguồn đối chiếu:'));
     assert.ok(post.sources[0].url.startsWith('https://')); // Provenance retained in editorial data.
-    assert.ok(html.includes('KHÔNG PHẢI PHỐI CẢNH CHÍNH THỨC'));
+    assert.ok(html.includes('không phải bản vẽ hoặc phối cảnh chính thức'));
   }
 });
 test('news archive links to all 84 posts and sitemap contains the original 10',async()=>{

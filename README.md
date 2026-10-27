@@ -6,6 +6,8 @@ Bản hiện tại có **96 URL chuẩn trong sitemap**: trang chủ, 9 chuyên 
 
 **Đã phát hành và kiểm tra trên production ngày 27/10/2026.** Xem [báo cáo tối ưu SEO](BAO-CAO-SEO-2026-10-27.md). Bản phát hành V3 ban đầu có 100 URL được ghi nhận riêng trong [báo cáo phát hành](BAO-CAO-PHAT-HANH-2026-10-27.md).
 
+**Chuẩn biên tập đã áp dụng toàn bộ 96 trang:** mở đầu 2–3 câu, title ≤60, meta ≤160, ba FAQ và bốn liên kết trong nội dung; có sơ đồ minh họa theo chủ đề. Xem [báo cáo biên tập](BAO-CAO-BIEN-TAP-2026-10-27.md) và [chuẩn nội dung](CONTENT-STANDARD.md).
+
 ## Phát triển
 
 Node.js 22 trở lên, npm và Chromium nếu chạy kiểm thử giao diện.
@@ -34,7 +36,7 @@ Kiểm thử trình duyệt dùng Chromium tại `/usr/bin/chromium`; đặt `CH
 
 - Biên tập 74 bài mới tại `content/guides/74-bai-cam-nang.json`; 10 bài cũ ở `src/articles.js`.
 - `npm run content:sync` tạo `src/guides.js`, bộ nhập CMS `public/noi-dung-seo.json` và seed đồng nhất. Lệnh không kết nối hoặc ghi KV.
-- `npm run check` đồng bộ nội dung, chạy 28 kiểm thử, preflight build và audit các URL chuẩn trong sitemap.
+- `npm run check` đồng bộ nội dung, chạy 32 kiểm thử, preflight build và audit các URL chuẩn trong sitemap.
 - Báo cáo tại `dist/seo-audit.json`, danh sách URL tại `dist/indexable-urls.txt`, ảnh kiểm tra ở `dist/screenshots/`.
 - Workflow `SEO audit` chạy khi push, chạy hằng ngày lúc **06:15 giờ Việt Nam**, hoặc chạy thủ công. Đây là kiểm tra và xuất báo cáo; không tự xuất bản hay sửa dữ kiện dự án. Audit production cũng chạy theo lịch hằng ngày; khi chạy thủ công có thể bật tùy chọn kiểm tra live.
 - Audit kiểm tra HTTP, title/description duy nhất, H1, canonical, JSON-LD, ảnh, liên kết và khả năng truy cập từ trang chủ. Đây không phải chứng nhận xếp hạng hoặc bằng chứng Google đã lập chỉ mục.
@@ -54,3 +56,5 @@ CMS có nút **Nhập bộ 84 bài SEO**: chỉ thêm slug còn thiếu, giữ b
 Các tài liệu bàn giao còn lại được giữ để tra lịch sử V2; số URL, số kiểm thử và nhãn nút cũ trong các tài liệu đó không đại diện V3.
 
 Tài khoản Cloudflare và namespace thật đã được xác minh và ghi trong `wrangler.jsonc` (đây không phải thông tin bí mật). Các lệnh deploy, backup và `audit:live` dùng wrapper để chọn đúng tài khoản và dùng HTTPS proxy của môi trường, ngay cả khi biến Account ID được nhập khác. Không lưu API token trong mã nguồn.
+
+FAQ, phần mở đầu, mô tả ảnh và liên kết trong nội dung có thể chỉnh trong CMS. Khi xuất bản, máy chủ kiểm tra các giới hạn nội dung; các mục chưa hoàn thiện có thể lưu ở trạng thái bản nháp. `npm run content:sync` dựng hồ sơ biên tập và SVG từ các file TSV rồi tạo seed, không ghi KV. Audit live kiểm tra nội dung thực trong sitemap, không ép số URL về 96 khi CMS có thay đổi hợp lệ; dùng `node scripts/cloudflare-command.js audit --expected-count=96` để xác minh riêng quy mô của đợt này.
