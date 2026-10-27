@@ -8,6 +8,7 @@ const password=(await fs.readFile('.dev.vars','utf8')).match(/^ADMIN_PASSWORD=(.
 assert.ok(password,'Missing local .dev.vars password');
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox']});
 const errors=[],results=[];
+const expectedTitle='Vinhomes Olympic Thường Tín: Quy hoạch, vị trí và pháp lý';
 await fs.mkdir('dist/screenshots',{recursive:true});
 try{
  for(const [name,width,height] of [['desktop',1440,1000],['mobile',390,844]]){
@@ -22,7 +23,7 @@ try{
    assert.equal(await page.locator('h1').count(),1);
    const brokenImages=await page.evaluate(async()=>{const images=[...document.images];for(const image of images)image.loading='eager';await Promise.all(images.map(image=>image.decode().catch(()=>{})));return images.filter(image=>!image.naturalWidth).map(image=>image.getAttribute('src'))});
    assert.deepEqual(brokenImages,[],name+': broken images at '+route);
-   if(route==='/')assert.equal(await page.locator('#news .news-card').count(),6);
+   if(route==='/'){await page.locator('#news .news-card').first().waitFor();assert.equal(await page.locator('#news .news-card').count(),6);assert.equal(await page.title(),expectedTitle);assert.match((await page.locator('h1').textContent()).replace(/\s+/g,' '),/Vinhomes Olympic Thường Tín – Đô thị thể thao phía Nam Hà Nội/);assert.equal(await page.locator('a[href="#"]').count(),0);}
    if(name==='mobile'&&route.includes('lap-ngan-sach')){
     await page.locator('#seoNavBtn').click();assert.equal(await page.locator('#seoNavBtn').getAttribute('aria-expanded'),'true');
     await page.locator('#seoNavBtn').click();
@@ -32,6 +33,7 @@ try{
   }
   await context.close();
  }
+ const nojs=await browser.newContext({javaScriptEnabled:false});const staticPage=await nojs.newPage();await staticPage.goto(base+'/');assert.equal(await staticPage.title(),expectedTitle);assert.equal(await staticPage.locator('#gallery img').count(),4);assert.match((await staticPage.locator('h1').textContent()).replace(/\s+/g,' '),/Vinhomes Olympic Thường Tín – Đô thị thể thao phía Nam Hà Nội/);for(const path of ['/tong-quan/','/vi-tri/','/san-pham/','/tin-tuc/'])assert.equal(await staticPage.locator('#nav a[href="'+path+'"]').count(),1);await nojs.close();
  const context=await browser.newContext({extraHTTPHeaders:{'CF-Connecting-IP':'2001:db8:'+randomBytes(12).toString('hex').match(/.{4}/g).join(':')}});
  await context.route('https://fonts.googleapis.com/**',r=>r.fulfill({contentType:'text/css',body:''}));
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));

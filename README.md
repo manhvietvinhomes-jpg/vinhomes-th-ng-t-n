@@ -1,10 +1,10 @@
-# Vinhomes Olympic — V3, CMS và 100 URL
+# Vinhomes Olympic — V3, CMS và kiến trúc SEO
 
 Website tư vấn độc lập của Mạnh Việt Real Estate tại `https://vinhomesthuongtin.vn`, Worker `royal-snow-1e06`.
 
-Bản V3 giữ 9 trang chuyên đề, 10 bài bàn giao và 4 trang loại hình; thêm 74 bài cẩm nang có tình huống áp dụng. Tổng dữ liệu khởi tạo: **100 URL** gồm trang chủ, chuyên đề, bài viết, loại hình, danh mục tin và chính sách bảo mật. Số URL trên production phụ thuộc dữ liệu KV đang lưu; không tự ghi đè KV bằng dữ liệu khởi tạo.
+Bản hiện tại có **96 URL chuẩn trong sitemap**: trang chủ, 9 chuyên đề, 84 bài viết, danh mục cẩm nang và chính sách bảo mật. Bốn URL loại hình minh họa cũ được gộp bằng 301 vào chuyên đề sản phẩm/quy hoạch, không tiếp tục để trang mỏng trong sitemap. Số URL thực tế phụ thuộc nội dung CMS; không xóa bài riêng để ép số lượng.
 
-**Đã phát hành V3 lên production ngày 27/10/2026.** Audit live đạt 100 URL; CMS và form đã được kiểm tra thực tế. Chi tiết trong [báo cáo phát hành](BAO-CAO-PHAT-HANH-2026-10-27.md).
+**Đã phát hành và kiểm tra trên production ngày 27/10/2026.** Xem [báo cáo tối ưu SEO](BAO-CAO-SEO-2026-10-27.md). Bản phát hành V3 ban đầu có 100 URL được ghi nhận riêng trong [báo cáo phát hành](BAO-CAO-PHAT-HANH-2026-10-27.md).
 
 ## Phát triển
 
@@ -34,12 +34,12 @@ Kiểm thử trình duyệt dùng Chromium tại `/usr/bin/chromium`; đặt `CH
 
 - Biên tập 74 bài mới tại `content/guides/74-bai-cam-nang.json`; 10 bài cũ ở `src/articles.js`.
 - `npm run content:sync` tạo `src/guides.js`, bộ nhập CMS `public/noi-dung-seo.json` và seed đồng nhất. Lệnh không kết nối hoặc ghi KV.
-- `npm run check` đồng bộ nội dung, chạy 24 kiểm thử, preflight build và audit 100 URL.
-- Báo cáo tại `dist/seo-audit.json`, danh sách URL tại `dist/100-urls.txt`, ảnh kiểm tra ở `dist/screenshots/`.
+- `npm run check` đồng bộ nội dung, chạy 28 kiểm thử, preflight build và audit các URL chuẩn trong sitemap.
+- Báo cáo tại `dist/seo-audit.json`, danh sách URL tại `dist/indexable-urls.txt`, ảnh kiểm tra ở `dist/screenshots/`.
 - Workflow `SEO audit` chạy khi push, chạy hằng ngày lúc **06:15 giờ Việt Nam**, hoặc chạy thủ công. Đây là kiểm tra và xuất báo cáo; không tự xuất bản hay sửa dữ kiện dự án. Audit production cũng chạy theo lịch hằng ngày; khi chạy thủ công có thể bật tùy chọn kiểm tra live.
 - Audit kiểm tra HTTP, title/description duy nhất, H1, canonical, JSON-LD, ảnh, liên kết và khả năng truy cập từ trang chủ. Đây không phải chứng nhận xếp hạng hoặc bằng chứng Google đã lập chỉ mục.
 
-Nội dung công khai dùng chú thích “hình minh họa”, không nhận là phối cảnh chính thức. Các đường dẫn đối chiếu được giữ trong dữ liệu nghiên cứu nội bộ; bảng liệt kê nguồn không hiển thị trong trang bài viết. Không tự tạo giá, ngày mở bán, quyền sở hữu hoặc cam kết lợi nhuận.
+Nội dung công khai dùng chú thích “hình minh họa”, không nhận là phối cảnh chính thức. Các đường dẫn đối chiếu được giữ trong dữ liệu nghiên cứu nội bộ; nguồn đã kiểm tra được dẫn tại trang chủ và các nội dung có dữ kiện liên quan. Không tự tạo giá, ngày mở bán, quyền sở hữu hoặc cam kết lợi nhuận.
 
 ## CMS và dữ liệu hiện có
 

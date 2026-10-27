@@ -33,7 +33,7 @@ test('sitemap includes only published unique canonical URLs, robots protect admi
 test('root injects SEO links and readable edited content',async()=>{
   const res=await get('/');assert.equal(res.status,200);
   const html=await res.text();assert.match(html,/rel="canonical" href="https:\/\/vinhomesthuongtin.vn\/"/);
-  assert.match(html,/href="\/gia-ban\/"/);assert.match(html,/~9.171 ha|Một tầm nhìn đô thị mới/);
+  assert.match(html,/href="\/gia-ban\/"/);assert.match(html,/9.171 ha|Tổng quan Vinhomes Olympic/);
 });
 test('nonexistent and hidden pages return correct status',async()=>{
   assert.equal((await get('/khong-co-trang/')).status,404);

@@ -5,9 +5,9 @@ import worker,{normalize} from '../src/worker.js';
 import {INITIAL_CONTENT} from '../src/seed.js';
 import {visibleUrls,renderSeo,injectHome} from '../src/seo.js';
 const origin='https://vinhomesthuongtin.vn';
-test('100 canonical URLs survive CMS normalization and repeated saves',()=>{
+test('96 indexable URLs survive CMS normalization and repeated saves',()=>{
  const original=normalize(INITIAL_CONTENT),again=normalize(original);
- assert.equal(visibleUrls(original).length,100);
+ assert.equal(visibleUrls(original).length,96);
  assert.equal(original.posts.filter(p=>p.published).length,84);
  assert.deepEqual(again,original);
  for(const post of original.posts.filter(p=>p.id.startsWith('olympic-cam-nang-'))){
@@ -34,12 +34,12 @@ test('home asset uses the root URL so Workers Assets cannot redirect index.html'
  const response=await worker.fetch(new Request(origin+'/'),{ASSETS:{fetch:async req=>{
   assert.equal(new URL(req.url).pathname,'/');return new Response(home);
  }}});
- const html=await response.text();assert.match(html,/<title>/);assert.match(html,/href="\/san-pham\/biet-thu\/"/);
+ const html=await response.text();assert.match(html,/<title>/);assert.match(html,/href="\/san-pham\/#biet-thu"/);
 });
 test('SSR honors edited home metadata and escapes hostile HTML in CMS content',async()=>{
  const home=await readFile(new URL('../public/index.html',import.meta.url),'utf8');
- const html=injectHome(home,{...INITIAL_CONTENT,siteName:'Tên riêng',brand:'Thương hiệu',seoDescription:'Mô tả riêng'});
- assert.match(html,/<title>Tên riêng \| Thương hiệu<\/title>/);
+ const html=injectHome(home,{...INITIAL_CONTENT,siteName:'Tên riêng',brand:'Thương hiệu',seoTitle:'Tiêu đề tìm kiếm riêng',seoDescription:'Mô tả riêng'});
+ assert.match(html,/<title>Tiêu đề tìm kiếm riêng<\/title>/);
  assert.match(html,/<meta name="description" content="Mô tả riêng">/);
  const site=normalize(INITIAL_CONTENT);site.posts[0].title='<script>alert(1)</script>';
  site.posts[0].image='https://images.example.com/photo.webp';
@@ -48,7 +48,7 @@ test('SSR honors edited home metadata and escapes hostile HTML in CMS content',a
  assert.ok(article.includes('content="https://images.example.com/photo.webp"'));
 });
 test('www, HTTP and missing slashes redirect to canonical destinations',async()=>{
- for(const [url,target] of [['https://www.vinhomesthuongtin.vn/vi-tri/?a=1',origin+'/vi-tri/?a=1'],['http://vinhomesthuongtin.vn/',origin+'/'],[origin+'/tin-tuc',origin+'/tin-tuc/'],[origin+'/san-pham/biet-thu',origin+'/san-pham/biet-thu/']]){
+ for(const [url,target] of [['https://www.vinhomesthuongtin.vn/vi-tri/?a=1',origin+'/vi-tri/?a=1'],['http://vinhomesthuongtin.vn/',origin+'/'],[origin+'/tin-tuc',origin+'/tin-tuc/'],[origin+'/san-pham/biet-thu',origin+'/san-pham/#biet-thu']]){
   const response=await worker.fetch(new Request(url),{});assert.equal(response.status,301);assert.equal(response.headers.get('location'),target);
  }
 });

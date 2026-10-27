@@ -2,15 +2,15 @@
   "siteName": "VINHOMES OLYMPIC",
   "brand": "Mạnh Việt Real Estate",
   "badge": "KHÔNG GIAN SỐNG & THỂ THAO TƯƠNG LAI",
-  "heroTitle": "VINHOMES",
-  "heroAccent": "OLYMPIC",
-  "heroSubtitle": "Biểu tượng sống mới phía Nam Hà Nội",
+  "heroTitle": "Vinhomes",
+  "heroAccent": "Olympic Thường Tín",
+  "heroSubtitle": "Quy hoạch, vị trí, pháp lý và thông tin cho người mua",
   "heroImage": "/assets/olympic-concept.webp",
   "heroNote": "Hình minh họa, không phải phối cảnh chính thức của chủ đầu tư.",
-  "overviewTitle": "Một tầm nhìn đô thị mới",
-  "overviewText": "Khám phá thông tin tham khảo về khu đô thị thể thao Quốc tế Hà Nội và các định hướng phát triển đô thị tại phía Nam Thủ đô. Website do Mạnh Việt vận hành để hỗ trợ khách hàng tiếp cận nguồn tin, hình ảnh minh họa và cập nhật mới nhất. Thông tin về quy hoạch, sản phẩm và giá bán cần được đối chiếu với các thông báo chính thức.",
-  "locationTitle": "Kết nối khu vực phía Nam Hà Nội",
-  "locationText": "Khám phá các yếu tố vị trí, liên kết khu vực và định hướng phát triển hạ tầng. Nội dung chỉ phục vụ tham khảo và sẽ được cập nhật khi có công bố chính thức.",
+  "overviewTitle": "Tổng quan Vinhomes Olympic Thường Tín",
+  "overviewText": "Khu đô thị thể thao Olympic được định hướng tại phía Nam Hà Nội. UBND xã Dân Hòa công bố quy mô tổng thể khoảng 9.171 ha, chia bốn phân khu. Riêng hồ sơ môi trường phân khu B nêu 2.944,39 ha; không đồng nhất diện tích dự án thành phần với toàn đô thị. Website tổng hợp dữ kiện để người mua đọc đúng phạm vi, kiểm tra vị trí và hồ sơ trước khi lựa chọn.",
+  "locationTitle": "Vị trí và kết nối khu vực Olympic",
+  "locationText": "Quyết định môi trường phân khu B ghi địa điểm tại Thường Tín, Thượng Phúc, Tam Hưng và Dân Hòa. Vị trí cụ thể cần được đối chiếu theo mã ô đất, lối tiếp cận và bản vẽ. Đọc chuyên đề vị trí để phân biệt địa bàn trong hồ sơ với hành trình thực tế tới từng khu vực.",
   "stats": [
     {
       "number": "~9.171 ha",
@@ -34,7 +34,7 @@
       "id": "p-villa",
       "title": "Biệt thự",
       "type": "Biệt thự",
-      "short": "Ý tưởng không gian sống riêng tư và cảnh quan xanh.",
+      "short": "Kiểm tra sân vườn, riêng tư, công năng và chi phí bảo trì.",
       "image": "/assets/waterfront.webp",
       "detail": "Nội dung mang tính minh họa ý tưởng, chưa phải thông tin mở bán chính thức."
     },
@@ -42,7 +42,7 @@
       "id": "p-town",
       "title": "Liền kề",
       "type": "Liền kề",
-      "short": "Khám phá hình dung về những dãy nhà phố hiện đại.",
+      "short": "Đọc mặt tiền, chiều sâu, ánh sáng và chi phí hoàn thiện.",
       "image": "/assets/city.webp",
       "detail": "Loại hình minh họa, vui lòng kiểm tra thông báo từ chủ đầu tư."
     },
@@ -50,17 +50,9 @@
       "id": "p-shop",
       "title": "Shophouse",
       "type": "Shophouse",
-      "short": "Ý tưởng không gian thương mại trong đô thị.",
+      "short": "Đánh giá dòng khách, khả năng khai thác và dòng tiền sau chi phí.",
       "image": "/assets/sport.webp",
       "detail": "Không xác nhận nguồn cung hoặc chính sách kinh doanh."
-    },
-    {
-      "id": "p-urban",
-      "title": "Không gian đô thị",
-      "type": "Khác",
-      "short": "Cảm hứng cho nhịp sống đô thị thể thao mới.",
-      "image": "/assets/olympic-concept.webp",
-      "detail": "Hình ảnh minh họa độc lập."
     }
   ],
   "amenities": [
@@ -83,22 +75,22 @@
   "gallery": [
     {
       "id": "g1",
-      "title": "Tầm nhìn đô thị thể thao",
+      "title": "Toàn cảnh đô thị và sân vận động (minh họa)",
       "image": "/assets/olympic-concept.webp"
     },
     {
       "id": "g2",
-      "title": "Cảnh quan mặt nước",
+      "title": "Mặt nước và các khối căn hộ (minh họa)",
       "image": "/assets/waterfront.webp"
     },
     {
       "id": "g3",
-      "title": "Kiến trúc khu đô thị",
+      "title": "Không gian đô thị và đường giao thông (minh họa)",
       "image": "/assets/city.webp"
     },
     {
       "id": "g4",
-      "title": "Ý tưởng tiện ích",
+      "title": "Sân vận động và quảng trường (minh họa)",
       "image": "/assets/sport.webp"
     }
   ],
@@ -151,17 +143,17 @@
     },
     {
       "slug": "san-pham",
-      "title": "Loại hình bất động sản được quan tâm tại Olympic",
+      "title": "Loại hình nhà ở và tiêu chí lựa chọn tại Olympic",
       "keyword": "biệt thự liền kề shophouse olympic",
-      "summary": "Góc nhìn nhu cầu mua ở, kinh doanh và đầu tư; không nhầm concept với danh mục sản phẩm mở bán.",
-      "body": "## Nhu cầu mua ở và đầu tư\nNgười mua thường tìm kiếm biệt thự, nhà liền kề, nhà phố thương mại và căn hộ khi tìm hiểu một đại đô thị. Trên website này, các ảnh loại hình là minh họa phong cách sống, không xác nhận từng dòng sản phẩm đã đủ điều kiện giao dịch.\n\n## Biệt thự và nhà ở thấp tầng\nTrước khi đánh giá một căn, hãy kiểm tra diện tích đất, diện tích xây dựng, mặt tiền, hướng, thời hạn sử dụng, hình thức sở hữu và nghĩa vụ tài chính gắn với hồ sơ cụ thể.\n\n## Shophouse và dòng tiền\nLợi nhuận cho thuê phụ thuộc mật độ cư dân, lưu lượng thương mại, thiết kế kinh doanh và chi phí vận hành. Không nên tính dòng tiền dựa hoàn toàn trên hứa hẹn lưu lượng khách trong tương lai.\n\n## Nhận tư vấn theo tiêu chí thật\nMạnh Việt có thể hỗ trợ lập danh sách câu hỏi, nhu cầu diện tích và ngân sách; chỉ gửi danh mục căn khi có nguồn tài liệu hợp lệ để đối chiếu.",
+      "summary": "So sánh nhu cầu với công năng nhà ở; phân biệt loại hình được quan tâm và danh mục sản phẩm có tài liệu giao dịch xác thực.",
+      "body": "## Loại hình không thay thế thông tin mở bán\nBiệt thự, liền kề, shophouse và căn hộ là các nhóm người mua thường so sánh khi tìm hiểu một đại đô thị. Trang này tập hợp tiêu chí lựa chọn, không công bố giỏ hàng, diện tích căn hoặc giá bán khi chưa có hồ sơ của đúng sản phẩm. Tên loại hình và hình minh họa không xác nhận điều kiện giao dịch.\n\n## Biệt thự\nĐọc diện tích đất cùng phần được xây, khoảng lùi, sân vườn và cách tổ chức phòng. Gia đình nhiều thế hệ cần kiểm tra đường di chuyển, phòng ngủ thuận tiện và khả năng tiếp cận khu vệ sinh; tổng diện tích sàn lớn không tự bảo đảm phù hợp. Tính thêm chăm sóc cảnh quan, bảo trì mái, chiếu sáng và an ninh trong ngân sách sở hữu. Nếu thông tin sản phẩm được cung cấp, đối chiếu mã lô, quyền sử dụng và tiêu chuẩn bàn giao trong hồ sơ trước khi trả tiền.\n\n## Liền kề\nMặt tiền, chiều sâu và vị trí thang ảnh hưởng trực tiếp diện tích dùng được. Xem ánh sáng giữa nhà, giếng trời, khu giặt phơi và lối thoát theo thiết kế; đừng chỉ so diện tích đất. Đặt thử nội thất vào mặt bằng và tính chi phí hoàn thiện tới thời điểm có thể ở. Những thay đổi liên quan khu ướt, kết cấu hoặc mặt ngoài cần được kiểm tra về kỹ thuật và quy định, không suy từ một căn đã cải tạo ở nơi khác.\n\n## Shophouse\nĐánh giá dòng khách theo ngày thường, giờ hoạt động và khả năng tiếp cận cửa hàng. Kiểm tra điều kiện dừng xe, giao nhận, ngành hàng phù hợp và phần diện tích khai thác thực tế. Lập kịch bản chưa có khách thuê, chi phí hoàn thiện và vận hành trước khi tính lợi nhuận ròng. Một vị trí gần công trình thể thao chưa bảo đảm lưu lượng mua sắm ổn định, còn giá thuê chào không thay thế hợp đồng đã ký.\n\n## Căn hộ và nhu cầu sử dụng một mặt sàn\nSo mặt bằng với lịch sinh hoạt, số người và khả năng kê nội thất. Kiểm tra tuyến từ chỗ đỗ xe tới cửa, thang máy, không gian chung và phí vận hành. Tách định nghĩa diện tích trong hợp đồng khỏi số đo quảng bá. Hình thức kiến trúc không tự xác định thời hạn hoặc quyền sở hữu; cần đọc giấy tờ của tài sản cụ thể.\n\n## Danh mục câu hỏi trước khi nhận bảng hàng\nYêu cầu mã căn hoặc ô đất, vị trí trên bản vẽ, diện tích theo định nghĩa, tổng tiền và phần đã bao gồm. Kiểm tra chủ thể bán, thẩm quyền nhận tiền, tiến độ thanh toán và tài liệu đủ điều kiện giao dịch tương ứng. Nếu chưa có thông tin, ghi câu hỏi còn thiếu thay vì tự điền từ một sản phẩm khác. Liên hệ tư vấn để lập tiêu chí phù hợp ngân sách và mục tiêu của gia đình.",
       "sourceLabel": "UBND xã Dân Hòa – thông tin chung dự án",
       "sourceUrl": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
       "status": "needs-verification",
       "image": "/assets/waterfront.webp",
       "published": true,
-      "updated": "2026-10-21",
-      "seoTitle": "Loại hình bất động sản được quan tâm tại Olympic | Mạnh Việt",
+      "updated": "2026-10-27",
+      "seoTitle": "Sản phẩm Vinhomes Olympic: loại hình và tiêu chí lựa chọn",
       "seoDescription": "Góc nhìn nhu cầu mua ở, kinh doanh và đầu tư; không nhầm concept với danh mục sản phẩm mở bán."
     },
     {
@@ -244,105 +236,79 @@
     {
       "id": "olympic-guide-01",
       "slug": "vinhomes-olympic-thuong-tin-tong-quan",
-      "title": "Vinhomes Olympic Thường Tín: Tổng quan đại đô thị thể thao phía Nam Hà Nội",
+      "title": "Tên Vinhomes Olympic và tên dự án trong hồ sơ khác nhau thế nào?",
       "date": "2026-10-21",
-      "excerpt": "Tìm hiểu Vinhomes Olympic Thường Tín: quy mô, vị trí, phân khu và các công trình thể thao đã được công bố. Cập nhật có nguồn, tư vấn minh bạch.",
-      "content": "Khi nhắc đến các cực phát triển mới của Hà Nội, khu vực phía Nam ngày càng được người mua nhà quan tâm. Vinhomes Olympic là cách gọi phổ biến trong tìm kiếm đối với một phần bức tranh lớn hơn: Khu đô thị thể thao Olympic, nay được nhắc đến với tên Khu đô thị thể thao Quốc tế Hà Nội. Điều tạo nên sức hút của dự án không chỉ là quy mô, mà còn là định hướng hình thành một đô thị nơi thể thao, hạ tầng, nhà ở và các hoạt động cộng đồng được đặt trong cùng một cấu trúc phát triển.\n\n## Quy mô và cách hiểu đúng tên dự án\n\nTheo các thông tin công khai của Hà Nội, quy mô dự án đầu tư khoảng 9.171 ha, triển khai tại nhiều xã, phường và được chia thành bốn phân khu thành phần A, B, C và D. Con số khoảng 16.093 ha mà nhiều trang đang nhắc đến là phạm vi nghiên cứu quy hoạch rộng hơn, không nên dùng thay cho diện tích đất đầu tư. Việc phân biệt hai khái niệm này giúp người đọc hiểu đúng quy mô, tránh kỳ vọng sai về ranh giới và vị trí một sản phẩm cụ thể.\n\n## Vai trò của Vinhomes tại phân khu B\n\nHồ sơ môi trường được cơ quan chuyên môn của Hà Nội công bố ghi nhận Công ty Cổ phần Vinhomes là chủ đầu tư dự án thành phần phân khu B, trải trên địa bàn Thường Tín, Thượng Phúc, Tam Hưng và Dân Hòa. Văn bản này mô tả khu đô thị, nhà ở, công trình thương mại dịch vụ, trường học, cơ sở y tế, công viên, mặt nước và hạ tầng kỹ thuật đồng bộ. Dẫu vậy, nội dung quy hoạch chưa đồng nghĩa với danh mục sản phẩm đã đủ điều kiện mở bán.\n\n## Điểm nhấn từ hệ sinh thái thể thao\n\nTháng 8/2026, Vingroup công bố định hướng Khu liên hợp thể thao quốc tế Hùng Vương hơn 400 ha, lấy sân vận động VinFast – Trống Đồng làm tâm điểm. Theo công bố, công trình sân vận động có sức chứa thiết kế 135.000 chỗ, bên cạnh các hạng mục thi đấu và thể thao cộng đồng. Đây là mục tiêu quy hoạch và đầu tư được công bố, chưa phải khẳng định mọi tiện ích đã hoàn thiện hay có thể sử dụng ngay.\n\n## Ai nên theo dõi dự án từ lúc này?\n\nNgười mua ở thực có thể ưu tiên kết nối giao thông, trường học, y tế và thời điểm cư dân hình thành. Nhà đầu tư nên tách bài toán giá trị dài hạn khỏi tin đồn ngắn hạn; tìm hiểu pháp lý từng sản phẩm, chi phí vốn, tiến độ thi công và nhu cầu khai thác thực tế. Thời điểm phù hợp để ra quyết định không phải khi truyền thông sôi động nhất, mà khi bạn có đủ dữ liệu cho căn dự định mua.\n\n## Nhận thông tin và tư vấn\n\nMuốn nhận bản tóm tắt quy hoạch và thông tin đã xác minh cho khu vực Thường Tín? Liên hệ Mạnh Việt để được cập nhật theo từng phân khu, không nhầm tin đồn với tài liệu chính thức.",
+      "excerpt": "Cách đối chiếu tên thương mại, tên dự án tổng thể và tên dự án thành phần để đọc đúng văn bản về đô thị thể thao Olympic.",
+      "content": "Tên thường dùng trong tìm kiếm giúp nhận diện một khu vực, nhưng tài liệu pháp lý cần được đối chiếu bằng đúng tên dự án, chủ thể và phạm vi. Với từ khóa Vinhomes Olympic Thường Tín, bước hữu ích đầu tiên là lập bảng tên gọi thay vì coi mọi tài liệu có chữ Olympic đều áp dụng cho cùng tài sản.\n\n## Tên tổng thể và tên dự án thành phần\nThông tin UBND xã Dân Hòa ngày 22/04/2026 nhắc Khu đô thị thể thao Olympic với quy mô khoảng 9.171 ha và bốn phân khu. Quyết định 916/QĐ-SNNMT ngày 13/04/2026 lại có đối tượng cụ thể là Dự án thành phần phân khu B thuộc Dự án đầu tư Xây dựng Khu đô thị thể thao Olympic. Tên thứ hai cho thấy phạm vi hẹp hơn, không phải một cách viết thay thế cho toàn bộ đô thị.\n\n## Tên Vinhomes trong văn bản nói lên điều gì?\nTrang 2 của quyết định môi trường nêu Công ty Cổ phần Vinhomes đại diện liên danh nhà đầu tư; phần thông tin chung tại trang 3 ghi chủ đầu tư phân khu B là Công ty Cổ phần Vinhomes. Đây là dữ kiện về chủ thể và dự án được nêu trong chính văn bản. Không suy rộng thành xác nhận danh mục sản phẩm hoặc thẩm quyền nhận tiền của một đơn vị tư vấn.\n\n## Bảng đối chiếu nên có những cột nào?\nGhi tên đầy đủ trên tài liệu, tên cơ quan ban hành, số văn bản, ngày và phạm vi áp dụng. Thêm mã phân khu hoặc ô đất nếu có. Khi nhận một bảng hàng, đối chiếu các trường này với hợp đồng và tài liệu của đúng sản phẩm; chỉ giống tên thương mại là chưa đủ.\n\n## Tránh nhầm tên website với đơn vị ban hành\nWebsite này là trang tư vấn độc lập của Mạnh Việt, không phải cổng thông tin chính thức của chủ đầu tư. Một tiêu đề dùng từ Vinhomes Olympic chỉ giúp định vị chủ đề; các con số và hồ sơ vẫn cần xem trực tiếp ở văn bản gốc. Khi có điểm không thống nhất giữa tên giới thiệu và tên hợp đồng, yêu cầu bên có thẩm quyền giải thích bằng văn bản trước khi chuyển tiền.",
       "image": "/assets/posts/01_vinhomes-olympic-thuong-tin-tong-quan.webp",
-      "seoTitle": "Vinhomes Olympic Thường Tín: Tổng quan đại đô thị thể thao phía Nam Hà Nội",
-      "seoDescription": "Tìm hiểu Vinhomes Olympic Thường Tín: quy mô, vị trí, phân khu và các công trình thể thao đã được công bố. Cập nhật có nguồn, tư vấn minh bạch.",
-      "keyword": "Vinhomes Olympic Thường Tín",
+      "seoTitle": "Tên Vinhomes Olympic và tên dự án trong hồ sơ",
+      "seoDescription": "Cách đối chiếu tên thương mại, tên dự án tổng thể và tên dự án thành phần để đọc đúng văn bản về đô thị thể thao Olympic.",
+      "keyword": "tên pháp lý khu đô thị thể thao Olympic",
       "sources": [
         {
-          "label": "[S1] Sở Quy hoạch – Kiến trúc Hà Nội: Công bố quy hoạch phân khu đô thị thể thao Olympic tỷ lệ 1/2.000 (31/12/2025)",
-          "url": "https://qhkt.hanoi.gov.vn/xem-chi-tiet-tim-kiem/-/asset_publisher/RnsUM9DiWKWJ/content/ha-noi-cong-bo-quy-hoach-phan-khu-o-thi-the-thao-olympic?_101_INSTANCE_RnsUM9DiWKWJ_viewMode=view"
+          "label": "UBND xã Dân Hòa: quy mô dự án và giải phóng mặt bằng (22/04/2026)",
+          "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm"
         },
         {
-          "label": "[S2] UBND xã Đại Thanh: Chủ tịch Hà Nội kiểm tra tiến độ dự án khu đô thị thể thao Olympic (15/05/2026)",
-          "url": "https://daithanh.hanoi.gov.vn/tin-tuc-su-kien/chu-tich-thanh-pho-ha-noi-vu-dai-thang-kiem-tra-tien-do-du-an-khu-do-thi-the-thao-olympic-276826051510364333.htm"
-        },
-        {
-          "label": "[S3] Sở Nông nghiệp và Môi trường Hà Nội: Hồ sơ môi trường dự án thành phần phân khu B, trang 3–4 (2026)",
+          "label": "Quyết định 916/QĐ-SNNMT ngày 13/04/2026: kết quả thẩm định ĐTM phân khu B (PDF, trang 2–3)",
           "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf"
-        },
-        {
-          "label": "[S4] Tập đoàn Vingroup: Công bố quy hoạch Khu liên hợp thể thao quốc tế Hùng Vương (14/08/2026)",
-          "url": "https://vingroup.net/tin-tuc-su-kien/bai-viet/8039/vingroup-cong-bo-quy-hoach-khu-lien-hop-the-thao-quoc-te-hung-vuong-kien-tao-trung-tam-the-thao-su-kien-quy-mo"
         }
       ],
       "status": "needs-verification",
       "published": true,
-      "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
+      "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026.",
+      "topic": "tong-quan",
+      "updated": "2026-10-27"
     },
     {
       "id": "olympic-guide-02",
       "slug": "vi-tri-vinhomes-olympic-thuong-tin",
-      "title": "Vị trí Vinhomes Olympic Thường Tín ở đâu? Góc nhìn kết nối và di chuyển",
+      "title": "Thường Tín và các địa danh trong hồ sơ phân khu B Olympic",
       "date": "2026-10-21",
-      "excerpt": "Vị trí Vinhomes Olympic Thường Tín nằm trong vùng phát triển phía Nam Hà Nội. Tìm hiểu kết nối Ngọc Hồi, Vành đai 4, Quốc lộ 1A và cách kiểm tra vị trí từng căn.",
-      "content": "“Vinhomes Olympic Thường Tín ở đâu?” là câu hỏi tưởng đơn giản nhưng cần trả lời bằng đúng phạm vi. Khu đô thị thể thao Quốc tế Hà Nội là một dự án lớn, trải trên nhiều địa bàn; không phải mọi phân khu đều nằm trọn trong xã Thường Tín. Với người mua nhà, điều cần biết không chỉ là địa danh trên quảng cáo, mà là mã ô đất, phân khu, đường tiếp cận và quãng đường di chuyển đến các điểm đến hằng ngày.\n\n## Thường Tín nằm ở phần nào của bức tranh tổng thể?\n\nTheo hồ sơ môi trường dự án thành phần phân khu B, khu vực triển khai liên quan đến bốn xã Thường Tín, Thượng Phúc, Tam Hưng và Dân Hòa. Bởi vậy, khi tư vấn một lô cụ thể, cần kiểm tra bản đồ ranh giới phân khu và địa chỉ hành chính tương ứng thay vì chỉ ghi chung “Thường Tín”. Đây cũng là cách giúp khách mua xác định chính xác căn nhà gần khu thể thao, trục đường hoặc không gian dịch vụ nào.\n\n## Kết nối liên vùng đang được hình thành\n\nQuy hoạch phân khu A đặt trọng tâm vào đô thị TOD, gắn với đầu mối Ngọc Hồi và liên hệ khu vực Vành đai 4. Một nguồn thông tin của cơ quan thuộc thành phố cập nhật tháng 9/2026 cho biết đại lộ quy hoạch rộng 120 m, dài hơn 8 km đang từng bước hình thành, định hướng kết nối Quốc lộ 21C với Quốc lộ 1A và tuyến Pháp Vân – Cầu Giẽ qua khu đô thị thể thao. Đây là hạ tầng đang triển khai, không nên mặc định đã thông xe toàn tuyến.\n\n## Ga Ngọc Hồi là điểm nhấn nhưng cần hiểu đúng thời điểm\n\nCác phương án về tổ hợp ga Ngọc Hồi được nghiên cứu với vai trò đầu mối đường sắt phía Nam, kết nối đường sắt quốc gia và nhiều tuyến đường sắt đô thị. Giá trị của một đầu mối như vậy nằm ở khả năng cải thiện lưu thông và mở rộng vùng tiếp cận trong dài hạn. Tuy nhiên, phương án nghiên cứu, quyết định đầu tư, giải phóng mặt bằng, thi công và vận hành là các giai đoạn khác nhau; người mua không nên quy đổi ngay thành thời gian đi lại đã được bảo đảm.\n\n## Ba phép thử vị trí trước khi lựa chọn\n\nHãy đi khảo sát vị trí vào giờ cao điểm; đối chiếu cung đường thực tế đến nơi làm việc, trường học và bệnh viện; kiểm tra ô đất dự kiến so với tuyến giao thông có quy hoạch hoặc hành lang bảo vệ. Nếu mua để kinh doanh, cần thêm dữ liệu dòng người và lối vào thực tế. Một vị trí tốt không chỉ nằm gần tuyến lớn trên bản đồ mà còn phải thuận tiện để sử dụng hàng ngày.\n\n## Nhận thông tin và tư vấn\n\nBạn đang cân nhắc khu vực Thường Tín, Ngọc Hồi hay gần sân vận động? Gửi nhu cầu cho Mạnh Việt để nhận bảng đối chiếu vị trí và thông tin kết nối theo từng khu vực.",
+      "excerpt": "Đọc địa danh trong Quyết định 916/QĐ-SNNMT: phân biệt vị trí dự án thành phần, cách gọi khu vực và tọa độ của một sản phẩm.",
+      "content": "Khi một đại đô thị trải qua nhiều địa bàn, tên khu vực trên thông tin giới thiệu không thay thế địa điểm được ghi trong hồ sơ. Bài này giải thích cách đọc địa danh của phân khu B; phần vị trí và kết nối toàn dự án nằm ở chuyên đề vị trí riêng.\n\n## Hồ sơ môi trường nêu những địa bàn nào?\nQuyết định 916/QĐ-SNNMT ngày 13/04/2026, phần thông tin chung trang 3, ghi địa điểm thực hiện phân khu B tại các xã Thường Tín, Thượng Phúc, Tam Hưng và Dân Hòa, thành phố Hà Nội. Danh sách này mô tả dự án thành phần trong quyết định, không xác định địa chỉ của mọi phân khu khác.\n\n## Vì sao một tên khu vực chưa xác định được căn nhà?\nMột địa danh có thể được dùng để mô tả vùng tìm kiếm rộng, trong khi tài sản giao dịch gắn với ô đất và bản vẽ chi tiết. Cần có mã căn, mã lô, ranh và lối tiếp cận để chuyển từ hiểu biết về khu vực sang đánh giá vị trí cụ thể. Không chọn một điểm ghim ở giữa đô thị để tính hành trình từ cửa căn nhà.\n\n## Cách xử lý tài liệu có tên địa bàn khác nhau\nLưu ngày ban hành và phạm vi của từng tài liệu; hỏi bên cung cấp về cách đối chiếu tên gọi khi địa giới hoặc hệ thống địa chỉ thay đổi. Không tự ghép tên xã từ nhiều phiên bản thành một địa chỉ được cho là hiện hành. Nếu cần xác minh pháp lý, sử dụng văn bản hoặc xác nhận của cơ quan có thẩm quyền.\n\n## Chuẩn bị hồ sơ trước chuyến khảo sát\nMang theo bản vẽ thể hiện vị trí quan tâm, tên địa bàn được ghi trong hồ sơ và câu hỏi về cổng tiếp cận. Sau chuyến đi, lưu ảnh mốc và đường đi cùng ngày khảo sát. Một bản ghi phân biệt rõ địa danh, tọa độ và lối vào sẽ hữu ích hơn lời giới thiệu chung rằng toàn dự án nằm gần một tuyến lớn.",
       "image": "/assets/posts/02_vi-tri-vinhomes-olympic-thuong-tin.webp",
-      "seoTitle": "Vị trí Vinhomes Olympic Thường Tín ở đâu? Góc nhìn kết nối và di chuyển",
-      "seoDescription": "Vị trí Vinhomes Olympic Thường Tín nằm trong vùng phát triển phía Nam Hà Nội. Tìm hiểu kết nối Ngọc Hồi, Vành đai 4, Quốc lộ 1A và cách kiểm tra vị trí từng căn.",
-      "keyword": "vị trí Vinhomes Olympic Thường Tín",
+      "seoTitle": "Địa danh Thường Tín trong hồ sơ phân khu B Olympic",
+      "seoDescription": "Đọc địa danh trong Quyết định 916/QĐ-SNNMT: phân biệt vị trí dự án thành phần, cách gọi khu vực và tọa độ của một sản phẩm.",
+      "keyword": "địa điểm phân khu B Olympic",
       "sources": [
         {
-          "label": "[S1] Sở Quy hoạch – Kiến trúc Hà Nội: Công bố quy hoạch phân khu đô thị thể thao Olympic tỷ lệ 1/2.000 (31/12/2025)",
-          "url": "https://qhkt.hanoi.gov.vn/xem-chi-tiet-tim-kiem/-/asset_publisher/RnsUM9DiWKWJ/content/ha-noi-cong-bo-quy-hoach-phan-khu-o-thi-the-thao-olympic?_101_INSTANCE_RnsUM9DiWKWJ_viewMode=view"
-        },
-        {
-          "label": "[S3] Sở Nông nghiệp và Môi trường Hà Nội: Hồ sơ môi trường dự án thành phần phân khu B, trang 3–4 (2026)",
+          "label": "Quyết định 916/QĐ-SNNMT ngày 13/04/2026: kết quả thẩm định ĐTM phân khu B (PDF, trang 2–3)",
           "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf"
-        },
-        {
-          "label": "[S6] Quỹ Đầu tư phát triển TP Hà Nội: Đại lộ 120 m dần hình thành (22/09/2026)",
-          "url": "https://quydautuphattrien.hanoi.gov.vn/ban-tin/dai-lo-120m-dan-hinh-thanh-mo-truc-ket-noi-toi-san-van-dong-135-000-cho-o-ha-noi-10683.html"
-        },
-        {
-          "label": "[S9] Viện Quy hoạch xây dựng Hà Nội: Định hướng tổ hợp ga Ngọc Hồi, đầu mối đường sắt phía Nam (10/2026)",
-          "url": "https://vqh.hanoi.gov.vn/index.php?language=vi&nv=news&op=tin-lien-ket%2Fquy-hoach-to-hop-ga-ngoc-hoi-dau-moi-duong-sat-phia-nam-ha-noi-3386.html"
         }
       ],
       "status": "needs-verification",
       "published": true,
-      "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
+      "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026.",
+      "topic": "vi-tri",
+      "updated": "2026-10-27"
     },
     {
       "id": "olympic-guide-03",
       "slug": "quy-hoach-vinhomes-olympic-a-b-c-d",
-      "title": "Quy hoạch Vinhomes Olympic: Phân khu A, B, C, D và những con số cần đọc đúng",
+      "title": "Đọc hồ sơ lấy ý kiến 1/500 Olympic phân khu A, B, C, D",
       "date": "2026-10-21",
-      "excerpt": "Phân biệt phạm vi nghiên cứu 16.093 ha và quy mô dự án khoảng 9.171 ha; tìm hiểu 4 phân khu A, B, C, D và cách kiểm tra hồ sơ quy hoạch.",
-      "content": "Quy hoạch là nền tảng quan trọng nhất khi đánh giá một đại đô thị. Với Vinhomes Olympic, khách hàng dễ gặp những con số lớn, tên phân khu và sơ đồ lan truyền trên mạng nhưng không phải bản nào cũng thể hiện cùng một phạm vi. Đọc đúng tài liệu quy hoạch sẽ giúp hiểu dự án hướng đến điều gì và phần nào còn phụ thuộc các bước triển khai tiếp theo.\n\n## Vì sao xuất hiện hai con số 16.093 ha và 9.171 ha?\n\nTài liệu công bố quy hoạch phân khu tỷ lệ 1/2.000 cuối năm 2025 đề cập phạm vi nghiên cứu khoảng 16.093 ha để bảo đảm liên kết đồng bộ không gian, giao thông và hạ tầng. Trong khi đó, tài liệu triển khai dự án đầu tư tại địa phương nêu quy mô khoảng 9.171 ha. Hai con số phản ánh hai phạm vi công việc, không phải thông tin mâu thuẫn nếu đặt đúng bối cảnh. Khi sử dụng trên website, cần ghi rõ “phạm vi nghiên cứu” hay “quy mô dự án đầu tư”.\n\n## Bốn phân khu không đồng nghĩa bốn đợt mở bán\n\nHồ sơ quy hoạch được công bố gồm các phân khu thành phần A, B, C, D. Phân khu A được giới thiệu với định hướng đô thị gắn TOD và đầu mối giao thông; phân khu B trong hồ sơ môi trường có không gian đô thị cùng khu liên hợp thể thao. Những thông tin định hướng ở các phân khu khác phải đối chiếu riêng với bản vẽ và quyết định tương ứng. Không thể từ ký hiệu A/B/C/D suy ra thứ tự chào bán, giá bán hay thời điểm bàn giao.\n\n## Từ bản vẽ 1/2.000 đến thông tin một căn nhà\n\nBản quy hoạch phân khu 1/2.000 giúp hiểu cấu trúc lớn về dân cư, giao thông và chức năng đất. Để xem một sản phẩm cụ thể, người mua cần tài liệu chi tiết hơn: bản vẽ 1/500 có hiệu lực, vị trí lô đất, chỉ tiêu xây dựng, đường tiếp giáp, diện tích và các điều kiện kinh doanh. Quy hoạch được phê duyệt cũng có thể được điều chỉnh theo thủ tục; vì vậy phải đối chiếu phiên bản và ngày ban hành.\n\n## Người mua nên đọc quy hoạch bằng câu hỏi\n\nĐất ở nằm ở đâu so với trục giao thông chính? Khu thể thao có tách biệt luồng sự kiện và luồng cư dân? Không gian xanh – mặt nước là công cộng hay nội khu? Mật độ xây dựng và hạ tầng xã hội có phù hợp gia đình nhiều thế hệ? Trả lời được những câu này sẽ có giá trị hơn việc chỉ nhìn phối cảnh hoành tráng, vì nó chuyển quy hoạch từ thông tin đẹp thành tiêu chí chọn nhà.\n\n## Nhận thông tin và tư vấn\n\nCần đối chiếu sơ đồ phân khu và đọc chỉ tiêu quy hoạch cho một vị trí cụ thể? Liên hệ Mạnh Việt để nhận danh mục tài liệu cần kiểm tra trước khi quyết định.",
+      "excerpt": "Hướng dẫn đọc phạm vi, chú giải và trạng thái hồ sơ lấy ý kiến 1/500; phân biệt thông báo lấy ý kiến với quyết định phê duyệt.",
+      "content": "Thông báo lấy ý kiến là tài liệu quan trọng để theo dõi quá trình quy hoạch, nhưng cần đọc đúng chức năng. Bài này tập trung vào hồ sơ tham vấn và cách đặt câu hỏi; chuyên đề quy hoạch cung cấp bức tranh tổng thể của các lớp tài liệu.\n\n## Bắt đầu từ tên thông báo và đối tượng lấy ý kiến\nUBND xã Ngọc Hồi công bố thông tin lấy ý kiến cộng đồng ngày 10/02/2026 đối với đồ án quy hoạch chi tiết tỷ lệ 1/500 Khu đô thị thể thao Olympic, phân khu A, B, C, D. Hãy ghi tên đồ án, phạm vi và thời điểm được nhắc tới trước khi đọc bản vẽ đi kèm. Không chuyển trạng thái lấy ý kiến thành kết luận đã phê duyệt toàn bộ nội dung.\n\n## Đọc bản vẽ cùng chú giải và bảng chỉ tiêu\nĐánh dấu mã ô đất, chức năng, mạng đường và các khu công cộng. Nếu nhận nhiều trang rời, kiểm tra chúng có cùng phiên bản và cùng bộ hồ sơ không. Màu sắc hoặc ký hiệu trên một ảnh không đủ để suy ra công năng của từng sản phẩm được giới thiệu trên bảng hàng.\n\n## Chuẩn bị ý kiến theo vấn đề cụ thể\nMột ý kiến rõ cần chỉ ra vị trí, nội dung đang xem và ảnh hưởng cần làm rõ, chẳng hạn tuyến tiếp cận, hạ tầng xã hội hoặc điểm giao cắt. Kèm mã bản vẽ và mốc có thể đối chiếu giúp tránh câu hỏi quá chung. Giữ bản nội dung đã gửi và bằng chứng tiếp nhận khi tham gia đúng quy trình.\n\n## Tìm văn bản kết quả sau bước tham vấn\nKhi dùng thông tin để lựa chọn tài sản, cần tìm văn bản đang có hiệu lực và phạm vi phê duyệt tương ứng. Quyết định môi trường phân khu B có dẫn Quyết định 6260/QĐ-UBND ngày 16/12/2025 về quy hoạch phân khu 1/2000; sự dẫn chiếu đó không thay cho việc kiểm tra riêng hồ sơ chi tiết của một lô. Diện tích nghiên cứu, dự án tổng thể và dự án thành phần phải được ghi thành các phạm vi riêng, không cộng hoặc thay thế cho nhau.",
       "image": "/assets/posts/03_quy-hoach-vinhomes-olympic-a-b-c-d.webp",
-      "seoTitle": "Quy hoạch Vinhomes Olympic: đọc phân khu A, B, C, D",
-      "seoDescription": "Phân biệt phạm vi nghiên cứu 16.093 ha và quy mô dự án khoảng 9.171 ha; tìm hiểu 4 phân khu A, B, C, D và cách kiểm tra hồ sơ quy hoạch.",
-      "keyword": "quy hoạch Vinhomes Olympic",
+      "seoTitle": "Hồ sơ lấy ý kiến 1/500 Olympic A, B, C, D: cách đọc",
+      "seoDescription": "Hướng dẫn đọc phạm vi, chú giải và trạng thái hồ sơ lấy ý kiến 1/500; phân biệt thông báo lấy ý kiến với quyết định phê duyệt.",
+      "keyword": "hồ sơ lấy ý kiến quy hoạch Olympic 1/500",
       "sources": [
         {
-          "label": "[S1] Sở Quy hoạch – Kiến trúc Hà Nội: Công bố quy hoạch phân khu đô thị thể thao Olympic tỷ lệ 1/2.000 (31/12/2025)",
-          "url": "https://qhkt.hanoi.gov.vn/xem-chi-tiet-tim-kiem/-/asset_publisher/RnsUM9DiWKWJ/content/ha-noi-cong-bo-quy-hoach-phan-khu-o-thi-the-thao-olympic?_101_INSTANCE_RnsUM9DiWKWJ_viewMode=view"
+          "label": "UBND xã Ngọc Hồi: lấy ý kiến quy hoạch chi tiết 1/500 A, B, C, D (10/02/2026)",
+          "url": "https://ngochoi.hanoi.gov.vn/tin-tuc-su-kien/lay-y-kien-cong-dong-dan-cu-doi-voi-do-an-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-phan-khu-a-b-c-d-2724260210151416024.htm"
         },
         {
-          "label": "[S3] Sở Nông nghiệp và Môi trường Hà Nội: Hồ sơ môi trường dự án thành phần phân khu B, trang 3–4 (2026)",
+          "label": "Quyết định 916/QĐ-SNNMT ngày 13/04/2026: kết quả thẩm định ĐTM phân khu B (PDF, trang 2–3)",
           "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf"
-        },
-        {
-          "label": "[S8] UBND xã Ngọc Hồi: Công khai, lấy ý kiến hồ sơ quy hoạch chi tiết 1/500 phân khu A (11/02/2026)",
-          "url": "https://ngochoi.hanoi.gov.vn/thong-bao/thong-bao-v-v-cong-khai-ho-so-quy-hoach-lay-y-kien-to-chuc-chuyen-gia-va-cong-dong-dan-cu-co-lien-quan-doi-voi-do-an-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-phan-khu-thanh-phan-a-27242602111508074.htm"
-        },
-        {
-          "label": "[S10] UBND xã Dân Hòa: Làm việc với Vingroup về quy hoạch chi tiết khu B, khu D (08/01/2026)",
-          "url": "https://danhoa.hanoi.gov.vn/chi-dao-cua-dia-phuong/xa-dan-hoa-lam-viec-voi-tap-doan-vingroup-ve-quy-hoach-chi-tiet-khu-do-thi-the-thao-olympic-va-cong-tac-giai-phong-mat-bang-276526010819563036.htm"
-        },
-        {
-          "label": "[S11] UBND xã Dân Hòa: Giới thiệu dự án và cơ sở triển khai 9.171 ha (05/02/2026)",
-          "url": "https://danhoa.hanoi.gov.vn/kinh-te-quoc-phong-an-ninh/du-an-xay-dung-khu-do-thi-the-thao-olympic-voi-viec-phat-trien-thu-do-tam-nhin-100-nam-va-nang-cao-doi-song-nhan-dan-2765260213181902199.htm"
         }
       ],
       "status": "needs-verification",
       "published": true,
-      "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
+      "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026.",
+      "topic": "quy-hoach",
+      "updated": "2026-10-27"
     },
     {
       "id": "olympic-guide-04",
@@ -405,43 +371,29 @@
     {
       "id": "olympic-guide-06",
       "slug": "tien-do-vinhomes-olympic-2026",
-      "title": "Tiến độ Vinhomes Olympic 2026: Những mốc nào đã được công bố?",
+      "title": "Đọc thông báo bồi thường và giải phóng mặt bằng Olympic",
       "date": "2026-10-21",
-      "excerpt": "Theo dõi tiến độ Vinhomes Olympic năm 2026 theo các nhóm thủ tục, giải phóng mặt bằng, giao thông và khu thể thao; cập nhật có nguồn, tránh nhầm hạng mục.",
-      "content": "Một hình ảnh công trường có thể thu hút hàng nghìn lượt xem, nhưng người mua cần nhiều hơn một bức ảnh. Tiến độ Vinhomes Olympic phải được nhìn theo từng lớp: hồ sơ quy hoạch, công tác đất đai, hạ tầng kết nối và tiến độ từng công trình. Chính cách tách lớp này giúp bạn đánh giá điều gì đã diễn ra, điều gì đang làm và điều gì mới ở mức dự kiến.\n\n## Giai đoạn nền tảng về thủ tục và quy hoạch\n\nCuối năm 2025, Hà Nội công bố quy hoạch phân khu tỷ lệ 1/2.000 đối với bốn khu A, B, C, D. Đầu năm 2026, nhiều địa phương công khai việc lấy ý kiến hồ sơ quy hoạch chi tiết và phối hợp giải phóng mặt bằng. Hồ sơ môi trường phân khu B công bố trên cổng cơ quan chuyên môn là một nguồn quan trọng để nhận biết chức năng dự kiến và phạm vi các hạng mục. Các mốc này là bước chuẩn bị pháp lý, chưa đồng nghĩa với một khu dân cư đã hoàn thành.\n\n## Hoạt động giải phóng mặt bằng tại địa phương\n\nTháng 4/2026, UBND xã Dân Hòa đăng thông tin về công tác đo đạc, bồi thường và triển khai giải phóng mặt bằng trên địa bàn. Tháng 5/2026, lãnh đạo thành phố kiểm tra và làm việc với đơn vị liên quan về tiến độ dự án. Đây là các dữ kiện phản ánh hoạt động quản lý và tổ chức triển khai; tình trạng bàn giao mặt bằng của một vị trí cụ thể cần được hỏi lại theo địa bàn và cập nhật mới nhất.\n\n## Hạ tầng và sân vận động là hai mảng riêng\n\nThông tin đăng trên cơ quan thuộc Hà Nội tháng 9/2026 ghi nhận đại lộ rộng 120 m, dài hơn 8 km đang dần định hình để kết nối khu liên hợp thể thao với các trục giao thông. Trong khi đó, Vingroup công bố kế hoạch phát triển khu Hùng Vương và sân VinFast – Trống Đồng, với mốc hoàn thành theo kế hoạch của doanh nghiệp. Đó không phải cam kết toàn bộ khu nhà ở và tiện ích đô thị sẽ cùng hoàn thành vào một ngày.\n\n## Cách cập nhật tiến độ đáng tin cậy\n\nVới mỗi thông tin mới, hãy ghi ngày, nguồn công bố, hạng mục, phạm vi và điều gì thực sự được xác nhận. Nếu xem ảnh chụp flycam, cần biết vị trí chụp, ngày chụp và quyền sử dụng ảnh. Nếu nghe mốc “80%”, hãy hỏi 80% của công việc nào. Đến lúc khách hàng mua một căn cụ thể, tiến độ hữu ích nhất là công trình liên quan trực tiếp đến đường vào, hạ tầng kỹ thuật, pháp lý và bàn giao căn đó.\n\n## Nhận thông tin và tư vấn\n\nNhận bản cập nhật tiến độ theo mốc có nguồn và được phân loại từng khu vực từ Mạnh Việt. Khách quan tâm thực sự sẽ có dữ liệu để theo dõi thay vì phải tự lọc tin mỗi ngày.",
+      "excerpt": "Cách xác định phạm vi và bước công việc trong thông báo địa phương; không nhầm giải phóng mặt bằng với thi công hoặc mở bán.",
+      "content": "Theo dõi công tác bồi thường và giải phóng mặt bằng cần bám đúng địa bàn, đợt thực hiện và đối tượng của từng văn bản. Bài này là hướng dẫn đọc thông báo; diễn biến tổng thể được tổ chức ở chuyên đề tiến độ, không biến một quyết định riêng thành kết luận cho cả đô thị.\n\n## Xác định văn bản đang nói về phần nào\nNguồn UBND xã Thanh Oai có Quyết định 1416/QĐ-UBND về phương án bồi thường, hỗ trợ, tái định cư liên quan dự án Olympic trên địa bàn thôn Văn Quán, đợt 5. Tên văn bản đã thể hiện phạm vi cụ thể. Cần kiểm tra trang và tài liệu kèm theo thay vì chỉ lưu phần tiêu đề có tên dự án.\n\n## Phân biệt các bước công việc\nThông báo, kiểm kê, phê duyệt phương án, chi trả và bàn giao mặt bằng là những công việc khác nhau. Một quyết định về phương án không tự chứng minh tất cả đối tượng đã nhận tiền hoặc toàn bộ khu vực đã được bàn giao. Ghi trạng thái được văn bản xác nhận, không thêm kết luận từ ảnh công trường ở nơi khác.\n\n## Đọc số liệu theo cùng phạm vi\nUBND xã Dân Hòa nêu quy mô tổng thể khoảng 9.171 ha, chia bốn phân khu; đó không phải diện tích hoàn thành giải phóng mặt bằng tại một thời điểm. Khi so hai thông báo, kiểm tra chúng cùng địa bàn, cùng đối tượng và cùng cách tính hay không. Không cộng các đợt có phạm vi chồng lấn nếu chưa đối chiếu phụ lục.\n\n## Liên hệ với nhu cầu theo dõi của người mua\nNếu quan tâm một lô hoặc phân khu, hãy xác định nó có nằm trong phạm vi được nhắc tới không và đường tiếp cận liên quan thế nào. Hồ sơ mặt bằng không thay cho điều kiện bán hàng, mốc bàn giao hay chất lượng xây dựng. Với nghĩa vụ và quyền lợi cụ thể trong thu hồi đất, cần đọc đầy đủ văn bản áp dụng và sử dụng tư vấn chuyên môn khi cần.",
       "image": "/assets/posts/06_tien-do-vinhomes-olympic-2026.webp",
-      "seoTitle": "Tiến độ Vinhomes Olympic 2026: cập nhật và cách kiểm tra",
-      "seoDescription": "Theo dõi tiến độ Vinhomes Olympic năm 2026 theo các nhóm thủ tục, giải phóng mặt bằng, giao thông và khu thể thao; cập nhật có nguồn, tránh nhầm hạng mục.",
-      "keyword": "tiến độ Vinhomes Olympic 2026",
+      "seoTitle": "Bồi thường, giải phóng mặt bằng Olympic: đọc thông báo",
+      "seoDescription": "Cách xác định phạm vi và bước công việc trong thông báo địa phương; không nhầm giải phóng mặt bằng với thi công hoặc mở bán.",
+      "keyword": "thông báo giải phóng mặt bằng Olympic",
       "sources": [
         {
-          "label": "[S1] Sở Quy hoạch – Kiến trúc Hà Nội: Công bố quy hoạch phân khu đô thị thể thao Olympic tỷ lệ 1/2.000 (31/12/2025)",
-          "url": "https://qhkt.hanoi.gov.vn/xem-chi-tiet-tim-kiem/-/asset_publisher/RnsUM9DiWKWJ/content/ha-noi-cong-bo-quy-hoach-phan-khu-o-thi-the-thao-olympic?_101_INSTANCE_RnsUM9DiWKWJ_viewMode=view"
+          "label": "UBND xã Thanh Oai: Quyết định 1416/QĐ-UBND, bồi thường tại thôn Văn Quán, đợt 5",
+          "url": "https://thanhoai.hanoi.gov.vn/chi-tiet-van-ban/quyet-dinh-ve-viec-phe-duyet-phuong-an-boi-thuong-ho-tro-tai-dinh-cu-khi-nha-nuoc-thu-hoi-dat-de-th-253884"
         },
         {
-          "label": "[S2] UBND xã Đại Thanh: Chủ tịch Hà Nội kiểm tra tiến độ dự án khu đô thị thể thao Olympic (15/05/2026)",
-          "url": "https://daithanh.hanoi.gov.vn/tin-tuc-su-kien/chu-tich-thanh-pho-ha-noi-vu-dai-thang-kiem-tra-tien-do-du-an-khu-do-thi-the-thao-olympic-276826051510364333.htm"
-        },
-        {
-          "label": "[S3] Sở Nông nghiệp và Môi trường Hà Nội: Hồ sơ môi trường dự án thành phần phân khu B, trang 3–4 (2026)",
-          "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf"
-        },
-        {
-          "label": "[S6] Quỹ Đầu tư phát triển TP Hà Nội: Đại lộ 120 m dần hình thành (22/09/2026)",
-          "url": "https://quydautuphattrien.hanoi.gov.vn/ban-tin/dai-lo-120m-dan-hinh-thanh-mo-truc-ket-noi-toi-san-van-dong-135-000-cho-o-ha-noi-10683.html"
-        },
-        {
-          "label": "[S7] UBND xã Dân Hòa: Quyết tâm đẩy nhanh công tác giải phóng mặt bằng (22/04/2026)",
+          "label": "UBND xã Dân Hòa: quy mô dự án và giải phóng mặt bằng (22/04/2026)",
           "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm"
-        },
-        {
-          "label": "[S4] Tập đoàn Vingroup: Công bố quy hoạch Khu liên hợp thể thao quốc tế Hùng Vương (14/08/2026)",
-          "url": "https://vingroup.net/tin-tuc-su-kien/bai-viet/8039/vingroup-cong-bo-quy-hoach-khu-lien-hop-the-thao-quoc-te-hung-vuong-kien-tao-trung-tam-the-thao-su-kien-quy-mo"
         }
       ],
       "status": "needs-verification",
       "published": true,
-      "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
+      "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026.",
+      "topic": "tien-do",
+      "updated": "2026-10-27"
     },
     {
       "id": "olympic-guide-07",
@@ -508,14 +460,14 @@
     {
       "id": "olympic-guide-09",
       "slug": "san-pham-vinhomes-olympic-lien-ke-biet-thu-chung-cu",
-      "title": "Vinhomes Olympic có những loại hình bất động sản nào? Chọn liền kề, biệt thự hay căn hộ",
+      "title": "Liền kề, biệt thự hay căn hộ: chọn theo cách sử dụng",
       "date": "2026-10-21",
       "excerpt": "Tìm hiểu các loại hình nhà ở nêu trong hồ sơ phân khu B: liền kề, biệt thự, chung cư; cách chọn phù hợp với nhu cầu ở, kinh doanh và đầu tư.",
       "content": "Nhiều khách tìm đến Vinhomes Olympic với một câu hỏi trực tiếp: “Có liền kề, biệt thự hay căn hộ không?” Hồ sơ môi trường phân khu B có đề cập các nhóm nhà ở liền kề, biệt thự và chung cư trong tổng thể chức năng đất ở. Đây là cơ sở để tìm hiểu định hướng sản phẩm, nhưng chưa đủ để khẳng định mã căn, diện tích, giá, số lượng hay quỹ hàng đang mở bán.\n\n## Liền kề: xem xét công năng và nhịp sống\n\nNhóm sản phẩm nhà ở liền kề thường được khách hàng cân nhắc khi cần không gian sống nhiều tầng hoặc vừa ở vừa sử dụng một phần cho hoạt động phù hợp pháp luật và quy định vận hành. Khi so sánh, nên quan sát mặt tiền, đường trước nhà, diện tích sử dụng thực, chỗ đỗ xe, mật độ dân cư và khoảng cách đến tiện ích thiết yếu. Đừng mặc định mọi căn liền kề đều có khả năng kinh doanh hoặc cho thuê tốt như nhau.\n\n## Biệt thự: ưu tiên riêng tư và khả năng sử dụng dài hạn\n\nVới nhóm biệt thự, các tiêu chí quan trọng là diện tích đất, khoảng lùi, không gian ngoài trời, môi trường xung quanh và chi phí duy trì. Giá trị của biệt thự không chỉ đến từ tên phân khu hay thiết kế mặt đứng mà còn ở chất lượng đường tiếp cận, cảnh quan, an ninh và hệ thống dịch vụ sau khi cư dân về ở. Người mua nên kiểm tra quy hoạch và hợp đồng để biết thông số được phép xây dựng, tiêu chuẩn bàn giao và các nghĩa vụ phát sinh.\n\n## Chung cư: đánh giá bài toán tiện ích – chi phí\n\nSản phẩm căn hộ thường phù hợp với khách chú trọng công năng, quản lý vận hành và mức vốn theo từng diện tích. Các câu hỏi cần có gồm phí dịch vụ dự kiến, chỗ để xe, thang máy, phòng cháy chữa cháy, diện tích thông thủy, hướng căn và kết nối tới nơi làm việc. Nếu mua để cho thuê, nên phân tích nhu cầu khách thuê thực thay vì mặc định dự án gần sân vận động sẽ luôn có tỷ lệ lấp đầy cao.\n\n## Không nên chọn loại hình chỉ vì kỳ vọng tăng giá\n\nMột căn nhà phù hợp phải nằm trong ngân sách, có hồ sơ rõ ràng và phục vụ mục tiêu mua. Danh mục trong tài liệu quy hoạch là điểm khởi đầu tốt để nghiên cứu, không phải lời mời bán hàng. Khi chủ đầu tư công bố một giai đoạn kinh doanh, cần so sánh căn cụ thể bằng bảng thống nhất các thông số về vị trí, diện tích, giá, phí và điều kiện hợp đồng.\n\n## Nhận thông tin và tư vấn\n\nBạn muốn nhận bảng so sánh liền kề – biệt thự – chung cư theo ngân sách và mục tiêu sử dụng? Liên hệ Mạnh Việt để được tư vấn khi có thông tin sản phẩm đủ kiểm chứng.",
       "image": "/assets/posts/09_san-pham-vinhomes-olympic-lien-ke-biet-thu-chung-cu.webp",
-      "seoTitle": "Sản phẩm Vinhomes Olympic: liền kề, biệt thự và căn hộ",
+      "seoTitle": "Liền kề, biệt thự hay căn hộ: so nhu cầu sử dụng",
       "seoDescription": "Tìm hiểu các loại hình nhà ở nêu trong hồ sơ phân khu B: liền kề, biệt thự, chung cư; cách chọn phù hợp với nhu cầu ở, kinh doanh và đầu tư.",
-      "keyword": "sản phẩm Vinhomes Olympic",
+      "keyword": "so sánh loại hình nhà ở",
       "sources": [
         {
           "label": "[S3] Sở Nông nghiệp và Môi trường Hà Nội: Hồ sơ môi trường dự án thành phần phân khu B, trang 3–4 (2026)",
@@ -528,19 +480,21 @@
       ],
       "status": "needs-verification",
       "published": true,
-      "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
+      "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026.",
+      "topic": "san-pham",
+      "updated": "2026-10-27"
     },
     {
       "id": "olympic-guide-10",
       "slug": "gia-vinhomes-olympic-quy-can",
-      "title": "Giá Vinhomes Olympic và quỹ căn: Xem gì trước khi nhận bảng hàng?",
+      "title": "Cách kiểm tra bảng giá và quỹ căn trước khi hỏi mua Olympic",
       "date": "2026-10-21",
       "excerpt": "Giá Vinhomes Olympic và quỹ căn cập nhật thế nào? Hướng dẫn phân biệt giá đồn đoán và bảng giá có nguồn, kiểm tra chiết khấu, tiến độ thanh toán.",
       "content": "Giá Vinhomes Olympic là từ khóa có thể thu hút lượng tìm kiếm lớn, nhưng cũng là nơi thông tin dễ nhiễu nhất. Một mức giá truyền miệng, hình chụp bảng tính không có ngày hoặc lời chào “hàng nội bộ” không đủ để xác định giá giao dịch. Ở thời điểm biên soạn 21/10/2026, những nguồn chính thức đã rà soát chưa cung cấp bảng giá và quỹ căn toàn dự án có thể xác nhận để trích đăng. Vì vậy, thay vì điền số chưa rõ, người mua nên nắm phương pháp đọc và đối chiếu bảng giá.\n\n## Giá bán không chỉ là một con số\n\nHai căn có cùng diện tích có thể khác nhau vì vị trí, mặt đường, hướng, chiều sâu, tiêu chuẩn hoàn thiện, điều kiện thanh toán và thời điểm áp dụng. Khi được báo giá, hãy yêu cầu ghi đầy đủ mã căn, vị trí trên mặt bằng, diện tích đất, diện tích sàn nếu có, giá trước ưu đãi và số tiền sau từng điều kiện chiết khấu. Chỉ so sánh các phương án khi biết rõ cơ sở tính toán.\n\n## Quỹ căn cần cập nhật theo thời gian thực\n\nMột bảng hàng đáng tin phải thể hiện đơn vị phát hành, ngày cập nhật, tình trạng có thể giao dịch và quy định giữ căn. Quỹ căn là dữ liệu biến động, nên bản chụp cũ không chứng minh một sản phẩm còn bán. Với phân khu quy mô lớn, thông tin quỹ căn phải gắn đúng dự án thành phần và giai đoạn; tránh dùng một danh sách chung để giới thiệu cho tất cả người mua.\n\n## Kiểm tra chiết khấu và phương án vay bằng dòng tiền thật\n\nƯu đãi chỉ có ý nghĩa khi người mua hiểu điều kiện áp dụng: thời hạn, hình thức thanh toán, tư cách khách hàng, loại sản phẩm và các khoản không được cộng gộp. Nếu sử dụng vốn vay, hãy tính kịch bản khi giai đoạn hỗ trợ lãi suất kết thúc, nghĩa vụ trả nợ mỗi tháng và khả năng duy trì nắm giữ. Khoản giảm giá công bố không tự động là lợi nhuận đầu tư.\n\n## Cách nhận bảng giá an toàn và hiệu quả\n\nBạn nên gửi nhu cầu về ngân sách, mục tiêu, diện tích, vị trí và nguồn vốn để chuyên viên tư vấn lọc đúng nhóm căn khi có thông tin chính thức. Đồng thời yêu cầu lưu vết bằng file có ngày và các điều khoản. Nếu không có bảng giá hợp lệ, việc thông báo “chưa có dữ liệu xác minh” là cách phục vụ khách hàng nghiêm túc hơn một con số hấp dẫn nhưng không kiểm chứng được.\n\n## Nhận thông tin và tư vấn\n\nCần nhận thông tin giá/quỹ căn Vinhomes Olympic khi được phát hành và kiểm chứng? Đăng ký với Mạnh Việt để được đối chiếu từng phương án, không sử dụng bảng giá tin đồn.",
       "image": "/assets/posts/10_gia-vinhomes-olympic-quy-can.webp",
-      "seoTitle": "Giá Vinhomes Olympic và quỹ căn: những điểm cần kiểm tra",
+      "seoTitle": "Kiểm tra bảng giá và quỹ căn Olympic trước khi hỏi mua",
       "seoDescription": "Giá Vinhomes Olympic và quỹ căn cập nhật thế nào? Hướng dẫn phân biệt giá đồn đoán và bảng giá có nguồn, kiểm tra chiết khấu, tiến độ thanh toán.",
-      "keyword": "giá Vinhomes Olympic",
+      "keyword": "cách kiểm tra bảng giá Olympic",
       "sources": [
         {
           "label": "[S3] Sở Nông nghiệp và Môi trường Hà Nội: Hồ sơ môi trường dự án thành phần phân khu B, trang 3–4 (2026)",
@@ -553,7 +507,9 @@
       ],
       "status": "needs-verification",
       "published": true,
-      "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026."
+      "articleNote": "Ảnh minh họa ; không phải phối cảnh chính thức. Nội dung tổng hợp từ các nguồn đối chiếu ngày 21/10/2026.",
+      "topic": "gia-ban",
+      "updated": "2026-10-27"
     },
     {
       "id": "olympic-cam-nang-khao-sat-duong-di-vinhomes-olympic",
@@ -2356,6 +2312,8 @@
   "formSubmitText": "GỬI YÊU CẦU TƯ VẤN",
   "formConsentText": "Tôi đồng ý để Mạnh Việt liên hệ theo thông tin đã cung cấp.",
   "formQuestions": [],
-  "seoDescription": "Thông tin tham khảo Vinhomes Olympic và đô thị thể thao phía Nam Hà Nội. Liên hệ tư vấn Mạnh Việt 0986 091 222.",
-  "independentDisclaimer": "Trang thông tin và tư vấn độc lập do Mạnh Việt vận hành, không phải website chính thức của Vingroup/Vinhomes. Hình concept chỉ mang tính minh họa."
+  "seoDescription": "Tìm hiểu Vinhomes Olympic Thường Tín: vị trí, quy hoạch, pháp lý và tiến độ. Dữ kiện đối chiếu tài liệu gốc, tư vấn độc lập từ Mạnh Việt.",
+  "independentDisclaimer": "Trang thông tin và tư vấn độc lập do Mạnh Việt vận hành, không phải website chính thức của Vingroup/Vinhomes. Hình concept chỉ mang tính minh họa.",
+  "seoTitle": "Vinhomes Olympic Thường Tín: Quy hoạch, vị trí và pháp lý",
+  "heroHeadingDetail": "Đô thị thể thao phía Nam Hà Nội"
 }

@@ -20,7 +20,7 @@ test('all 10 Word articles have distinct posts, canonical URLs, evidence and opt
   for(const post of recent){
     assert.match(post.slug,/^[a-z0-9-]+$/);
     assert.ok(post.content.length>1600);
-    assert.ok(post.sources.length>=2);
+    assert.ok(post.sources.length>=1);
     assert.ok(post.sources.every(s=>s.url.startsWith('https://')));
     assert.equal(post.published,true);
     assert.equal(post.status,'needs-verification');

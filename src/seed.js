@@ -197,3 +197,44 @@ export const INITIAL_CONTENT = {
   seoDescription: 'Thông tin tham khảo Vinhomes Olympic và đô thị thể thao phía Nam Hà Nội. Liên hệ tư vấn Mạnh Việt 0986 091 222.',
   independentDisclaimer: 'Trang thông tin và tư vấn độc lập do Mạnh Việt vận hành, không phải website chính thức của Vingroup/Vinhomes. Hình concept chỉ mang tính minh họa.'
 };
+
+// SEO editorial revision: retain CMS-editable fields with separate search metadata.
+Object.assign(INITIAL_CONTENT,{
+  seoTitle:'Vinhomes Olympic Thường Tín: Quy hoạch, vị trí và pháp lý',
+  seoDescription:'Tìm hiểu Vinhomes Olympic Thường Tín: vị trí, quy hoạch, pháp lý và tiến độ. Dữ kiện đối chiếu tài liệu gốc, tư vấn độc lập từ Mạnh Việt.',
+  heroTitle:'Vinhomes',heroAccent:'Olympic Thường Tín',heroHeadingDetail:'Đô thị thể thao phía Nam Hà Nội',
+  heroSubtitle:'Quy hoạch, vị trí, pháp lý và thông tin cho người mua',
+  overviewTitle:'Tổng quan Vinhomes Olympic Thường Tín',
+  overviewText:'Khu đô thị thể thao Olympic được định hướng tại phía Nam Hà Nội. UBND xã Dân Hòa công bố quy mô tổng thể khoảng 9.171 ha, chia bốn phân khu. Riêng hồ sơ môi trường phân khu B nêu 2.944,39 ha; không đồng nhất diện tích dự án thành phần với toàn đô thị. Website tổng hợp dữ kiện để người mua đọc đúng phạm vi, kiểm tra vị trí và hồ sơ trước khi lựa chọn.',
+  locationTitle:'Vị trí và kết nối khu vực Olympic',
+  locationText:'Quyết định môi trường phân khu B ghi địa điểm tại Thường Tín, Thượng Phúc, Tam Hưng và Dân Hòa. Vị trí cụ thể cần được đối chiếu theo mã ô đất, lối tiếp cận và bản vẽ. Đọc chuyên đề vị trí để phân biệt địa bàn trong hồ sơ với hành trình thực tế tới từng khu vực.'
+});
+const productPage=INITIAL_CONTENT.pages.find(p=>p.slug==='san-pham');
+Object.assign(productPage,{
+ title:'Loại hình nhà ở và tiêu chí lựa chọn tại Olympic',
+ seoTitle:'Sản phẩm Vinhomes Olympic: loại hình và tiêu chí lựa chọn',
+ summary:'So sánh nhu cầu với công năng nhà ở; phân biệt loại hình được quan tâm và danh mục sản phẩm có tài liệu giao dịch xác thực.',
+ updated:'2026-10-27',
+ body:`## Loại hình không thay thế thông tin mở bán
+Biệt thự, liền kề, shophouse và căn hộ là các nhóm người mua thường so sánh khi tìm hiểu một đại đô thị. Trang này tập hợp tiêu chí lựa chọn, không công bố giỏ hàng, diện tích căn hoặc giá bán khi chưa có hồ sơ của đúng sản phẩm. Tên loại hình và hình minh họa không xác nhận điều kiện giao dịch.
+
+## Biệt thự
+Đọc diện tích đất cùng phần được xây, khoảng lùi, sân vườn và cách tổ chức phòng. Gia đình nhiều thế hệ cần kiểm tra đường di chuyển, phòng ngủ thuận tiện và khả năng tiếp cận khu vệ sinh; tổng diện tích sàn lớn không tự bảo đảm phù hợp. Tính thêm chăm sóc cảnh quan, bảo trì mái, chiếu sáng và an ninh trong ngân sách sở hữu. Nếu thông tin sản phẩm được cung cấp, đối chiếu mã lô, quyền sử dụng và tiêu chuẩn bàn giao trong hồ sơ trước khi trả tiền.
+
+## Liền kề
+Mặt tiền, chiều sâu và vị trí thang ảnh hưởng trực tiếp diện tích dùng được. Xem ánh sáng giữa nhà, giếng trời, khu giặt phơi và lối thoát theo thiết kế; đừng chỉ so diện tích đất. Đặt thử nội thất vào mặt bằng và tính chi phí hoàn thiện tới thời điểm có thể ở. Những thay đổi liên quan khu ướt, kết cấu hoặc mặt ngoài cần được kiểm tra về kỹ thuật và quy định, không suy từ một căn đã cải tạo ở nơi khác.
+
+## Shophouse
+Đánh giá dòng khách theo ngày thường, giờ hoạt động và khả năng tiếp cận cửa hàng. Kiểm tra điều kiện dừng xe, giao nhận, ngành hàng phù hợp và phần diện tích khai thác thực tế. Lập kịch bản chưa có khách thuê, chi phí hoàn thiện và vận hành trước khi tính lợi nhuận ròng. Một vị trí gần công trình thể thao chưa bảo đảm lưu lượng mua sắm ổn định, còn giá thuê chào không thay thế hợp đồng đã ký.
+
+## Căn hộ và nhu cầu sử dụng một mặt sàn
+So mặt bằng với lịch sinh hoạt, số người và khả năng kê nội thất. Kiểm tra tuyến từ chỗ đỗ xe tới cửa, thang máy, không gian chung và phí vận hành. Tách định nghĩa diện tích trong hợp đồng khỏi số đo quảng bá. Hình thức kiến trúc không tự xác định thời hạn hoặc quyền sở hữu; cần đọc giấy tờ của tài sản cụ thể.
+
+## Danh mục câu hỏi trước khi nhận bảng hàng
+Yêu cầu mã căn hoặc ô đất, vị trí trên bản vẽ, diện tích theo định nghĩa, tổng tiền và phần đã bao gồm. Kiểm tra chủ thể bán, thẩm quyền nhận tiền, tiến độ thanh toán và tài liệu đủ điều kiện giao dịch tương ứng. Nếu chưa có thông tin, ghi câu hỏi còn thiếu thay vì tự điền từ một sản phẩm khác. Liên hệ tư vấn để lập tiêu chí phù hợp ngân sách và mục tiêu của gia đình.`
+});
+INITIAL_CONTENT.products=INITIAL_CONTENT.products.filter(p=>p.type!=='Khác');
+for(const p of INITIAL_CONTENT.products){
+ p.short={Biệt_thự:'Kiểm tra sân vườn, riêng tư, công năng và chi phí bảo trì.',Liền_kề:'Đọc mặt tiền, chiều sâu, ánh sáng và chi phí hoàn thiện.',Shophouse:'Đánh giá dòng khách, khả năng khai thác và dòng tiền sau chi phí.'}[p.title.replaceAll(' ','_')]||p.short;
+}
+INITIAL_CONTENT.gallery=INITIAL_CONTENT.gallery.map(g=>({...g,title:{g1:'Toàn cảnh đô thị và sân vận động (minh họa)',g2:'Mặt nước và các khối căn hộ (minh họa)',g3:'Không gian đô thị và đường giao thông (minh họa)',g4:'Sân vận động và quảng trường (minh họa)'}[g.id]||g.title}));

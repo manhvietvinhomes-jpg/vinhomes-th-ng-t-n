@@ -1,4 +1,5 @@
 import { INITIAL_CONTENT } from './seed.js';
+import { PRODUCT_REDIRECTS } from './editorial.js';
 import { DOMAIN, slugify, renderSeo, sitemap, robots, injectHome } from './seo.js';
 
 const enc = new TextEncoder();
@@ -26,7 +27,7 @@ function cleanUrl(value) {
 function normalize(source) {
   const obj = source && typeof source === 'object' && !Array.isArray(source) ? source : {};
   const out = structuredClone(INITIAL_CONTENT);
-  const fields = ['siteName','brand','badge','heroTitle','heroAccent','heroSubtitle','heroNote','overviewTitle','overviewText','locationTitle','locationText','advisorName','advisorTitle','advisorBio','phone','contactTitle','contactText','formNameLabel','formPhoneLabel','formNoteLabel','formSubmitText','formConsentText','seoDescription','independentDisclaimer'];
+  const fields = ['siteName','brand','badge','heroTitle','heroAccent','heroSubtitle','heroNote','overviewTitle','overviewText','locationTitle','locationText','advisorName','advisorTitle','advisorBio','phone','contactTitle','contactText','formNameLabel','formPhoneLabel','formNoteLabel','formSubmitText','formConsentText','seoDescription','seoTitle','heroHeadingDetail','independentDisclaimer'];
   for (const field of fields) if (Object.hasOwn(obj,field)) out[field] = str(obj[field], field.endsWith('Text') || field.endsWith('Disclaimer') ? 4000 : 380);
   for (const field of ['heroImage','advisorPhoto','zalo','facebook']) if (Object.hasOwn(obj,field)) out[field] = cleanUrl(obj[field]);
   if (Array.isArray(obj.formQuestions)) out.formQuestions = obj.formQuestions.slice(0,5).map(x=>({id:str(x?.id,70)||crypto.randomUUID(),label:str(x?.label,150),placeholder:str(x?.placeholder,160),required:!!x?.required}));
@@ -56,7 +57,7 @@ function normalize(source) {
   if (Array.isArray(obj.gallery)) out.gallery = obj.gallery.slice(0,100).map(x=>({id:str(x?.id,70)||crypto.randomUUID(),title:str(x?.title,160),image:cleanUrl(x?.image)}));
   if (Array.isArray(obj.posts)) out.posts = obj.posts.slice(0,500).map(x=>({
     id:str(x?.id,70)||crypto.randomUUID(),title:str(x?.title,200),date:str(x?.date,30),
-    excerpt:str(x?.excerpt,700),content:str(x?.content,8500),image:cleanUrl(x?.image),slug:slugify(x?.slug||x?.title),published:x?.published!==false,
+    updated:str(x?.updated,30),excerpt:str(x?.excerpt,700),content:str(x?.content,8500),image:cleanUrl(x?.image),slug:slugify(x?.slug||x?.title),published:x?.published!==false,
     seoTitle:str(x?.seoTitle,200),seoDescription:str(x?.seoDescription,300),keyword:str(x?.keyword,130),
     status:['confirmed','needs-verification','pending'].includes(x?.status)?x.status:'needs-verification',
     articleNote:str(x?.articleNote,380),topic:str(x?.topic,60),category:str(x?.category,100),
@@ -241,6 +242,8 @@ export default {
   async fetch(request,env) {
     const url=new URL(request.url);
     if(url.hostname==='www.vinhomesthuongtin.vn'||(url.hostname==='vinhomesthuongtin.vn'&&url.protocol==='http:'))return Response.redirect(DOMAIN+url.pathname+url.search,301);
+    const productRedirect=PRODUCT_REDIRECTS[url.pathname.replace(/\/$/,'')+'/'];
+    if(productRedirect&&(request.method==='GET'||request.method==='HEAD')){const target=new URL(DOMAIN+productRedirect);target.search=url.search;return Response.redirect(target.href,301);}
     if(url.pathname.startsWith('/api/'))return apiWithCookies(request,env);
     if(url.pathname==='/admin'||url.pathname==='/admin/'){
       const response=await env.ASSETS.fetch(request);
@@ -260,6 +263,7 @@ export default {
         const html=injectHome(await asset.text(),content);
         return new Response(request.method==='HEAD'?null:html,{headers:{...headers,'content-type':'text/html; charset=utf-8'}});
       }
+      if(/^\/san-pham\/[a-z0-9-]+\/$/.test(url.pathname))headers['x-robots-tag']='noindex, follow';
       const html=renderSeo(url.pathname,content);
       return html?new Response(request.method==='HEAD'?null:html,{headers:{...headers,'content-type':'text/html; charset=utf-8'}}):new Response('Không tìm thấy trang',{status:404,headers:{'content-type':'text/plain; charset=utf-8','x-robots-tag':'noindex'}});
     }

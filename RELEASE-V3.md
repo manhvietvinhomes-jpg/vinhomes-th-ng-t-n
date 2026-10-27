@@ -41,3 +41,5 @@ Rollback Worker không tự hoàn tác nội dung KV. Khi cần khôi phục n�
 ## Google Search Console
 
 Sitemap là `https://vinhomesthuongtin.vn/sitemap.xml`. Chỉ gửi bằng tài khoản đã xác minh quyền sở hữu hoặc được cấp quyền phù hợp. Không dùng API Indexing để gửi hàng loạt URL bất động sản thông thường; không tuyên bố đã index dựa vào việc sitemap trả HTTP 200.
+
+Lần tối ưu SEO 27/10/2026 giảm sitemap còn 96 URL chuẩn bằng cách gộp bốn trang loại hình mỏng. Di chuyển nội dung có kiểm tra xung đột dùng `node scripts/cloudflare-command.js seo-migrate` (dry-run), thêm `--apply` để áp dụng bản vá theo trường. Bản vá giữ bài và dữ liệu khách hàng; khi phát hiện trường đã được chỉnh khác baseline, lệnh dừng trước khi ghi. Không chạy lại một migration khác mà chưa xem nội dung và bản sao lưu.

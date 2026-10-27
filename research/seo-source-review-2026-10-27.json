@@ -1,0 +1,52 @@
+{
+  "checkedAt": "2026-10-27",
+  "documents": [
+    {
+      "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
+      "status": 200,
+      "supports": [
+        "Quy mô tổng thể khoảng 9.171 ha",
+        "Bốn phân khu"
+      ],
+      "scope": "Dự án tổng thể theo bài của UBND Dân Hòa ngày 22/04/2026"
+    },
+    {
+      "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+      "status": 200,
+      "document": "916/QĐ-SNNMT, 13/04/2026",
+      "sha256": "798f79164868a0abcf1c77bf6fe1f814436fb40ae3e73f263edf5b563316d431",
+      "pagesRead": [
+        1,
+        2,
+        3
+      ],
+      "supports": [
+        "Đối tượng: dự án thành phần phân khu B",
+        "Diện tích 2.944,39 ha",
+        "Địa điểm: Thường Tín, Thượng Phúc, Tam Hưng, Dân Hòa",
+        "Vinhomes đại diện liên danh; phần thông tin chung ghi chủ đầu tư Vinhomes"
+      ],
+      "doesNotProve": [
+        "Điều kiện mở bán từng tài sản",
+        "Giá bán hoặc lịch giao dịch",
+        "Phê duyệt mọi hồ sơ của mọi phân khu"
+      ]
+    },
+    {
+      "url": "https://ngochoi.hanoi.gov.vn/tin-tuc-su-kien/lay-y-kien-cong-dong-dan-cu-doi-voi-do-an-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-phan-khu-a-b-c-d-2724260210151416024.htm",
+      "status": 200,
+      "supports": [
+        "Thông báo lấy ý kiến quy hoạch 1/500 A, B, C, D"
+      ],
+      "scope": "Bước tham vấn, không đồng nhất với quyết định phê duyệt"
+    }
+  ],
+  "excludedClaim": {
+    "value": "Phạm vi nghiên cứu 16.093 ha",
+    "reason": "Nguồn QHKT cũ trả 404; chưa xác minh lại văn bản gốc, không đưa vào thông tin nhanh trang chủ."
+  },
+  "oldReferenceStatus": {
+    "url": "https://qhkt.hanoi.gov.vn/xem-chi-tiet-tim-kiem/-/asset_publisher/RnsUM9DiWKWJ/content/ha-noi-cong-bo-quy-hoach-phan-khu-o-thi-the-thao-olympic?_101_INSTANCE_RnsUM9DiWKWJ_viewMode=view",
+    "status": 404
+  }
+}
