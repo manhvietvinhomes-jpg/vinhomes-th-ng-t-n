@@ -1,3 +1,4 @@
+import {ADMIN_PATH} from '../src/admin-config.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -5,10 +6,10 @@ import worker,{normalize} from '../src/worker.js';
 import {INITIAL_CONTENT} from '../src/seed.js';
 import {visibleUrls,renderSeo,injectHome} from '../src/seo.js';
 const origin='https://vinhomesthuongtin.vn';
-test('96 indexable URLs survive CMS normalization and repeated saves',()=>{
+test('20 consolidated indexable URLs survive CMS normalization and repeated saves',()=>{
  const original=normalize(INITIAL_CONTENT),again=normalize(original);
- assert.equal(visibleUrls(original).length,96);
- assert.equal(original.posts.filter(p=>p.published).length,84);
+ assert.equal(visibleUrls(original).length,20);
+ assert.equal(original.posts.filter(p=>p.published).length,4);
  assert.deepEqual(again,original);
  for(const post of original.posts.filter(p=>p.id.startsWith('olympic-cam-nang-'))){
   assert.ok(post.content.length>800,post.slug);
@@ -21,11 +22,11 @@ test('existing KV edits and hidden articles are preserved without automatic rese
  const env={OLYMPIC_KV:{get:async()=>old}};
  const response=await worker.fetch(new Request(origin+'/api/site'),env);
  const {content}=await response.json();assert.equal(content.heroTitle,'NỘI DUNG RIÊNG');
- assert.equal(content.posts.length,1);assert.equal(content.posts[0].published,false);
+ assert.equal(content.posts.length,0);
  assert.ok(!visibleUrls(content).includes('/tin-tuc/bai-tu-bien-tap/'));
 });
 test('admin is served before public single-segment routing and is never indexed',async()=>{
- const response=await worker.fetch(new Request(origin+'/admin/'),{ASSETS:{fetch:async()=>new Response('<form id="loginForm"></form>')}});
+ const response=await worker.fetch(new Request(origin+ADMIN_PATH),{ASSETS:{fetch:async()=>new Response('<form id="loginForm"></form>')}});
  assert.equal(response.status,200);assert.match(await response.text(),/loginForm/);
  assert.equal(response.headers.get('cache-control'),'no-store');assert.match(response.headers.get('x-robots-tag'),/noindex/);
 });
@@ -41,9 +42,9 @@ test('SSR honors edited home metadata and escapes hostile HTML in CMS content',a
  const html=injectHome(home,{...INITIAL_CONTENT,siteName:'Tên riêng',brand:'Thương hiệu',seoTitle:'Tiêu đề tìm kiếm riêng',seoDescription:'Mô tả riêng'});
  assert.match(html,/<title>Tiêu đề tìm kiếm riêng<\/title>/);
  assert.match(html,/<meta name="description" content="Mô tả riêng">/);
- const site=normalize(INITIAL_CONTENT);site.posts[0].title='<script>alert(1)</script>';
- site.posts[0].image='https://images.example.com/photo.webp';
- const article=renderSeo('/tin-tuc/'+site.posts[0].slug+'/',site);
+ const site=normalize(INITIAL_CONTENT);const current=site.posts.find(p=>p.published);current.title='<script>alert(1)</script>';
+ current.image='https://images.example.com/photo.webp';
+ const article=renderSeo('/tin-tuc/'+current.slug+'/',site);
  assert.ok(!article.includes('<script>alert(1)</script>'));
  assert.ok(article.includes('content="https://images.example.com/photo.webp"'));
 });

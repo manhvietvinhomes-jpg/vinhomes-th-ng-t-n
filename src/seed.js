@@ -1,3 +1,4 @@
+import {RETIRED_IDS, NEWS_POSTS, UTILITY_SLUGS} from './journalism-release.js';
 import { PAGE_CONTENT } from './page-content.js';
 import { TEN_POSTS } from './articles.js';
 import { GUIDE_POSTS } from './guides.js';
@@ -184,8 +185,8 @@ export const INITIAL_CONTENT = {
   advisorTitle: 'Tư vấn bất động sản',
   advisorBio: 'Đồng hành cùng anh/chị trên hành trình an cư và đầu tư giá trị.',
   advisorPhoto: '',
-  phone: '0986091222',
-  zalo: 'https://zalo.me/0986091222',
+  phone: '0989294744',
+  zalo: 'https://zalo.me/0989294744',
   facebook: '',
   contactTitle: 'Nhận thông tin dự án',
   contactText: 'Để lại thông tin, Mạnh Việt sẽ liên hệ tư vấn và hỗ trợ giải đáp các câu hỏi về dự án.',
@@ -195,7 +196,7 @@ export const INITIAL_CONTENT = {
   formSubmitText: 'GỬI YÊU CẦU TƯ VẤN',
   formConsentText: 'Tôi đồng ý để Mạnh Việt liên hệ theo thông tin đã cung cấp.',
   formQuestions: [],
-  seoDescription: 'Thông tin tham khảo Vinhomes Olympic và đô thị thể thao phía Nam Hà Nội. Liên hệ tư vấn Mạnh Việt 0986 091 222.',
+  seoDescription: 'Thông tin tham khảo Vinhomes Olympic và đô thị thể thao phía Nam Hà Nội. Liên hệ tư vấn Mạnh Việt 0989.294.744.',
   independentDisclaimer: 'Trang thông tin và tư vấn độc lập do Mạnh Việt vận hành, không phải website chính thức của Vingroup/Vinhomes. Hình concept chỉ mang tính minh họa.'
 };
 
@@ -243,10 +244,25 @@ INITIAL_CONTENT.gallery=INITIAL_CONTENT.gallery.map(g=>({...g,title:{g1:'Toàn c
 // Apply the reviewed editorial profiles to seed data; live KV is migrated separately.
 for(const [collection,prefix] of [['pages','/'],['posts','/tin-tuc/']])for(const item of INITIAL_CONTENT[collection]){
  const profile=PAGE_CONTENT[prefix+item.slug+'/'];if(!profile)continue;
- Object.assign(item,{title:profile.heading,seoTitle:profile.seoTitle,seoDescription:profile.seoDescription,intro:profile.intro,searchIntent:profile.intent,image:profile.image,imageAlt:profile.imageAlt,imageCaption:profile.imageCaption,faqs:profile.faqs,relatedLinks:profile.links,updated:'2026-10-27'});
+ Object.assign(item,{title:profile.heading,seoTitle:profile.seoTitle,seoDescription:profile.seoDescription,intro:profile.intro,searchIntent:profile.intent,image:profile.image,imageAlt:profile.imageAlt,imageCaption:profile.imageCaption,faqs:profile.faqs,relatedLinks:profile.links,updated:profile.updated||'2026-10-27'});
  if(collection==='pages'){item.summary=profile.intro;item.body=profile.body}else{item.excerpt=profile.intro;item.content=profile.body}
 }
 INITIAL_CONTENT.homeIntro=PAGE_CONTENT['/'].intro;
 
 INITIAL_CONTENT.badge='THÔNG TIN DỰ ÁN VÀ HƯỚNG DẪN CHO NGƯỜI MUA';
 INITIAL_CONTENT.independentDisclaimer='Trang thông tin và tư vấn độc lập do Mạnh Việt vận hành, không phải website chính thức của Vingroup/Vinhomes. Hình minh họa không phải tài liệu chính thức.';
+
+// Journalistic consolidation: preserve originals as drafts; current URLs are rendered from reviewed profiles.
+for(const post of INITIAL_CONTENT.posts)if(RETIRED_IDS.includes(post.id))post.published=false;
+for(const post of NEWS_POSTS)if(!INITIAL_CONTENT.posts.some(p=>p.id===post.id))INITIAL_CONTENT.posts.push(structuredClone(post));
+for(const slug of UTILITY_SLUGS){const p=PAGE_CONTENT['/'+slug+'/'];INITIAL_CONTENT.pages.push({slug,title:p.heading,summary:p.intro,body:p.body,intro:p.intro,searchIntent:p.intent,keyword:p.intent,seoTitle:p.seoTitle,seoDescription:p.seoDescription,image:p.image,imageAlt:p.imageAlt,imageCaption:p.imageCaption,faqs:p.faqs,relatedLinks:p.links,updated:'2026-10-30',published:true,status:'pending',sourceLabel:'Chính sách vận hành website',sourceUrl:''});}
+INITIAL_CONTENT.independentDisclaimer='Trang thông tin độc lập của Mạnh Việt; ảnh minh họa, đối chiếu thông báo chính thức và hồ sơ của đúng sản phẩm trước khi giao dịch.';
+INITIAL_CONTENT.advisorTitle='Biên tập thông tin và tiếp nhận tư vấn';
+INITIAL_CONTENT.advisorBio='Tổ chức chuyên đề, đối chiếu tài liệu công khai và tiếp nhận góp ý dữ kiện qua 0989.294.744.';
+INITIAL_CONTENT.amenities=[
+ {icon:'✧',title:'Liên hợp thể thao',description:'Hồ sơ phân khu B ngày 13/04/2026 ghi 411,29 ha dành cho phần liên hợp thể thao.'},
+ {icon:'♧',title:'Cây xanh và mặt nước',description:'Công viên cây xanh và cảnh quan mặt nước được liệt kê trong các hạng mục phân khu B.'},
+ {icon:'⌖',title:'Hạ tầng đô thị',description:'Hồ sơ B nêu đường giao thông, cấp nước, thoát nước, xử lý nước thải và cấp điện.'}
+];
+const apartment=INITIAL_CONTENT.products.find(p=>p.id==='p-shop');if(apartment)Object.assign(apartment,{title:'Chung cư',type:'Chung cư',slug:'chung-cu',short:'Đọc mặt bằng tầng, thang máy, phần chung và chi phí vận hành.',detail:'Nhà ở chung cư được liệt kê trong hồ sơ ĐTM phân khu B ngày 13/04/2026; thông số từng sản phẩm đọc theo tài liệu riêng.'});
+for(const p of INITIAL_CONTENT.products)p.image='/assets/guides/san-pham.webp';

@@ -1,7 +1,7 @@
 // Verified against original public documents on 2026-10-27.
 export const HOME_SEO_TITLE='Vinhomes Olympic Thường Tín: Quy hoạch, vị trí và pháp lý';
 export const HOME_DESCRIPTION='Tìm hiểu Vinhomes Olympic Thường Tín: vị trí, quy hoạch, pháp lý và tiến độ. Dữ kiện đối chiếu tài liệu gốc, tư vấn độc lập từ Mạnh Việt.';
-export const VERIFIED_DATE='2026-10-27';
+export const VERIFIED_DATE='2026-10-30';
 export const VERIFIED_SOURCES=[
  {id:'dan-hoa',label:'UBND xã Dân Hòa: quy mô dự án và giải phóng mặt bằng (22/04/2026)',url:'https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm'},
  {id:'dtm-b',label:'Quyết định 916/QĐ-SNNMT ngày 13/04/2026: kết quả thẩm định ĐTM phân khu B (PDF, trang 2–3)',url:'https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf'},

@@ -1,97 +1,85 @@
+import {contentWordCount} from '../src/text.js';
 import fs from 'node:fs';
-import path from 'node:path';
-import {INITIAL_CONTENT} from '../src/seed.js';
+const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+const old=read('content/pre-journalism-seed.json'),data=read('content/editorial-archive-2026-10-27.json'),fresh=read('content/journalism/pages.json'),sources=read('content/journalism/sources.json');
+const slug=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/gi,'d').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80);
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
-const slug=s=>String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[đĐ]/g,'d').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80);
-const data={},allItems=new Map();
-for(const p of INITIAL_CONTENT.pages)allItems.set('/'+p.slug+'/',p);
-for(const p of INITIAL_CONTENT.posts.filter(p=>p.published!==false))allItems.set('/tin-tuc/'+p.slug+'/',p);
-const bodyOverrides=JSON.parse(fs.readFileSync('content/section-bodies.json','utf8'));
-const rows=[];
-for(const line of fs.readFileSync('content/handbook-notes.tsv','utf8').trim().split('\n')){
- const [s,intro,...qa]=line.split('|');rows.push({route:'/tin-tuc/'+s+'/',intro,qa});
-}
-for(const line of fs.readFileSync('content/section-notes.tsv','utf8').trim().split('\n')){
- const [route,intent,intro,...qa]=line.split('|');rows.push({route,intent,intro,qa});
-}
-const shortTitles={
- 'so-sanh':'Có nên mua tại Olympic? Tiêu chí đánh giá phương án',
- 'tien-ich-vinhomes-olympic-khu-the-thao':'Tiện ích Olympic: quy hoạch và dịch vụ đang phục vụ',
- 'vinhomes-olympic-khi-nao-mo-ban':'Olympic khi nào mở bán? Cách kiểm tra thông báo',
- 'tiem-nang-thuong-tin-vinhomes-olympic':'Đánh giá khu vực Thường Tín: hiện trạng và kỳ vọng',
- 'kinh-nghiem-mua-vinhomes-olympic':'Trình tự kiểm tra trước khi mua tại Olympic',
- 'ky-hieu-chuc-nang-dat':'Ký hiệu đất: phân biệt đất ở và công trình công cộng',
- 'khoang-lui-va-chi-gioi':'Khoảng lùi và chỉ giới: đọc ranh trước khi chọn nhà',
- 'dieu-chinh-quy-hoach-cach-theo-doi':'Điều chỉnh quy hoạch: so phiên bản và phạm vi đổi',
- 'chon-biet-thu-theo-nhu-cau':'Chọn biệt thự: công năng, riêng tư và chi phí',
- 'chon-can-ho-cho-gia-dinh':'Chọn căn hộ: mặt bằng, thang máy và phần chung',
- 'tam-nhin-va-kha-nang-thay-doi':'Tầm nhìn nhà ở: kiểm tra hiện trạng và quy hoạch',
- 'tien-do-thanh-toan-mua-nha':'Lịch thanh toán mua nhà và dòng tiền gia đình',
- 'chi-phi-co-hoi-mua-bat-dong-san':'Chi phí cơ hội mua nhà: so vốn theo cùng kỳ',
- 'quy-du-phong-khi-so-huu-nha':'Quỹ dự phòng nhà ở và chi phí ngoài kế hoạch',
- 'doc-hop-dong-mua-ban-nha':'Đọc hợp đồng mua nhà và các phụ lục liên quan',
- 'bao-lanh-nha-o-hinh-thanh-tuong-lai':'Bảo lãnh nhà ở tương lai: phạm vi và điều kiện',
- 'chung-tu-thanh-toan-bat-dong-san':'Chứng từ mua nhà: lưu và đối soát từng đợt',
- 'truong-hoc-khi-chon-noi-o':'Chọn nhà theo trường học: tiếp nhận và đưa đón',
- 'cong-vien-va-khong-gian-xanh':'Không gian xanh: lối vào và khả năng sử dụng',
- 'van-hanh-khu-do-thi-giai-doan-dau':'Khu đô thị mới: chuẩn bị vận hành và chuyển về',
- 'nha-san-co-hay-hinh-thanh-tuong-lai':'Nhà sẵn có hay nhà tương lai: so thời gian và chi phí',
- 'lap-danh-sach-can-so-sanh':'Danh sách so căn: dữ liệu và tiêu chí lựa chọn',
- 'dam-phan-dieu-kien-mua-nha':'Đàm phán mua nhà: giá và các điều kiện đi kèm'
-};
-const utility={
- '/':{title:'Vinhomes Olympic Thường Tín',seoTitle:INITIAL_CONTENT.seoTitle,topic:'tong-quan',slug:'trang-chu',body:'## Phạm vi dự án\nTách dự án tổng thể với từng dự án thành phần.\n\n## Nguồn thông tin\nĐối chiếu tài liệu gốc theo đúng phạm vi.\n\n## Chọn chuyên đề\nChọn nội dung theo câu hỏi cần giải quyết.'},
- '/tin-tuc/':{title:'Cẩm nang và phân tích Vinhomes Olympic',seoTitle:'Cẩm nang Olympic: hồ sơ, khảo sát và tài chính',topic:'tong-quan',slug:'cam-nang',body:'## Chuyên đề nền tảng\nXác định nhóm thông tin trước khi đọc sâu.\n\n## Câu hỏi cụ thể\nChọn bài có cùng công việc cần thực hiện.\n\n## Phạm vi áp dụng\nPhân biệt hướng dẫn chung với hồ sơ của tài sản.'},
- '/chinh-sach-bao-mat/':{title:'Chính sách bảo mật thông tin đăng ký tư vấn',seoTitle:'Chính sách bảo mật thông tin đăng ký tư vấn',topic:'phap-ly',slug:'chinh-sach-bao-mat',body:'## Dữ liệu được thu thập\nBiểu mẫu nhận tên, số điện thoại, nội dung quan tâm và các câu trả lời người dùng tự gửi. Không yêu cầu giấy tờ tùy thân, tài khoản ngân hàng, mã OTP hoặc mật khẩu.\n\n## Mục đích và quyền tiếp cận\nThông tin được dùng để liên hệ theo yêu cầu đã gửi; danh sách khách không công khai và chỉ dành cho người quản trị có xác thực. Không tự động gửi dữ liệu khách sang dịch vụ tiếp thị khác.\n\n## Yêu cầu sửa hoặc xóa\nNgười gửi có thể liên hệ số điện thoại công khai để đề nghị kiểm tra, sửa hoặc xóa dữ liệu. Quản trị viên kiểm tra yêu cầu trước khi xử lý, tránh thay đổi thông tin của người khác.\n\n## Giới hạn sử dụng biểu mẫu\nChỉ gửi nội dung cần thiết cho tư vấn ban đầu. Liên kết sang Zalo hoặc website bên ngoài có chính sách dữ liệu của đơn vị đó; cần xem trước khi tiếp tục cung cấp thông tin.'}
-};
-const officialSources={
- 'tong-quan':{label:'UBND Dân Hòa: quy mô và phân khu được công bố',url:'https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm'},
- 'vi-tri':{label:'Quyết định 916/QĐ-SNNMT, trang 2–3: địa điểm phân khu B',url:'https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf'},
- 'quy-hoach':{label:'UBND Ngọc Hồi: thông báo lấy ý kiến quy hoạch 1/500',url:'https://ngochoi.hanoi.gov.vn/tin-tuc-su-kien/lay-y-kien-cong-dong-dan-cu-doi-voi-do-an-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-phan-khu-a-b-c-d-2724260210151416024.htm'},
- 'phap-ly':{label:'Quyết định 916/QĐ-SNNMT: đối tượng và phạm vi thẩm định ĐTM',url:'https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf'},
- 'tien-do':{label:'UBND Thanh Oai: phương án bồi thường tại Văn Quán, đợt 5',url:'https://thanhoai.hanoi.gov.vn/chi-tiet-van-ban/quyet-dinh-ve-viec-phe-duyet-phuong-an-boi-thuong-ho-tro-tai-dinh-cu-khi-nha-nuoc-thu-hoi-dat-de-th-253884'}
-};
-function sentences(text){return text.split(/(?<=[.!?])\s+/).filter(Boolean)}
-function wrap(text,limit){const out=[];for(const word of text.split(/\s+/)){if(!out.length||out.at(-1).length+word.length+1>limit)out.push(word);else out[out.length-1]+=' '+word}return out}
-function illustration(profile,headings){
- const titleLines=wrap(profile.seoTitle,42).slice(0,2),labels=headings.slice(0,3);
- const cards=labels.map((text,index)=>{
-  const x=56+index*304;return `<rect x="${x}" y="276" width="280" height="270" rx="18" fill="#fff" stroke="#d2dce3"/><circle cx="${x+42}" cy="318" r="23" fill="#17354a"/><text x="${x+42}" y="326" text-anchor="middle" fill="#fff" font-size="21">0${index+1}</text>${wrap(text,19).slice(0,5).map((line,i)=>`<text x="${x+24}" y="${386+i*31}" fill="#17354a" font-size="23">${escape(line)}</text>`).join('')}`;
- }).join('');
- return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" role="img" aria-labelledby="title desc"><title id="title">${escape(profile.imageAlt)}</title><desc id="desc">Ba nội dung: ${escape(labels.join('; '))}. Đồ họa biên tập, không phải bản vẽ dự án.</desc><rect width="1000" height="650" fill="#f4f0e8"/><path d="M0 0H1000V210H0Z" fill="#102c40"/><rect x="56" y="43" width="63" height="5" rx="2" fill="#d8b371"/><text x="140" y="53" font-family="sans-serif" font-size="18" letter-spacing="3" fill="#dfc38c">CẨM NANG NHÀ Ở</text><g font-family="Arial, sans-serif">${titleLines.map((line,i)=>`<text x="56" y="${109+i*46}" fill="#fff" font-size="33" font-weight="600">${escape(line)}</text>`).join('')}<text x="56" y="247" fill="#6b7c88" font-size="19">Các điểm đối chiếu trong bài</text>${cards}<path d="M56 580H944" stroke="#cdbd9d"/><text x="56" y="615" fill="#596d7c" font-size="17">Hình minh họa biên tập • Không phải bản vẽ hoặc thông báo của dự án</text></g></svg>`;
-}
-const topicFallback={'olympic-guide-01':'tong-quan','olympic-guide-02':'vi-tri','olympic-guide-03':'quy-hoach','olympic-guide-04':'san-pham','olympic-guide-05':'gia-ban','olympic-guide-06':'tien-do','olympic-guide-07':'so-sanh','olympic-guide-08':'phap-ly','olympic-guide-09':'san-pham','olympic-guide-10':'gia-ban'};
-const pillars=INITIAL_CONTENT.pages;
-fs.mkdirSync('public/assets/guides',{recursive:true});
-for(const row of rows){
- const item=allItems.get(row.route)||utility[row.route];if(!item)throw Error('Missing item '+row.route);
- const title=shortTitles[item.slug]||item.seoTitle||item.title;
- const description=sentences(row.intro)[0];
- if(title.length>60||description.length>160)throw Error(`Metadata too long: ${row.route} (${title.length}/${description.length})`);
- const introSentences=sentences(row.intro);if(introSentences.length<2||introSentences.length>3)throw Error('Lead must have 2–3 sentences: '+row.route);
- let body=bodyOverrides[row.route]||item.body||item.content||'';const start=body.indexOf('## ');if(start>=0)body=body.slice(start);
- // Remove old marketing contact endings; retain substantive instructional sections.
- body=body.replace(/\n\n## Nhận thông tin và tư vấn[\s\S]*$/,'');
- const headings=[...body.matchAll(/^## (.+)$/gm)].map(m=>m[1]);if(headings.length<3)throw Error('Insufficient substantive sections '+row.route);
- const topic=item.topic||topicFallback[item.id]||item.slug||'tong-quan';
- const image='/assets/guides/'+(item.slug||slug(item.title))+'.svg';
- const faqs=[];for(let i=0;i<3;i++){
-  const question=row.qa[i*2],answer=row.qa[i*2+1];if(!question||!answer)throw Error('Missing FAQ');
-  // Advice is attributed to its actual editorial explanation, not falsely to a public authority.
-  const methodHeading=headings[Math.min(i,headings.length-1)];
-  const sources=[{label:'Giải thích trong bài: '+methodHeading,url:row.route+'#'+slug(methodHeading),kind:'editorial'}];
-  if(officialSources[topic]&&(/^\/(tong-quan|vi-tri|quy-hoach|phap-ly|tien-do)\/$/.test(row.route)||item.id?.startsWith('olympic-guide-')))sources.push({...officialSources[topic],kind:'document'});
-  if(row.route==='/'){sources.splice(0,sources.length,{label:i===1?'Thông báo vận hành trang độc lập':'Thông tin nhanh và phạm vi dự án',url:i===1?'/#disclaimer':'/#thong-tin-nhanh',kind:'editorial'});if(i===2)sources.push({...officialSources['vi-tri'],kind:'document'});}
-  faqs.push({question,answer,sources});
+const words=contentWordCount;
+const living=new Set(['truong-hoc-khi-chon-noi-o','y-te-va-tiep-can-cham-soc','tien-ich-the-thao-cho-cu-dan','cong-vien-va-khong-gian-xanh','khong-gian-cho-tre-em','mua-sam-dich-vu-hang-ngay']);
+const fallback={'olympic-guide-04':'san-pham','olympic-guide-05':'gia-ban','olympic-guide-07':'so-sanh','olympic-guide-08':'phap-ly'};
+const topic=p=>living.has(p.slug)?'tong-quan':p.topic||fallback[p.id]||'tong-quan';
+const redirects={},retired=[];
+for(const p of old.posts.filter(x=>x.published!==false)){redirects['/tin-tuc/'+p.slug+'/']='/'+topic(p)+'/';retired.push(p.id);}
+const notice='Trang thông tin độc lập của Mạnh Việt; ảnh minh họa, đối chiếu thông báo chính thức và hồ sơ của đúng sản phẩm trước khi giao dịch.';
+const plans={};
+for(const [route,p] of Object.entries(fresh)){
+ const s=route.split('/')[1];let body=fs.readFileSync('content/journalism/'+s+'.md','utf8').trim();
+ const end='## Kinh nghiệm thực địa\n[MẠNH VIỆT BỔ SUNG: ảnh, ghi chú thực tế]';body=body.replace(end,'').trim();
+ const candidates=old.posts.filter(x=>x.published!==false&&topic(x)===s).sort((a,b)=>Number(a.id.startsWith('olympic-guide-'))-Number(b.id.startsWith('olympic-guide-')));
+ for(const guide of candidates){if(words(body)>=1820)break;
+  const content=guide.content.replace(/\n\n## Nhận thông tin và tư vấn[\s\S]*$/,'');
+  // Consolidate the earlier original guidance; it is now contextual guidance, not a separate thin URL.
+  const paragraphs=content.replace(/^#{2,3} .+\n/gm,'').trim();
+  if(!paragraphs)continue;
+  body+='\n\n### '+guide.title+'\n'+paragraphs;
  }
- const related=(item.relatedSlugs||[]).map(s=>({href:'/tin-tuc/'+s+'/',anchor:INITIAL_CONTENT.posts.find(p=>p.slug===s)?.seoTitle||INITIAL_CONTENT.posts.find(p=>p.slug===s)?.title})).filter(x=>x.anchor);
- const matching=(INITIAL_CONTENT.posts||[]).filter(p=>p.published!==false&&p.slug!==item.slug&&(p.topic===topic||p.category&&p.category===item.category)).slice(0,4).map(p=>({href:'/tin-tuc/'+p.slug+'/',anchor:shortTitles[p.slug]||p.seoTitle||p.title}));
- const candidates=[...(pillars.some(p=>p.slug===topic)&&row.route!=='/'+topic+'/'?[{href:'/'+topic+'/',anchor:pillars.find(p=>p.slug===topic).title}]:[]),...related,...matching,...pillars.filter(p=>row.route!=='/'+p.slug+'/').map(p=>({href:'/'+p.slug+'/',anchor:p.title}))];
- const links=[];for(const link of candidates)if(link.href!==row.route&&!links.some(x=>x.href===link.href))links.push(link);
- const profile={intent:row.intent||item.keyword||item.title,heading:shortTitles[item.slug]&&item.id?.startsWith('olympic-guide-')?shortTitles[item.slug]:item.title,seoTitle:title,seoDescription:description,intro:row.intro,body,topic,image,imageAlt:'Sơ đồ minh họa: '+title,imageCaption:'Sơ đồ biên tập về các nội dung cần kiểm tra; không phải bản vẽ hoặc phối cảnh chính thức.',faqs,links:links.slice(0,4),notice:'Trang thông tin độc lập của Mạnh Việt. Hình ảnh là minh họa; cần đối chiếu thông báo và hồ sơ chính thức của đúng tài sản tại thời điểm sử dụng.'};
- data[row.route]=profile;fs.writeFileSync('public'+image,illustration(profile,headings));
+ body+='\n\n'+end;
+ if(words(body)<1800||words(body)>2500)throw Error(s+' body word count '+words(body));
+ const links=Object.entries(fresh).filter(([r])=>r!==route).sort(([a],[b])=>a.localeCompare(b));
+ const index=Object.keys(fresh).indexOf(route);const selected=[];
+ for(let j=1;j<=4;j++){const r=Object.keys(fresh)[(index+j)%9];selected.push({href:r,anchor:fresh[r].heading});}
+ const headings=[...body.matchAll(/^## (.+)$/gm)].map(x=>x[1]);
+ const image='/assets/guides/'+s+'.webp';
+ data[route]={...p,body,links:selected,image,imageAlt:'Sơ đồ biên tập: '+p.heading,imageCaption:'Sơ đồ nội dung, không phải bản đồ địa chính hoặc phối cảnh dự án.',notice,sources:p.sourceKeys.map(k=>({label:sources[k].label,url:sources[k].url})),updated:'2026-10-30'};
+ plans[route]={wordCount:words(body),keywords:p.keywords,intent:p.intent,competitorReview:'Google/Bing blocked by environment proxy; no first-page/PAA claims. See municipal-search-results.json.',sources:p.sourceKeys.map(k=>sources[k])};
 }
-if(Object.keys(data).length!==96)throw Error('Expected profiles for all 96 canonical pages.');
-fs.writeFileSync('content/editorial-pages.json',JSON.stringify(data,null,2)+'\n');
-fs.writeFileSync('src/page-content.js','// Generated from content/handbook-notes.tsv and content/section-notes.tsv.\nexport const PAGE_CONTENT = '+JSON.stringify(data,null,2)+';\n');
-console.log(`Prepared ${Object.keys(data).length} distinct intents, ${Object.values(data).reduce((n,p)=>n+p.faqs.length,0)} FAQs and illustrations.`);
+// Utility pages describe the actual site operation. They do not claim unverified company details.
+const utilities={
+ '/gioi-thieu/':{heading:'Giới thiệu trang thông tin Vinhomes Olympic',intro:'Website vinhomesthuongtin.vn cung cấp thông tin và hướng dẫn kiểm tra hồ sơ Olympic. Mạnh Việt biên tập và tiếp nhận yêu cầu qua 0989.294.744.',body:'## Website phục vụ ai?\nTrang dành cho người tìm hiểu dự án, gia đình chuẩn bị nhu cầu mua nhà và người muốn tra cứu tài liệu đã công khai. Các chuyên đề tách tên dự án, vị trí, quy hoạch, pháp lý, tiến độ, ngân sách, mặt bằng, loại hình và đánh giá phương án.\n\n## Ai vận hành và chịu trách nhiệm nội dung?\nMạnh Việt là người biên tập và đầu mối liên hệ hiển thị trên website. Website hoạt động độc lập; không tự nhận là cơ quan báo chí, website chủ đầu tư hay đại lý được ủy quyền. Tên thương hiệu Mạnh Việt Real Estate không được dùng thay cho tên pháp nhân đăng ký.\n\n## Tiếp nhận góp ý và sửa dữ kiện\nGửi tên trang, dữ kiện cần sửa và tài liệu qua số 0989.294.744. Ban biên tập đối chiếu tên văn bản, ngày và phạm vi trước khi cập nhật; ngày cập nhật phản ánh lần sửa nội dung có ý nghĩa.\n\n## Thông tin vận hành cần xác minh thêm\nChủ website cần cung cấp thông tin đăng ký của đơn vị vận hành trước khi công khai tên pháp nhân, địa chỉ đăng ký và mã số thuế. Không dùng địa chỉ của chủ đầu tư hoặc cơ quan nhà nước làm địa chỉ website.'},
+ '/lien-he/':{heading:'Liên hệ Mạnh Việt về thông tin Vinhomes Olympic',intro:'Liên hệ Mạnh Việt qua số 0989.294.744 để trao đổi nhu cầu hoặc gửi góp ý dữ kiện. Biểu mẫu trên trang chủ nhận họ tên, điện thoại và nội dung người gửi tự cung cấp.',body:'## Liên hệ trực tiếp\nĐiện thoại: 0989.294.744. Liên kết gọi điện dùng tel:0989294744; liên kết Zalo dẫn tới số tương ứng. Tài khoản Zalo cần được người vận hành xác nhận đang sử dụng. Không đưa địa chỉ văn phòng khi chưa có thông tin xác minh.\n\n## Nội dung nên chuẩn bị\nNêu chuyên đề quan tâm, mục đích tìm hiểu và tài liệu cần đối chiếu. Khi phản hồi một lỗi, gửi đường dẫn trang, đoạn nội dung và nguồn chứng minh. Không gửi CCCD, thông tin ngân hàng, mật khẩu hoặc OTP qua biểu mẫu.\n\n## Tiếp nhận yêu cầu dữ liệu\nNgười đã gửi biểu mẫu có thể yêu cầu kiểm tra, sửa hoặc xóa thông tin. Quản trị viên xác nhận yêu cầu trước khi xử lý, tránh thay đổi dữ liệu của người khác. Chính sách bảo mật giải thích mục đích và phạm vi sử dụng thông tin.'},
+ '/tac-gia-manh-viet/':{heading:'Mạnh Việt – người biên tập website Olympic',intro:'Mạnh Việt là người biên tập và đầu mối tư vấn của vinhomesthuongtin.vn. Hồ sơ này mô tả vai trò trên website, không tự nhận chứng chỉ hoặc kinh nghiệm chưa có tài liệu xác minh.',body:'## Vai trò biên tập\nTổ chức chuyên đề, đọc tài liệu công khai, đối chiếu phạm vi dữ kiện và tiếp nhận phản hồi. Các bài phân tích phân biệt dữ liệu nguồn, phép tính từ dữ liệu và hướng dẫn thực hành của người biên tập.\n\n## Cách làm việc với nguồn\nƯu tiên hồ sơ cơ quan nhà nước, thông báo của chủ thể có trách nhiệm và tài liệu gốc đọc được. Một số liệu được nhiều trang đăng lại từ cùng hồ sơ vẫn được tính là một nguồn. Không gắn nhãn trải nghiệm thực tế cho nội dung chưa có ghi chép hiện trường.\n\n## Kinh nghiệm thực địa\nẢnh và ghi chú của Mạnh Việt sẽ được bổ sung sau khi có ngày, địa điểm, hướng chụp và quyền sử dụng. Những khung chờ bổ sung trên bài không phải lời xác nhận đã khảo sát.\n\n## Liên hệ và chỉnh sửa\nTiếp nhận yêu cầu sửa nội dung qua 0989.294.744. Khi chủ website cung cấp được hồ sơ nghề nghiệp có thể đối chiếu, tiểu sử sẽ cập nhật phần thông tin đã xác minh.'},
+ '/chinh-sach-bien-tap/':{heading:'Chính sách biên tập và kiểm chứng dữ kiện',intro:'Website ưu tiên tài liệu gốc có tên, ngày và phạm vi áp dụng. Số liệu một nguồn, phép tính và dữ liệu cần kiểm tra được phân biệt trong hồ sơ biên tập.',body:'## Chọn và đối chiếu nguồn\nDữ kiện quan trọng được tìm nguồn thứ hai. Khi chỉ có một hồ sơ gốc, ghi rõ nguồn đó và không coi bản đăng lại là xác nhận độc lập. Tài liệu dẫn chiếu được phân biệt với văn bản đầy đủ đã đọc; thông báo lấy ý kiến khác quyết định phê duyệt.\n\n## Viết và cập nhật\nMở bài trả lời câu hỏi chính; số liệu gắn đúng dự án thành phần và thời điểm. Không dùng giá không có chứng cứ hoặc hứa hẹn lợi nhuận. Ngày xuất bản bản tổng hợp không bị lùi về ngày sự kiện trong nguồn; cập nhật lần cuối chỉ đổi khi có rà soát nội dung.\n\n## Ảnh và trải nghiệm\nSơ đồ biên tập được ghi là minh họa. Ảnh công trường cần ngày, địa điểm và quyền sử dụng. Không nhận ảnh concept là phối cảnh chính thức hoặc ghi trải nghiệm chưa diễn ra.\n\n## Sửa sai và quyền lợi độc giả\nĐộc giả có thể gửi URL, dữ kiện cần sửa và bằng chứng qua 0989.294.744. Thông tin mới được đối chiếu đúng phạm vi trước khi thay nội dung. Dữ liệu khách hàng không được dùng làm dẫn chứng công khai; yêu cầu sửa hoặc xóa thông tin thực hiện theo chính sách bảo mật.'}
+};
+for(const [route,p] of Object.entries(utilities))data[route]={...p,intent:p.heading,seoTitle:p.heading,seoDescription:p.intro.split('. ')[0]+'.',topic:'tong-quan',image:'/assets/guides/'+route.split('/')[1]+'.webp',imageAlt:'Sơ đồ biên tập: '+p.heading,imageCaption:'Sơ đồ mô tả hoạt động website.',faqs:[],links:[{href:'/gioi-thieu/',anchor:'Đơn vị vận hành trang thông tin'},{href:'/lien-he/',anchor:'Kênh liên hệ và gửi phản hồi'},{href:'/tac-gia-manh-viet/',anchor:'Hồ sơ người biên tập Mạnh Việt'},{href:'/chinh-sach-bien-tap/',anchor:'Nguyên tắc kiểm chứng và cập nhật'},{href:'/chinh-sach-bao-mat/',anchor:'Chính sách thông tin biểu mẫu'}].filter(x=>x.href!==route).slice(0,4),notice,updated:'2026-10-30'};
+const newsDefinitions=[
+ ['tri-le-thu-hoi-dat-13-10-2026','Tri Lễ: công khai thu hồi đất ngày 13/10/2026','trile','tien-do','Dân Hòa công khai thông báo thu hồi đất tại Tri Lễ ngày 13/10/2026. Nội dung nêu đợt 6 với ba hộ, theo phạm vi của thông báo.', 'Thông báo ghi thôn Tri Lễ 1, nay là thôn Tri Lễ, xã Dân Hòa. Tên dự án trong nội dung là Khu đô thị thể thao Quốc tế Hà Nội, kèm ghi chú tên trước đây là Khu đô thị thể thao Olympic. Đây là thông tin nhận diện trong chính văn bản công khai; không suy ra việc mọi hồ sơ cũ đã được sửa tên.','Thông báo là một mốc công khai công việc thu hồi đất của nhóm hộ được nêu. Nó không cung cấp tỷ lệ bàn giao mặt bằng toàn dự án, phần trăm xây dựng hoặc ngày nhận nhà. Khi theo dõi các đợt tiếp theo, cần giữ đúng thôn, số đợt và loại công việc để tránh cộng nhầm các phạm vi.'],
+ ['que-son-nguon-goc-dat-28-09-2026','Quế Sơn: điều chỉnh nguồn gốc đất ngày 28/09/2026','queson','tien-do','Dân Hòa đăng danh sách điều chỉnh xác nhận nguồn gốc đất tại Quế Sơn ngày 28/09/2026. Nội dung áp dụng đợt 1 của công tác đất đai dự án Olympic.','Nội dung công khai nói về đất nông nghiệp được giao theo Nghị định 64/1993-CP của các hộ có đất thu hồi thực hiện dự án tại thôn Quế Sơn. Tiêu đề danh sách là thông tin cần lưu để đối chiếu tài liệu kèm theo, không phải tên một sản phẩm bất động sản.','Đây là bước xử lý dữ liệu nguồn gốc đất theo địa bàn. Không gọi danh sách này là quyết định đủ điều kiện bán nhà hoặc bảng giá đền bù chung. Người liên quan cần đối chiếu đúng hồ sơ của hộ và tài liệu đính kèm do địa phương công khai.'],
+ ['ngoc-hoi-lay-y-kien-10-02-2026','Ngọc Hồi lấy ý kiến quy hoạch Olympic ngày 10/02/2026','ngochhoi','quy-hoach','Ngọc Hồi tổ chức lấy ý kiến đồ án chi tiết Olympic ngày 10/02/2026. Nội dung được công khai là quy hoạch tỷ lệ 1/500 cho A, B, C, D.','Nguồn địa phương mô tả hội nghị lấy ý kiến cơ quan quản lý, tổ chức, chuyên gia và cộng đồng dân cư. Đây là bước hoàn thiện đồ án; khi lưu hồ sơ cần giữ tên công việc thay vì rút gọn thành đã phê duyệt quy hoạch.','Bản tổng hợp này được biên tập ngày 30/10/2026 từ nguồn sự kiện tháng 2. Thông tin về trạng thái sau hội nghị cần văn bản mới hơn đúng phạm vi. Bài trụ cột quy hoạch giải thích cách đọc tỷ lệ, phân khu và phiên bản đồ án.'],
+ ['tham-dinh-moi-truong-b-13-04-2026','Phân khu B: quyết định môi trường ngày 13/04/2026','dtm','phap-ly','Quyết định 916/QĐ-SNNMT được ban hành ngày 13/04/2026 cho phân khu B. Hồ sơ ghi diện tích 2.944,39 ha tại bốn xã phía Nam Hà Nội.','Điều 1 nêu Công ty Cổ phần Vinhomes đại diện liên danh nhà đầu tư. Phần thông tin chung xác định các xã Thường Tín, Thượng Phúc, Tam Hưng, Dân Hòa; diện tích gồm 2.533,1 ha đô thị và 411,29 ha liên hợp thể thao. Các số liệu thuộc một hồ sơ gốc.','Văn bản phê duyệt kết quả thẩm định báo cáo đánh giá tác động môi trường, kèm yêu cầu bảo vệ môi trường của dự án thành phần. Không dùng loại quyết định này như bảng giá, thông báo mở bán hoặc giấy tờ quyền sở hữu cho một căn nhà.']
+];
+const news=[];
+for(const [s,heading,sourceKey,pillar,intro,detail,scope] of newsDefinitions){
+ const route='/tin-tuc/'+s+'/',source=sources[sourceKey],body='## Sự kiện được nguồn công khai ghi nhận\n'+detail+'\n\n## Phạm vi thông tin và bước theo dõi\n'+scope+'\n\n## Kinh nghiệm thực địa\n[MẠNH VIỆT BỔ SUNG: ảnh, ghi chú thực tế]';
+ const parent=data['/'+pillar+'/'];
+ // Select five factual FAQs about the exact topic; all retain the actual external evidence.
+ const facts={
+ 'trile':[['Thông báo Tri Lễ công khai ngày nào?','Ngày 13/10/2026 theo trang thông tin Dân Hòa.'],['Thông báo nêu đợt mấy và bao nhiêu hộ?','Tiêu đề nội dung nêu đợt 6, ba hộ.'],['Tên thôn cũ được chú thích thế nào?','Tri Lễ 1 được ghi là nay thuộc thôn Tri Lễ, xã Dân Hòa.'],['Tên dự án nào xuất hiện trong thông báo này?','Khu đô thị thể thao Quốc tế Hà Nội, kèm chú thích trước đây là Khu đô thị thể thao Olympic.'],['Loại công việc được công khai là gì?','Niêm yết công khai thông báo thu hồi đất, theo địa bàn và nhóm hộ được nêu.']],
+ 'queson':[['Danh sách Quế Sơn được đăng vào thời điểm nào?','Trang Dân Hòa ghi ngày 28/09/2026.'],['Danh sách này áp dụng tại địa bàn nào?','Thôn Quế Sơn, xã Dân Hòa, thành phố Hà Nội.'],['Nội dung công khai đề cập loại đất gì?','Đất nông nghiệp được giao theo Nghị định 64/1993-CP, theo tên danh sách.'],['Số đợt của nội dung Quế Sơn là bao nhiêu?','Tiêu đề ghi đợt 1 tại địa bàn Quế Sơn.'],['Danh sách điều chỉnh nội dung nào?','Nội dung xác nhận nguồn gốc đất của các hộ có đất thu hồi thực hiện dự án Olympic.']],
+ 'ngochhoi':[['Sự kiện tại Ngọc Hồi diễn ra khi nào?','Hội nghị lấy ý kiến được tổ chức ngày 10/02/2026.'],['Đồ án được lấy ý kiến có tỷ lệ nào?','Quy hoạch chi tiết tỷ lệ 1/500.'],['Hội nghị nêu những phân khu nào?','Nội dung nguồn gọi A, B, C, D.'],['Các nhóm tham gia lấy ý kiến được nêu là ai?','Cơ quan quản lý, tổ chức, chuyên gia và cộng đồng dân cư.'],['Nguồn gọi đây là bước nào của quy trình?','Bước lấy ý kiến phục vụ lập, thẩm định và hoàn thiện quy hoạch.']],
+ 'dtm':[['Số hiệu của quyết định môi trường B là gì?','916/QĐ-SNNMT, ngày 13/04/2026.'],['Cơ quan nào ban hành quyết định?','Sở Nông nghiệp và Môi trường thành phố Hà Nội.'],['Đối tượng thẩm định trong tên văn bản là gì?','Báo cáo đánh giá tác động môi trường của dự án thành phần phân khu B thuộc dự án khu đô thị thể thao Olympic.'],['Điều 1 ghi ai đại diện liên danh?','Công ty Cổ phần Vinhomes đại diện liên danh nhà đầu tư.'],['Hai phần diện tích B được nêu trong hồ sơ là gì?','Khu đô thị 2.533,1 ha và khu liên hợp thể thao 411,29 ha, tổng 2.944,39 ha.']]
+ };
+ const faq=facts[sourceKey].map(([question,answer])=>({question,answer,sources:[{label:source.label,url:source.url,kind:'document'}]}));
+ const p={heading,seoTitle:heading,seoDescription:intro.split('. ')[0]+'.',intro,body,intent:'Bản tin theo sự kiện: '+heading,topic:pillar,image:'/assets/guides/'+s+'.webp',imageAlt:'Sơ đồ sự kiện: '+heading,imageCaption:'Đồ họa biên tập; không phải ảnh hiện trường.',faqs:faq,links:[{href:'/'+pillar+'/',anchor:parent.heading},{href:'/tong-quan/',anchor:'Nhận diện dự án và tên hồ sơ'},{href:'/vi-tri/',anchor:'Địa bàn và ranh phân khu B'},{href:'/san-pham/',anchor:'Nhóm loại hình được nêu trong hồ sơ B'}],notice,sources:[source],updated:'2026-10-30'};
+ data[route]=p;news.push({id:'journalism-'+s,slug:s,title:heading,seoTitle:p.seoTitle,seoDescription:p.seoDescription,intro,searchIntent:p.intent,excerpt:intro,content:body,topic:pillar,category:'Tin theo sự kiện',image:p.image,imageAlt:p.imageAlt,imageCaption:p.imageCaption,faqs:p.faqs,relatedLinks:p.links,sources:[source],date:'2026-10-30',updated:'2026-10-30',eventDate:source.date,published:true,status:'confirmed'});
+}
+// The home and news hubs keep short overviews, while the nine pillars own the deep search intents.
+Object.assign(data['/'],{faqs:data['/tong-quan/'].faqs,notice,updated:'2026-10-30'});
+Object.assign(data['/tin-tuc/'],{heading:'Tin Vinhomes Olympic theo sự kiện và ngày nguồn',seoTitle:'Tin Vinhomes Olympic: hồ sơ và sự kiện theo ngày',seoDescription:'Các mốc hồ sơ Olympic tại Tri Lễ, Quế Sơn, Ngọc Hồi và phân khu B. Bản tin nêu ngày sự kiện và liên kết tài liệu gốc.',intro:'Mục tin tức tập hợp sự kiện có ngày và tài liệu công khai về Olympic. Hướng dẫn nền tảng được tổ chức ở các trang chuyên đề.',body:'## Tin theo ngày nguồn\nTheo dõi ngày sự kiện trong tiêu đề và ngày biên tập trong bài.\n\n## Tra cứu tài liệu gốc\nMỗi bản tin chỉ ra phạm vi của thông báo hoặc quyết định.\n\n## Hướng dẫn nền tảng\nDùng các chuyên đề cho câu hỏi tổng quan, địa bàn và hồ sơ.',faqs:[],notice,links:[{href:'/tien-do/',anchor:'Bảng mốc triển khai theo địa bàn'},{href:'/quy-hoach/',anchor:'Hướng dẫn đọc đồ án A, B, C, D'},{href:'/phap-ly/',anchor:'Chuỗi hồ sơ và điều kiện giao dịch'},{href:'/tong-quan/',anchor:'Tên dự án và phạm vi tổng thể'}]});
+data['/chinh-sach-bao-mat/'].faqs=[];data['/chinh-sach-bao-mat/'].notice=notice;
+for(const p of Object.values(data))if(p.links)p.links=p.links.map(x=>({...x,href:redirects[x.href]||x.href})).filter((x,i,a)=>a.findIndex(y=>y.href===x.href)===i);
+// Every current content page links to four other current pages, never to retired articles.
+const current=['/',...Object.keys(fresh),'/tin-tuc/','/chinh-sach-bao-mat/',...Object.keys(utilities),...news.map(p=>'/tin-tuc/'+p.slug+'/')];
+for(const route of current){const p=data[route];p.links=p.links.filter(x=>x.href!==route);for(const r of Object.keys(fresh))if(p.links.length<4&&r!==route&&!p.links.some(x=>x.href===r))p.links.push({href:r,anchor:data[r].heading});p.links=p.links.slice(0,4);}
+const wrap=(s,n)=>{const lines=[];for(const w of s.split(/\s+/)){if(!lines.length||lines.at(-1).length+w.length+1>n)lines.push(w);else lines[lines.length-1]+=' '+w}return lines};
+for(const route of current.filter(r=>r!=='/')){
+ const p=data[route],imageName=route==='/tin-tuc/'?'cam-nang':route==='/chinh-sach-bao-mat/'?'chinh-sach-bao-mat':route.split('/').filter(Boolean).at(-1);
+ p.image='/assets/guides/'+imageName+'.webp';
+ const labels=[...p.body.matchAll(/^## (.+)$/gm)].map(x=>x[1]).filter(x=>x!=='Kinh nghiệm thực địa').slice(0,3);
+ const svg='<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650" role="img"><title>'+escape(p.imageAlt)+'</title><rect width="1000" height="650" fill="#f4f0e8"/><rect width="1000" height="210" fill="#102c40"/><g font-family="Arial,sans-serif">'+wrap(p.heading,43).slice(0,3).map((x,i)=>`<text x="40" y="${58+i*48}" fill="#fff" font-size="32">${escape(x)}</text>`).join('')+labels.map((l,i)=>`<rect x="40" y="${240+i*112}" width="920" height="95" rx="10" fill="#fff"/><text x="60" y="${275+i*112}" font-size="20" fill="#956c2e">0${i+1}</text>${wrap(l,64).slice(0,2).map((x,j)=>`<text x="110" y="${275+i*112+j*30}" fill="#17354a" font-size="24">${escape(x)}</text>`).join('')}`).join('')+'<text x="40" y="625" fill="#556873" font-size="17">Sơ đồ biên tập • Không phải bản vẽ dự án hoặc ảnh hiện trường</text></g></svg>';
+ fs.writeFileSync('public/assets/guides/'+imageName+'.svg',svg);
+}
+for(const p of news){const profile=data['/tin-tuc/'+p.slug+'/'];p.image=profile.image;p.relatedLinks=profile.links;}
+fs.writeFileSync('content/editorial-pages.json',JSON.stringify(data,null,2)+'\n');fs.writeFileSync('src/page-content.js','// Generated by scripts/build-page-content.js.\nexport const PAGE_CONTENT = '+JSON.stringify(data,null,2)+';\n');
+fs.writeFileSync('src/journalism-release.js','// Generated. Old post IDs are archived, not deleted.\nexport const RETIRED_IDS = '+JSON.stringify(retired)+';\nexport const EDITORIAL_REDIRECTS = '+JSON.stringify(redirects,null,2)+';\nexport const NEWS_POSTS = '+JSON.stringify(news,null,2)+';\nexport const UTILITY_SLUGS = '+JSON.stringify(Object.keys(utilities).map(r=>r.split('/')[1]))+';\n');
+fs.writeFileSync('research/2026-10-30/page-research.json',JSON.stringify(plans,null,2)+'\n');
+console.log('Built nine 1,800–2,500-word pillars, four dated event summaries, four operational pages and '+retired.length+' consolidations.');

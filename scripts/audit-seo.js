@@ -1,3 +1,7 @@
+import {PILLAR_SLUGS} from '../src/text.js';
+import {PAGE_CONTENT} from '../src/page-content.js';
+import {ADMIN_PATH} from '../src/admin-config.js';
+import {EDITORIAL_REDIRECTS,UTILITY_SLUGS} from '../src/journalism-release.js';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -44,17 +48,18 @@ for(const url of urls){
  check((html.match(/<h1(?:\s|>)/g)||[]).length===1,route,'Must have exactly one H1');
  check(html.includes(`rel="canonical" href="${url}"`),route,'Incorrect canonical');
  check(!/\bAI\b/.test(html),route,'Outdated illustration wording');
- check(!/href="#"/.test(html),route,'Empty anchor destination');
+ check(!/href="#"/.test(html),route,'Empty anchor destination');check(!html.includes('href="/admin/')&&!html.includes('href="'+ADMIN_PATH),route,'Public admin link');
  check(!/VINHOMESOLYMPIC/.test(html),route,'Brand words are concatenated');
  check(!/content="noindex/.test(html),route,'Noindex URL included in sitemap');
  const schemas=[...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
- check(schemas.length>0,route,'Missing structured data');
+ check(schemas.length>0,route,'Missing structured data');check(html.includes('og:site_name')&&html.includes('og:locale')&&html.includes('twitter:image'),route,'Social metadata incomplete');check(/<html lang="vi"/.test(html),route,'Vietnamese language missing');
  const graphs=[];for(const schema of schemas){try{const json=JSON.parse(schema[1]);graphs.push(...(json['@graph']||[json]))}catch{fail(route,'Invalid JSON-LD')}}
- const faq=graphs.find(x=>x['@type']==='FAQPage');check(faq&&faq.mainEntity?.length>=3&&faq.mainEntity?.length<=5,route,'Requires 3–5 FAQ answers');
+ let contentWords=null; if(PILLAR_SLUGS.some(s=>route==='/'+s+'/')){const bodyHtml=html.match(/<section class="article-body">([\s\S]*?)<\/section>/)?.[1]||'';const count=decode(bodyHtml.replace(/<[^>]+>/g,' ')).trim().split(/\s+/).filter(Boolean).length;contentWords=count;check(count>=1800&&count<=2500,route,'Pillar visible words outside 1,800–2,500: '+count);}
+ const faq=graphs.find(x=>x['@type']==='FAQPage');const requiresFaq=route!=='/tin-tuc/'&&route!=='/chinh-sach-bao-mat/'&&!UTILITY_SLUGS.some(s=>route==='/'+s+'/');if(requiresFaq)check(faq&&faq.mainEntity?.length>=5&&faq.mainEntity?.length<=6,route,'Information article requires 5–6 FAQ answers');
  if(faq)for(const q of faq.mainEntity)check(decode(html).includes(q.name)&&decode(html).includes(q.acceptedAnswer.text),route,'FAQ schema differs from visible content');
- const lead=decode((html.match(/<p class="(?:hero-description|seo-deck)"[^>]*>([\s\S]*?)<\/p>/)||[])[1]||'').replace(/<[^>]+>/g,'');const leadSentences=lead.split(/(?<=[.!?])\s+/).filter(Boolean);check(leadSentences.length>=2&&leadSentences.length<=3,route,'Lead must answer in 2–3 sentences');
- check(html.includes('Trang thông tin độc lập của Mạnh Việt. Hình ảnh là minh họa; cần đối chiếu thông báo'),route,'Missing editorial notice');
- const core=(html.match(/<article class="seo-article">([\s\S]*?)<\/article>/)||[])[1]||'';const contentDestinations=new Set([...core.matchAll(/href="(\/[^"]+)"/g)].map(m=>new URL(decode(m[1]),DOMAIN).pathname).filter(p=>p!==route));check(contentDestinations.size>=3&&contentDestinations.size<=5,route,`Needs 3–5 content links, got ${contentDestinations.size}`);
+ const lead=decode((html.match(/<p class="(?:hero-description|seo-deck)"[^>]*>([\s\S]*?)<\/p>/)||[])[1]||'').replace(/<[^>]+>/g,'');const leadSentences=lead.split(/(?<=[.!?])\s+/).filter(Boolean);check(leadSentences.length>=2&&leadSentences.length<=4,route,'Lead must answer in 2–4 sentences');
+ check(html.includes(PAGE_CONTENT['/'].notice),route,'Missing editorial notice');
+ const core=(html.match(/<article class="seo-article">([\s\S]*?)<\/article>/)||[])[1]||'';const contentDestinations=new Set([...core.matchAll(/href="(\/[^"]+)"/g)].map(m=>new URL(decode(m[1]),DOMAIN).pathname).filter(p=>p!==route));check(contentDestinations.size>=4&&contentDestinations.size<=6,route,`Needs 4–6 content links, got ${contentDestinations.size}`);
  for(const m of html.matchAll(/href="(\/[^"]*)"/g)){
   const target=new URL(decode(m[1]),DOMAIN);
   if(target.pathname==='/admin/'||/\.(css|svg)$/.test(target.pathname))continue;
@@ -67,7 +72,7 @@ for(const url of urls){
   check(/alt="[^"]+"/.test(image[0]),route,'Missing image alt');
   const src=decode(image[1]);if(src.startsWith('/'))links.set('asset:'+src,new Set([src]));
  }
- pages.push({route,title,description,leadSentences:leadSentences.length,faqCount:faq?.mainEntity?.length||0,contentLinks:contentDestinations.size,images:images.length,internalLinks:links.get(route)?.size||0});
+ pages.push({route,title,description,contentWords,leadSentences:leadSentences.length,faqCount:faq?.mainEntity?.length||0,contentLinks:contentDestinations.size,images:images.length,internalLinks:links.get(route)?.size||0});
 }
 const known=new Set(urls.map(x=>new URL(x).pathname)),checkedAssets=new Map();
 for(const [from,targets] of links){
@@ -80,11 +85,11 @@ for(const [from,targets] of links){
 }
 const reachable=new Set(['/']),queue=['/'];
 while(queue.length){for(const to of links.get(queue.shift())||[]){if(known.has(to)&&!reachable.has(to)){reachable.add(to);queue.push(to)}}}
-for(const route of known)check(reachable.has(route),route,'Orphan URL: not reachable from homepage');
+for(const route of known){check(reachable.has(route),route,'Orphan URL: not reachable from homepage');const incoming=[...links].filter(([from,to])=>known.has(from)&&from!==route&&to.has(route)).length;check(incoming>=3,route,'Fewer than 3 linking pages: '+incoming);const item=pages.find(p=>p.route===route);if(item)item.incomingPages=incoming;}
 const robots=await get('/robots.txt'),robotsText=await robots.text();
 check(robots.status===200&&robotsText.includes('Sitemap: '+DOMAIN+'/sitemap.xml')&&robotsText.includes('Disallow: /admin/'),'/robots.txt','Incorrect robots');
-for(const [from,to] of Object.entries(PRODUCT_REDIRECTS)){const response=await get(from);check(response.status===301&&response.headers.get('location')===DOMAIN+to,from,'Product consolidation must redirect directly to its destination');}
-const missing=await get('/tin-tuc/khong-ton-tai/');check(missing.status===404,'/tin-tuc/khong-ton-tai/','Soft 404');
+for(const [from,to] of Object.entries({...PRODUCT_REDIRECTS,...EDITORIAL_REDIRECTS})){const response=await get(from);check(response.status===301&&response.headers.get('location')===DOMAIN+to,from,'Consolidation must redirect directly to its destination');check(known.has(new URL(to,DOMAIN).pathname),from,'Redirect target must be indexable');}
+const adminOld=await get('/admin/');check(adminOld.status===404,'/admin/','Old admin must be unavailable');const adminNew=await get(ADMIN_PATH);check(adminNew.status===200&&/noindex/.test(adminNew.headers.get('x-robots-tag')||''),ADMIN_PATH,'Admin requires noindex');const missing=await get('/tin-tuc/khong-ton-tai/');check(missing.status===404,'/tin-tuc/khong-ton-tai/','Soft 404');
 const report={checkedAt:new Date().toISOString(),mode:base?'http':'worker-in-process',base:base||DOMAIN,urlCount:urls.length,reachableCount:reachable.size,assetCount:checkedAssets.size,failures,warnings,pages};
 await fs.mkdir('dist',{recursive:true});
 await fs.writeFile('dist/seo-audit.json',JSON.stringify(report,null,2)+'\n');

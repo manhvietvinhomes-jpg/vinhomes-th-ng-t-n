@@ -1,0 +1,277 @@
+{
+  "/tong-quan/": {
+    "wordCount": 1968,
+    "keywords": [
+      "vinhomes olympic là gì",
+      "khu đô thị thể thao quốc tế hà nội",
+      "quy mô tổng thể olympic",
+      "chủ đầu tư phân khu b",
+      "tên gọi olympic thường tín",
+      "dự án phía nam hà nội"
+    ],
+    "intent": "Nhận diện dự án, tên hồ sơ và cấu trúc tổng thể",
+    "competitorReview": "Google/Bing blocked by environment proxy; no first-page/PAA claims. See municipal-search-results.json.",
+    "sources": [
+      {
+        "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+        "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+        "date": "2026-04-13"
+      },
+      {
+        "label": "UBND xã Dân Hòa: Tri Lễ, 13/10/2026",
+        "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/thong-bao-2765261013100629618.htm",
+        "date": "2026-10-13"
+      },
+      {
+        "label": "UBND xã Dân Hòa, 22/04/2026",
+        "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
+        "date": "2026-04-22"
+      },
+      {
+        "label": "UBND xã Ngọc Hồi, 10/02/2026",
+        "url": "https://ngochoi.hanoi.gov.vn/tin-tuc-su-kien/lay-y-kien-cong-dong-dan-cu-doi-voi-do-an-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-phan-khu-a-b-c-d-2724260210151416024.htm",
+        "date": "2026-02-10"
+      }
+    ]
+  },
+  "/vi-tri/": {
+    "wordCount": 1991,
+    "keywords": [
+      "vinhomes olympic ở đâu",
+      "ranh giới phân khu b",
+      "đường vào olympic",
+      "olympic thường tín thuộc xã nào",
+      "kết nối phân khu b",
+      "đo đường đi olympic"
+    ],
+    "intent": "Xác định địa bàn, ranh và tổ chức khảo sát đường tiếp cận",
+    "competitorReview": "Google/Bing blocked by environment proxy; no first-page/PAA claims. See municipal-search-results.json.",
+    "sources": [
+      {
+        "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+        "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+        "date": "2026-04-13"
+      },
+      {
+        "label": "UBND xã Dân Hòa, 22/04/2026",
+        "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
+        "date": "2026-04-22"
+      },
+      {
+        "label": "UBND xã Dân Hòa: Tri Lễ, 13/10/2026",
+        "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/thong-bao-2765261013100629618.htm",
+        "date": "2026-10-13"
+      }
+    ]
+  },
+  "/quy-hoach/": {
+    "wordCount": 1875,
+    "keywords": [
+      "quy hoạch olympic 1/500",
+      "quy hoạch olympic 1/2000",
+      "phân khu a b c d olympic",
+      "quyết định 6260",
+      "điều chỉnh đồ án olympic",
+      "chức năng đất phân khu b"
+    ],
+    "intent": "Đọc cấp quy hoạch, phân khu và phiên bản đồ án",
+    "competitorReview": "Google/Bing blocked by environment proxy; no first-page/PAA claims. See municipal-search-results.json.",
+    "sources": [
+      {
+        "label": "UBND xã Ngọc Hồi, 10/02/2026",
+        "url": "https://ngochoi.hanoi.gov.vn/tin-tuc-su-kien/lay-y-kien-cong-dong-dan-cu-doi-voi-do-an-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-phan-khu-a-b-c-d-2724260210151416024.htm",
+        "date": "2026-02-10"
+      },
+      {
+        "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+        "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+        "date": "2026-04-13"
+      },
+      {
+        "label": "UBND xã Dân Hòa, 22/04/2026",
+        "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
+        "date": "2026-04-22"
+      }
+    ]
+  },
+  "/phap-ly/": {
+    "wordCount": 1917,
+    "keywords": [
+      "quyết định 916 olympic",
+      "hồ sơ môi trường phân khu b",
+      "liên danh đầu tư olympic",
+      "điều kiện kinh doanh nhà olympic",
+      "kiểm tra bên ký olympic",
+      "hồ sơ pháp lý phân khu b"
+    ],
+    "intent": "Kiểm tra chuỗi hồ sơ và chủ thể của giao dịch cụ thể",
+    "competitorReview": "Google/Bing blocked by environment proxy; no first-page/PAA claims. See municipal-search-results.json.",
+    "sources": [
+      {
+        "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+        "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+        "date": "2026-04-13"
+      },
+      {
+        "label": "Sở Xây dựng Hà Nội: danh sách dự án đủ điều kiện kinh doanh",
+        "url": "https://soxaydung.hanoi.gov.vn/danh-sach-du-an-nha-o-du-dieu-kien-dua-vao-kinh-doanh",
+        "date": null
+      },
+      {
+        "label": "UBND xã Dân Hòa: Tri Lễ, 13/10/2026",
+        "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/thong-bao-2765261013100629618.htm",
+        "date": "2026-10-13"
+      }
+    ]
+  },
+  "/tien-do/": {
+    "wordCount": 1963,
+    "keywords": [
+      "tiến độ olympic tháng 10 2026",
+      "giải phóng mặt bằng dân hòa",
+      "thu hồi đất tri lễ olympic",
+      "nguồn gốc đất quế sơn",
+      "đường dẫn ước lễ",
+      "nhật ký xây dựng olympic"
+    ],
+    "intent": "Theo dõi mốc triển khai theo ngày, địa bàn và hạng mục",
+    "competitorReview": "Google/Bing blocked by environment proxy; no first-page/PAA claims. See municipal-search-results.json.",
+    "sources": [
+      {
+        "label": "UBND xã Dân Hòa: Tri Lễ, 13/10/2026",
+        "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/thong-bao-2765261013100629618.htm",
+        "date": "2026-10-13"
+      },
+      {
+        "label": "UBND xã Dân Hòa: Quế Sơn, 28/09/2026",
+        "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/danh-sach-dieu-chinh-xac-nhan-nguon-goc-dat-nong-nghiep-duoc-giao-theo-nghi-dinh-64-1993-cp-cua-2765260929093308487.htm",
+        "date": "2026-09-28"
+      },
+      {
+        "label": "UBND xã Dân Hòa, 22/04/2026",
+        "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
+        "date": "2026-04-22"
+      },
+      {
+        "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+        "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+        "date": "2026-04-13"
+      }
+    ]
+  },
+  "/gia-ban/": {
+    "wordCount": 1845,
+    "keywords": [
+      "bảng giá olympic cần kiểm tra",
+      "chi phí mua nhà olympic",
+      "giá đất và giá nhà olympic",
+      "chiết khấu báo giá olympic",
+      "ngân sách mua olympic",
+      "đơn giá sản phẩm olympic"
+    ],
+    "intent": "Chuẩn hóa báo giá và kiểm tra khả năng chi trả",
+    "competitorReview": "Google/Bing blocked by environment proxy; no first-page/PAA claims. See municipal-search-results.json.",
+    "sources": [
+      {
+        "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+        "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+        "date": "2026-04-13"
+      },
+      {
+        "label": "UBND xã Dân Hòa, 22/04/2026",
+        "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
+        "date": "2026-04-22"
+      },
+      {
+        "label": "UBND xã Dân Hòa: Quế Sơn, 28/09/2026",
+        "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/danh-sach-dieu-chinh-xac-nhan-nguon-goc-dat-nong-nghiep-duoc-giao-theo-nghi-dinh-64-1993-cp-cua-2765260929093308487.htm",
+        "date": "2026-09-28"
+      },
+      {
+        "label": "Sở Xây dựng Hà Nội: danh sách dự án đủ điều kiện kinh doanh",
+        "url": "https://soxaydung.hanoi.gov.vn/danh-sach-du-an-nha-o-du-dieu-kien-dua-vao-kinh-doanh",
+        "date": null
+      }
+    ]
+  },
+  "/mat-bang/": {
+    "wordCount": 1835,
+    "keywords": [
+      "bản vẽ mặt bằng olympic",
+      "diện tích đô thị phân khu b",
+      "cơ cấu diện tích olympic b",
+      "đọc chú giải mặt bằng",
+      "mặt bằng căn olympic",
+      "tỷ lệ bản vẽ olympic"
+    ],
+    "intent": "Đọc bản vẽ, ký hiệu và diện tích của ô đất hoặc căn",
+    "competitorReview": "Google/Bing blocked by environment proxy; no first-page/PAA claims. See municipal-search-results.json.",
+    "sources": [
+      {
+        "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+        "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+        "date": "2026-04-13"
+      },
+      {
+        "label": "UBND xã Ngọc Hồi, 10/02/2026",
+        "url": "https://ngochoi.hanoi.gov.vn/tin-tuc-su-kien/lay-y-kien-cong-dong-dan-cu-doi-voi-do-an-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-phan-khu-a-b-c-d-2724260210151416024.htm",
+        "date": "2026-02-10"
+      }
+    ]
+  },
+  "/san-pham/": {
+    "wordCount": 1836,
+    "keywords": [
+      "liền kề olympic trong hồ sơ",
+      "biệt thự olympic trong hồ sơ",
+      "chung cư olympic trong hồ sơ",
+      "thương mại dịch vụ olympic",
+      "chọn loại hình olympic",
+      "tiện ích quy hoạch olympic"
+    ],
+    "intent": "Chọn nhóm loại hình theo công năng sử dụng và dữ liệu sản phẩm",
+    "competitorReview": "Google/Bing blocked by environment proxy; no first-page/PAA claims. See municipal-search-results.json.",
+    "sources": [
+      {
+        "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+        "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+        "date": "2026-04-13"
+      }
+    ]
+  },
+  "/so-sanh/": {
+    "wordCount": 1904,
+    "keywords": [
+      "có nên mua olympic",
+      "đánh giá nhu cầu ở olympic",
+      "so phương án mua olympic",
+      "rủi ro thời gian chờ olympic",
+      "quy mô và giá trị sử dụng",
+      "tiêu chí chọn olympic"
+    ],
+    "intent": "So phương án ở hoặc đầu tư trên cùng nhu cầu và ngân sách",
+    "competitorReview": "Google/Bing blocked by environment proxy; no first-page/PAA claims. See municipal-search-results.json.",
+    "sources": [
+      {
+        "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+        "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+        "date": "2026-04-13"
+      },
+      {
+        "label": "UBND xã Dân Hòa, 22/04/2026",
+        "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
+        "date": "2026-04-22"
+      },
+      {
+        "label": "UBND xã Dân Hòa: Tri Lễ, 13/10/2026",
+        "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/thong-bao-2765261013100629618.htm",
+        "date": "2026-10-13"
+      },
+      {
+        "label": "UBND xã Ngọc Hồi, 10/02/2026",
+        "url": "https://ngochoi.hanoi.gov.vn/tin-tuc-su-kien/lay-y-kien-cong-dong-dan-cu-doi-voi-do-an-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-phan-khu-a-b-c-d-2724260210151416024.htm",
+        "date": "2026-02-10"
+      }
+    ]
+  }
+}

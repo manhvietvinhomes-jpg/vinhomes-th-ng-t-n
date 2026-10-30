@@ -1,3 +1,7 @@
+import {contentWordCount,PILLAR_SLUGS} from './text.js';
+import {ADMIN_PATH} from './admin-config.js';
+import {EDITORIAL_REDIRECTS, UTILITY_SLUGS} from './journalism-release.js';
+import {matchingStep} from './totp.js';
 import { INITIAL_CONTENT } from './seed.js';
 import { PRODUCT_REDIRECTS } from './editorial.js';
 import { DOMAIN, slugify, renderSeo, sitemap, robots, injectHome } from './seo.js';
@@ -26,8 +30,8 @@ function cleanUrl(value) {
 }
 function editorialFields(x){
  return {intro:str(x?.intro,850),searchIntent:str(x?.searchIntent,220),imageAlt:str(x?.imageAlt,450),imageCaption:str(x?.imageCaption,400),
-  faqs:Array.isArray(x?.faqs)?x.faqs.slice(0,5).map(f=>({question:str(f?.question,250),answer:str(f?.answer,1500),sources:Array.isArray(f?.sources)?f.sources.slice(0,4).map(s=>({label:str(s?.label,300),url:typeof s?.url==='string'&&/^\/(?:[a-z0-9-]+\/)*(?:#[a-z0-9-]+)?$/.test(s.url)?s.url:cleanUrl(s?.url),kind:s?.kind==='document'?'document':'editorial'})).filter(s=>s.label&&s.url):[]})).filter(f=>f.question&&f.answer):[],
-  relatedLinks:Array.isArray(x?.relatedLinks)?x.relatedLinks.slice(0,5).map(l=>({href:typeof l?.href==='string'&&/^\/(?:[a-z0-9-]+\/)*$/.test(l.href)?l.href:'',anchor:str(l?.anchor,220)})).filter(l=>l.href&&l.anchor):[]};
+  faqs:Array.isArray(x?.faqs)?x.faqs.slice(0,6).map(f=>({question:str(f?.question,250),answer:str(f?.answer,1500),sources:Array.isArray(f?.sources)?f.sources.slice(0,4).map(s=>({label:str(s?.label,300),url:typeof s?.url==='string'&&/^\/(?:[a-z0-9-]+\/)*(?:#[a-z0-9-]+)?$/.test(s.url)?s.url:cleanUrl(s?.url),kind:s?.kind==='document'?'document':'editorial'})).filter(s=>s.label&&s.url):[]})).filter(f=>f.question&&f.answer):[],
+  relatedLinks:Array.isArray(x?.relatedLinks)?x.relatedLinks.slice(0,6).map(l=>({href:typeof l?.href==='string'&&/^\/(?:[a-z0-9-]+\/)*$/.test(l.href)?l.href:'',anchor:str(l?.anchor,220)})).filter(l=>l.href&&l.anchor):[]};
 }
 function normalize(source) {
   const obj = source && typeof source === 'object' && !Array.isArray(source) ? source : {};
@@ -47,7 +51,7 @@ function normalize(source) {
     out.pages=obj.pages.slice(0,25).map(x=>({
       ...editorialFields(x),slug:str(x?.slug,80).toLowerCase().replace(/[^a-z0-9-]/g,''),
       title:str(x?.title,180),summary:str(x?.summary,850),keyword:str(x?.keyword,130),
-      body:str(x?.body,16000),image:cleanUrl(x?.image),status:['confirmed','needs-verification','pending'].includes(x?.status)?x.status:'pending',
+      body:str(x?.body,28000),image:cleanUrl(x?.image),status:['confirmed','needs-verification','pending'].includes(x?.status)?x.status:'pending',
       sourceLabel:str(x?.sourceLabel,250),sourceUrl:cleanUrl(x?.sourceUrl),updated:str(x?.updated,30),
       seoTitle:str(x?.seoTitle,200),seoDescription:str(x?.seoDescription,300),published:x?.published!==false
     })).filter(x=>{
@@ -62,7 +66,7 @@ function normalize(source) {
   if (Array.isArray(obj.gallery)) out.gallery = obj.gallery.slice(0,100).map(x=>({id:str(x?.id,70)||crypto.randomUUID(),title:str(x?.title,160),image:cleanUrl(x?.image)}));
   if (Array.isArray(obj.posts)) out.posts = obj.posts.slice(0,500).map(x=>({
     ...editorialFields(x),id:str(x?.id,70)||crypto.randomUUID(),title:str(x?.title,200),date:str(x?.date,30),
-    updated:str(x?.updated,30),excerpt:str(x?.excerpt,700),content:str(x?.content,8500),image:cleanUrl(x?.image),slug:slugify(x?.slug||x?.title),published:x?.published!==false,
+    updated:str(x?.updated,30),eventDate:str(x?.eventDate,30),excerpt:str(x?.excerpt,700),content:str(x?.content,28000),image:cleanUrl(x?.image),slug:slugify(x?.slug||x?.title),published:x?.published!==false,
     seoTitle:str(x?.seoTitle,200),seoDescription:str(x?.seoDescription,300),keyword:str(x?.keyword,130),
     status:['confirmed','needs-verification','pending'].includes(x?.status)?x.status:'needs-verification',
     articleNote:str(x?.articleNote,380),topic:str(x?.topic,60),category:str(x?.category,100),
@@ -172,7 +176,7 @@ async function publicLead(req,env) {
 async function api(request,env) {
   const u=new URL(request.url), p=u.pathname,method=request.method;
   if (!env.OLYMPIC_KV)return fail('Chưa thiết lập kho dữ liệu Cloudflare KV. Xem HƯỚNG-DẪN.txt.',503);
-  if(p==='/api/site'&&method==='GET')return good({content:await site(env)});
+  if(p==='/api/site'&&method==='GET'){const content=await site(env);content.posts=content.posts.filter(x=>x.published!==false).map(({content,faqs,sources,...p})=>p);content.pages=content.pages.filter(x=>x.published!==false).map(({body,faqs,...p})=>p);return good({content});}
   if(p==='/api/leads'&&method==='POST')return publicLead(request,env);
   if(!p.startsWith('/api/admin/'))return fail('Không tìm thấy.',404);
   if(!(await authenticated(request,env)))return fail('Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.',401);
@@ -187,10 +191,11 @@ async function api(request,env) {
       const title=item.seoTitle||item.title,description=item.seoDescription||item.summary||item.excerpt||'';
       if([...title].length>60||[...description].length>160)return fail('Tiêu đề SEO tối đa 60 ký tự, mô tả tối đa 160 ký tự: '+item.slug);
       const leadSentences=(item.intro||'').split(/(?<=[.!?])\s+/).filter(Boolean);
-      if(leadSentences.length<2||leadSentences.length>3||!item.searchIntent)return fail('Cần ý định riêng và mở đầu trả lời trực tiếp bằng 2–3 câu: '+item.slug);
+      if(leadSentences.length<2||leadSentences.length>4||!item.searchIntent)return fail('Cần ý định riêng và mở đầu trả lời trực tiếp bằng 2–4 câu: '+item.slug);
+      if(PILLAR_SLUGS.includes(item.slug)){const words=contentWordCount(item.body);if(words<1800||words>2500)return fail('Trang trụ cột cần 1.800–2.500 từ hiển thị: '+item.slug);}
       if(!item.image||!item.imageAlt)return fail('Cần ảnh minh họa và mô tả ảnh: '+item.slug);
-      if(item.faqs?.length<3||item.faqs?.length>5||item.faqs.some(f=>!f.sources.length))return fail('Mỗi nội dung xuất bản cần 3–5 FAQ có căn cứ: '+item.slug);
-      if(item.relatedLinks?.length<3||item.relatedLinks?.length>5)return fail('Mỗi nội dung xuất bản cần 3–5 liên kết mô tả: '+item.slug);
+      if(!UTILITY_SLUGS.includes(item.slug)&&(item.faqs?.length<5||item.faqs?.length>6||item.faqs.some(f=>!f.sources.length||f.sources.some(z=>z.kind!=='document'||!z.url.startsWith('https://')))))return fail('Bài thông tin cần 5–6 FAQ dẫn tài liệu bên ngoài: '+item.slug);
+      if(item.relatedLinks?.length<4||item.relatedLinks?.length>6)return fail('Mỗi nội dung xuất bản cần 4–6 liên kết mô tả: '+item.slug);
     }
     await env.OLYMPIC_KV.put('site:content',JSON.stringify(clean));
     return good({content:clean,message:'Đã lưu nội dung.'});
@@ -236,8 +241,11 @@ async function apiWithCookies(req,env){
     const identity=await hashedIp(req,env), keyName='limit:auth:'+identity;
     if(Number(await env.OLYMPIC_KV.get(keyName)||'0')>=10)return fail('Bạn đã thử nhiều lần. Vui lòng đợi khoảng một giờ.',429);
     const password=str(body.password,300);
-    const ok=password.length>0&&equalStr(await signature(env.ADMIN_PASSWORD,'verify'),await signature(password,'verify'));
-    if(!ok){await rateLimit(env,keyName,10,3600);return fail('Mật khẩu không đúng.',401);}
+    let ok=password.length>0&&equalStr(await signature(env.ADMIN_PASSWORD,'verify'),await signature(password,'verify'));
+    let totpStep=null;
+    if(env.ADMIN_TOTP_SECRET){try{totpStep=ok?await matchingStep(env.ADMIN_TOTP_SECRET,str(body.otp,6)):null;const last=Number(await env.OLYMPIC_KV.get('auth:last-totp-step')||'0');ok=ok&&totpStep!==null&&totpStep>last;}catch{return fail('Cấu hình xác thực chưa hợp lệ.',503);}}
+    if(!ok){await rateLimit(env,keyName,10,3600);return fail('Mật khẩu hoặc mã xác thực không đúng.',401);}
+    if(totpStep!==null)await env.OLYMPIC_KV.put('auth:last-totp-step',String(totpStep),{expirationTtl:120});
     await env.OLYMPIC_KV.delete(keyName);
     const expiry=Date.now()+SESSION_AGE*1000;
     const token=`${expiry}.${await signature(env.ADMIN_PASSWORD,`v1:${expiry}`)}`;
@@ -252,23 +260,25 @@ async function apiWithCookies(req,env){
     return fail(safe, safe.includes('thử lại') ? 500 : 400);
   }
 }
+function notFound(request){return new Response(request.method==='HEAD'?null:'<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><title>Không tìm thấy trang | Mạnh Việt</title><link rel="stylesheet" href="/site.css"></head><body><main class="container" style="padding:80px 20px"><h1>Không tìm thấy trang</h1><p>Đường dẫn có thể đã thay đổi. Chọn chuyên đề phù hợp để tiếp tục.</p><nav aria-label="Trang chính"><a href="/">Trang chủ</a> · <a href="/tong-quan/">Tổng quan Olympic</a> · <a href="/vi-tri/">Vị trí</a> · <a href="/phap-ly/">Pháp lý</a> · <a href="/tin-tuc/">Tin theo ngày nguồn</a></nav></main></body></html>',{status:404,headers:{'content-type':'text/html; charset=utf-8','x-robots-tag':'noindex, follow','x-content-type-options':'nosniff','x-frame-options':'DENY'}})}
 export default {
   async fetch(request,env) {
     const url=new URL(request.url);
-    if(url.hostname==='www.vinhomesthuongtin.vn'||(url.hostname==='vinhomesthuongtin.vn'&&url.protocol==='http:'))return Response.redirect(DOMAIN+url.pathname+url.search,301);
-    const productRedirect=PRODUCT_REDIRECTS[url.pathname.replace(/\/$/,'')+'/'];
-    if(productRedirect&&(request.method==='GET'||request.method==='HEAD')){const target=new URL(DOMAIN+productRedirect);target.search=url.search;return Response.redirect(target.href,301);}
+    const rawPath=url.pathname,slashPath=/^\/[a-z0-9-]+(?:\/[a-z0-9-]+)?$/.test(rawPath)&&!rawPath.startsWith('/api/')&&!rawPath.startsWith('/media/')?rawPath+'/':rawPath;
+    const target=PRODUCT_REDIRECTS[slashPath]||EDITORIAL_REDIRECTS[slashPath]||slashPath;
+    if((request.method==='GET'||request.method==='HEAD')&&(url.hostname==='www.vinhomesthuongtin.vn'||(url.hostname==='vinhomesthuongtin.vn'&&url.protocol==='http:')||target!==rawPath)){const next=new URL(DOMAIN+target);next.search=url.search;return Response.redirect(next.href,301);}
     if(url.pathname.startsWith('/api/'))return apiWithCookies(request,env);
-    if(url.pathname==='/admin'||url.pathname==='/admin/'){
-      const response=await env.ASSETS.fetch(request);
-      const copy=new Response(response.body,response);
-      copy.headers.set('x-robots-tag','noindex, nofollow');copy.headers.set('cache-control','no-store');return copy;
+    if(rawPath==='/admin/'||rawPath.startsWith('/admin/'))return notFound(request);
+    if(rawPath.startsWith(ADMIN_PATH)){
+      const relative=rawPath.slice(ADMIN_PATH.length);if(!['','admin.js','admin.css'].includes(relative))return notFound(request);
+      const assetRequest=new Request(new URL('/admin/'+relative,request.url),request);const response=await env.ASSETS.fetch(assetRequest);
+      const copy=new Response(request.method==='HEAD'?null:response.body,response);copy.headers.set('x-robots-tag','noindex, nofollow');copy.headers.set('cache-control','no-store');copy.headers.set('x-frame-options','DENY');copy.headers.set('x-content-type-options','nosniff');return copy;
     }
     // Public pages are rendered on the server, so search engines receive readable text without JS.
     if((request.method==='GET'||request.method==='HEAD') && (/^\/[a-z0-9-]+\/$/.test(url.pathname)||url.pathname==='/'||url.pathname==='/sitemap.xml'||url.pathname==='/robots.txt'||/^\/(tin-tuc|san-pham)\/[a-z0-9-]+\/$/.test(url.pathname))) {
       const content=env.OLYMPIC_KV ? await site(env) : normalize(INITIAL_CONTENT);
       const noindex=url.hostname!=='vinhomesthuongtin.vn'?'noindex, nofollow':'index, follow';
-      const headers={'x-content-type-options':'nosniff','x-robots-tag':noindex,'cache-control':'public,max-age=120'};
+      const headers={'x-frame-options':'DENY','referrer-policy':'strict-origin-when-cross-origin','permissions-policy':'camera=(), microphone=()','x-content-type-options':'nosniff','x-robots-tag':noindex,'cache-control':'public,max-age=120'};
       if(url.pathname==='/robots.txt')return new Response(request.method==='HEAD'?null:robots(),{headers:{...headers,'content-type':'text/plain; charset=utf-8'}});
       if(url.pathname==='/sitemap.xml')return new Response(request.method==='HEAD'?null:sitemap(content),{headers:{...headers,'content-type':'application/xml; charset=utf-8'}});
       if(url.pathname==='/') {
@@ -279,7 +289,7 @@ export default {
       }
       if(/^\/san-pham\/[a-z0-9-]+\/$/.test(url.pathname))headers['x-robots-tag']='noindex, follow';
       const html=renderSeo(url.pathname,content);
-      return html?new Response(request.method==='HEAD'?null:html,{headers:{...headers,'content-type':'text/html; charset=utf-8'}}):new Response('Không tìm thấy trang',{status:404,headers:{'content-type':'text/plain; charset=utf-8','x-robots-tag':'noindex'}});
+      return html?new Response(request.method==='HEAD'?null:html,{headers:{...headers,'content-type':'text/html; charset=utf-8'}}):notFound(request);
     }
     if(/^\/(tin-tuc|san-pham)\/[a-z0-9-]+$/.test(url.pathname)||url.pathname==='/tin-tuc'||/^\/(tong-quan|vi-tri|quy-hoach|san-pham|gia-ban|mat-bang|tien-do|phap-ly|so-sanh|chinh-sach-bao-mat)$/.test(url.pathname)){
       return Response.redirect(new URL(url.pathname+'/',DOMAIN),301);
@@ -292,7 +302,7 @@ export default {
       if(!result.value)return new Response('Not found',{status:404});
       return new Response(request.method==='HEAD'?null:result.value,{headers:{'content-type':result.metadata?.mime||'application/octet-stream','cache-control':'public,max-age=31536000,immutable','x-content-type-options':'nosniff'}});
     }
-    return env.ASSETS.fetch(request);
+    const response=await env.ASSETS.fetch(request);return response.status===404?notFound(request):response;
   }
 };
 export { normalize, imageMime };

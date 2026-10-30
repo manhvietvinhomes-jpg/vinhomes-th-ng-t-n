@@ -1,509 +1,209 @@
 {
-  "updated": "2026-10-27",
-  "articles": [
-    {
-      "slug": "vinhomes-olympic-thuong-tin-tong-quan",
-      "title": "Tên Vinhomes Olympic và tên dự án trong hồ sơ khác nhau thế nào?",
-      "keyword": "tên pháp lý khu đô thị thể thao Olympic",
-      "topic": "tong-quan"
-    },
-    {
-      "slug": "vi-tri-vinhomes-olympic-thuong-tin",
-      "title": "Thường Tín và các địa danh trong hồ sơ phân khu B Olympic",
-      "keyword": "địa điểm phân khu B Olympic",
-      "topic": "vi-tri"
-    },
-    {
-      "slug": "quy-hoach-vinhomes-olympic-a-b-c-d",
-      "title": "Đọc hồ sơ lấy ý kiến 1/500 Olympic phân khu A, B, C, D",
-      "keyword": "hồ sơ lấy ý kiến quy hoạch Olympic 1/500",
-      "topic": "quy-hoach"
-    },
-    {
-      "slug": "tien-ich-vinhomes-olympic-khu-the-thao",
-      "title": "Tiện ích Olympic: quy hoạch và dịch vụ đang phục vụ",
-      "keyword": "tiện ích Vinhomes Olympic",
-      "topic": "Phân tích dự án"
-    },
-    {
-      "slug": "vinhomes-olympic-khi-nao-mo-ban",
-      "title": "Olympic khi nào mở bán? Cách kiểm tra thông báo",
-      "keyword": "Vinhomes Olympic khi nào mở bán",
-      "topic": "Phân tích dự án"
-    },
-    {
-      "slug": "tien-do-vinhomes-olympic-2026",
-      "title": "Đọc thông báo bồi thường và giải phóng mặt bằng Olympic",
-      "keyword": "thông báo giải phóng mặt bằng Olympic",
-      "topic": "tien-do"
-    },
-    {
-      "slug": "tiem-nang-thuong-tin-vinhomes-olympic",
-      "title": "Đánh giá khu vực Thường Tín: hiện trạng và kỳ vọng",
-      "keyword": "tiềm năng Thường Tín Vinhomes Olympic",
-      "topic": "Phân tích dự án"
-    },
-    {
-      "slug": "kinh-nghiem-mua-vinhomes-olympic",
-      "title": "Trình tự kiểm tra trước khi mua tại Olympic",
-      "keyword": "kinh nghiệm mua Vinhomes Olympic",
-      "topic": "Phân tích dự án"
-    },
-    {
-      "slug": "san-pham-vinhomes-olympic-lien-ke-biet-thu-chung-cu",
-      "title": "Liền kề, biệt thự hay căn hộ: chọn theo cách sử dụng",
-      "keyword": "so sánh loại hình nhà ở",
-      "topic": "san-pham"
-    },
-    {
-      "slug": "gia-vinhomes-olympic-quy-can",
-      "title": "Cách kiểm tra bảng giá và quỹ căn trước khi hỏi mua Olympic",
-      "keyword": "cách kiểm tra bảng giá Olympic",
-      "topic": "gia-ban"
-    },
-    {
-      "slug": "khao-sat-duong-di-vinhomes-olympic",
-      "title": "Khảo sát đường đi đến Vinhomes Olympic theo lịch sinh hoạt",
-      "keyword": "khảo sát đường đi đến vinhomes olympic theo lịch sinh hoạt",
-      "topic": "Vị trí và kết nối"
-    },
-    {
-      "slug": "ga-ngoc-hoi-va-lua-chon-nha",
-      "title": "Ga Ngọc Hồi: cách đánh giá kết nối khi chọn nhà Olympic",
-      "keyword": "ga ngọc hồi",
-      "topic": "Vị trí và kết nối"
-    },
-    {
-      "slug": "quoc-lo-1a-ket-noi-thuong-tin",
-      "title": "Quốc lộ 1A và bài toán kết nối khu vực Thường Tín",
-      "keyword": "quốc lộ 1a và bài toán kết nối khu vực thường tín",
-      "topic": "Vị trí và kết nối"
-    },
-    {
-      "slug": "phap-van-cau-gie-khi-chon-nha",
-      "title": "Pháp Vân – Cầu Giẽ: kiểm tra lối tiếp cận trước khi chọn nhà",
-      "keyword": "pháp vân – cầu giẽ",
-      "topic": "Vị trí và kết nối"
-    },
-    {
-      "slug": "vanh-dai-4-va-gia-tri-su-dung",
-      "title": "Vành đai 4: đọc kết nối hạ tầng khi tìm nhà Olympic",
-      "keyword": "vành đai 4",
-      "topic": "Vị trí và kết nối"
-    },
-    {
-      "slug": "dai-lo-120m-cach-doc-thong-tin",
-      "title": "Đại lộ 120 m: kiểm tra quy mô và tiến độ tuyến đường",
-      "keyword": "đại lộ 120 m",
-      "topic": "Vị trí và kết nối"
-    },
-    {
-      "slug": "khao-sat-gio-cao-diem-thuong-tin",
-      "title": "Khảo sát giờ cao điểm tại Thường Tín: mẫu nhật ký di chuyển",
-      "keyword": "khảo sát giờ cao điểm tại thường tín",
-      "topic": "Vị trí và kết nối"
-    },
-    {
-      "slug": "doc-ban-do-vi-tri-du-an",
-      "title": "Đọc bản đồ vị trí dự án: tọa độ, tỷ lệ và lối vào",
-      "keyword": "đọc bản đồ vị trí dự án",
-      "topic": "Vị trí và kết nối"
-    },
-    {
-      "slug": "quy-hoach-1-2000-la-gi",
-      "title": "Quy hoạch 1/2.000: đọc cấu trúc đô thị trước khi chọn vị trí",
-      "keyword": "quy hoạch 1/2.000",
-      "topic": "Quy hoạch và mặt bằng"
-    },
-    {
-      "slug": "quy-hoach-1-500-cach-doc",
-      "title": "Quy hoạch 1/500: danh mục chi tiết cần đọc trên bản vẽ",
-      "keyword": "quy hoạch 1/500",
-      "topic": "Quy hoạch và mặt bằng"
-    },
-    {
-      "slug": "ky-hieu-chuc-nang-dat",
-      "title": "Ký hiệu chức năng đất: tránh nhầm đất ở và công trình công cộng",
-      "keyword": "ký hiệu chức năng đất",
-      "topic": "Quy hoạch và mặt bằng"
-    },
-    {
-      "slug": "mat-do-xay-dung-khi-chon-nha",
-      "title": "Mật độ xây dựng: cách so sánh không gian ở thực tế",
-      "keyword": "mật độ xây dựng",
-      "topic": "Quy hoạch và mặt bằng"
-    },
-    {
-      "slug": "tang-cao-va-khong-gian-song",
-      "title": "Tầng cao công trình và lựa chọn không gian sống",
-      "keyword": "tầng cao công trình và lựa chọn không gian sống",
-      "topic": "Quy hoạch và mặt bằng"
-    },
-    {
-      "slug": "khoang-lui-va-chi-gioi",
-      "title": "Khoảng lùi, chỉ giới: kiểm tra ranh trước khi tính diện tích sử dụng",
-      "keyword": "khoảng lùi, chỉ giới",
-      "topic": "Quy hoạch và mặt bằng"
-    },
-    {
-      "slug": "phan-ky-dau-tu-va-tien-ich",
-      "title": "Phân kỳ đầu tư: kiểm tra tiện ích nào phục vụ khi nhận nhà",
-      "keyword": "phân kỳ đầu tư",
-      "topic": "Quy hoạch và mặt bằng"
-    },
-    {
-      "slug": "dieu-chinh-quy-hoach-cach-theo-doi",
-      "title": "Theo dõi điều chỉnh quy hoạch: lưu phiên bản và phạm vi thay đổi",
-      "keyword": "theo dõi điều chỉnh quy hoạch",
-      "topic": "Quy hoạch và mặt bằng"
-    },
-    {
-      "slug": "chon-biet-thu-theo-nhu-cau",
-      "title": "Chọn biệt thự: diện tích sử dụng, riêng tư và chi phí chăm sóc",
-      "keyword": "chọn biệt thự",
-      "topic": "Chọn loại hình và căn"
-    },
-    {
-      "slug": "chon-lien-ke-cong-nang",
-      "title": "Chọn nhà liền kề: mặt tiền, chiều sâu và bố trí công năng",
-      "keyword": "chọn nhà liền kề",
-      "topic": "Chọn loại hình và căn"
-    },
-    {
-      "slug": "chon-shophouse-dong-khach",
-      "title": "Shophouse: đánh giá dòng khách trước khi tính tiền thuê",
-      "keyword": "shophouse",
-      "topic": "Chọn loại hình và căn"
-    },
-    {
-      "slug": "chon-can-ho-cho-gia-dinh",
-      "title": "Chọn căn hộ cho gia đình: mặt bằng, thang máy và không gian chung",
-      "keyword": "chọn căn hộ cho gia đình",
-      "topic": "Chọn loại hình và căn"
-    },
-    {
-      "slug": "can-goc-va-can-giua",
-      "title": "Căn góc và căn giữa: khi nào phần chênh giá có giá trị",
-      "keyword": "căn góc và căn giữa",
-      "topic": "Chọn loại hình và căn"
-    },
-    {
-      "slug": "san-vuon-khi-chon-nha",
-      "title": "Sân vườn nhà ở: diện tích đẹp cần dùng được và chăm được",
-      "keyword": "sân vườn nhà ở",
-      "topic": "Chọn loại hình và căn"
-    },
-    {
-      "slug": "tam-nhin-va-kha-nang-thay-doi",
-      "title": "Tầm nhìn căn nhà: kiểm tra hiện trạng và công trình tương lai",
-      "keyword": "tầm nhìn căn nhà",
-      "topic": "Chọn loại hình và căn"
-    },
-    {
-      "slug": "nha-cho-gia-dinh-nhieu-the-he",
-      "title": "Nhà cho gia đình nhiều thế hệ: riêng tư và tiếp cận",
-      "keyword": "nhà cho gia đình nhiều thế hệ",
-      "topic": "Chọn loại hình và căn"
-    },
-    {
-      "slug": "lap-ngan-sach-mua-nha",
-      "title": "Ngân sách mua nhà Olympic: tính từ số tiền có thể sử dụng",
-      "keyword": "ngân sách mua nhà olympic",
-      "topic": "Tài chính và ngân sách"
-    },
-    {
-      "slug": "vay-mua-nha-kha-nang-tra-no",
-      "title": "Vay mua nhà: đo khả năng trả nợ trước khi chọn căn",
-      "keyword": "vay mua nhà",
-      "topic": "Tài chính và ngân sách"
-    },
-    {
-      "slug": "lai-suat-uu-dai-va-tha-noi",
-      "title": "Lãi suất ưu đãi và thả nổi: lập bảng so sánh khoản vay",
-      "keyword": "lãi suất ưu đãi và thả nổi",
-      "topic": "Tài chính và ngân sách"
-    },
-    {
-      "slug": "tien-do-thanh-toan-mua-nha",
-      "title": "Tiến độ thanh toán: ghép lịch đóng tiền với dòng tiền gia đình",
-      "keyword": "tiến độ thanh toán",
-      "topic": "Tài chính và ngân sách"
-    },
-    {
-      "slug": "chi-phi-co-hoi-mua-bat-dong-san",
-      "title": "Chi phí cơ hội khi mua bất động sản: so sánh vốn theo cùng kỳ",
-      "keyword": "chi phí cơ hội khi mua bất động sản",
-      "topic": "Tài chính và ngân sách"
-    },
-    {
-      "slug": "thanh-khoan-bat-dong-san",
-      "title": "Thanh khoản bất động sản: chuẩn bị kịch bản cần bán lại",
-      "keyword": "thanh khoản bất động sản",
-      "topic": "Tài chính và ngân sách"
-    },
-    {
-      "slug": "dong-tien-cho-thue-nha",
-      "title": "Dòng tiền cho thuê nhà: từ doanh thu tới tiền còn lại",
-      "keyword": "dòng tiền cho thuê nhà",
-      "topic": "Tài chính và ngân sách"
-    },
-    {
-      "slug": "quy-du-phong-khi-so-huu-nha",
-      "title": "Quỹ dự phòng khi sở hữu nhà: chuẩn bị cho chi phí ngoài kế hoạch",
-      "keyword": "quỹ dự phòng khi sở hữu nhà",
-      "topic": "Tài chính và ngân sách"
-    },
-    {
-      "slug": "ho-so-can-xem-truoc-khi-mua",
-      "title": "Hồ sơ cần xem trước khi mua: lập danh mục theo tài sản",
-      "keyword": "hồ sơ cần xem trước khi mua",
-      "topic": "Hồ sơ và giao dịch"
-    },
-    {
-      "slug": "dat-coc-mua-nha-can-doc-gi",
-      "title": "Đặt cọc mua nhà: đọc đúng mục đích và điều kiện hoàn tiền",
-      "keyword": "đặt cọc mua nhà",
-      "topic": "Hồ sơ và giao dịch"
-    },
-    {
-      "slug": "doc-hop-dong-mua-ban-nha",
-      "title": "Đọc hợp đồng mua bán nhà: những nhóm điều khoản cần đối chiếu",
-      "keyword": "đọc hợp đồng mua bán nhà",
-      "topic": "Hồ sơ và giao dịch"
-    },
-    {
-      "slug": "bao-lanh-nha-o-hinh-thanh-tuong-lai",
-      "title": "Bảo lãnh nhà ở hình thành trong tương lai: câu hỏi cần chuẩn bị",
-      "keyword": "bảo lãnh nhà ở hình thành trong tương lai",
-      "topic": "Hồ sơ và giao dịch"
-    },
-    {
-      "slug": "the-chap-va-giai-chap-tai-san",
-      "title": "Thế chấp và giải chấp: làm rõ trước khi thanh toán",
-      "keyword": "thế chấp và giải chấp",
-      "topic": "Hồ sơ và giao dịch"
-    },
-    {
-      "slug": "quyen-so-huu-va-thoi-han-su-dung",
-      "title": "Quyền sở hữu và thời hạn sử dụng: đọc theo đúng hồ sơ",
-      "keyword": "quyền sở hữu và thời hạn sử dụng",
-      "topic": "Hồ sơ và giao dịch"
-    },
-    {
-      "slug": "kiem-tra-don-vi-tu-van-phan-phoi",
-      "title": "Kiểm tra đơn vị tư vấn và phân phối trước khi giao dịch",
-      "keyword": "kiểm tra đơn vị tư vấn và phân phối trước khi giao dịch",
-      "topic": "Hồ sơ và giao dịch"
-    },
-    {
-      "slug": "chung-tu-thanh-toan-bat-dong-san",
-      "title": "Chứng từ thanh toán bất động sản: cách lập hồ sơ tiền đã chuyển",
-      "keyword": "chứng từ thanh toán bất động sản",
-      "topic": "Hồ sơ và giao dịch"
-    },
-    {
-      "slug": "huong-nang-khi-chon-nha",
-      "title": "Hướng nắng khi chọn nhà: khảo sát phòng dùng nhiều nhất",
-      "keyword": "hướng nắng khi chọn nhà",
-      "topic": "Khảo sát chất lượng sống"
-    },
-    {
-      "slug": "thong-gio-tu-nhien-nha-o",
-      "title": "Thông gió tự nhiên: đọc đường đi của không khí trong nhà",
-      "keyword": "thông gió tự nhiên",
-      "topic": "Khảo sát chất lượng sống"
-    },
-    {
-      "slug": "tieng-on-va-rieng-tu-nha-o",
-      "title": "Tiếng ồn và riêng tư: khảo sát trước khi chốt căn",
-      "keyword": "tiếng ồn và riêng tư",
-      "topic": "Khảo sát chất lượng sống"
-    },
-    {
-      "slug": "thoat-nuoc-va-cao-do-khu-dat",
-      "title": "Thoát nước và cao độ: câu hỏi khi khảo sát nhà và khu đất",
-      "keyword": "thoát nước và cao độ",
-      "topic": "Khảo sát chất lượng sống"
-    },
-    {
-      "slug": "loi-thoat-nan-khi-chon-nha",
-      "title": "Lối thoát nạn khi chọn nhà: kiểm tra khả năng tiếp cận",
-      "keyword": "lối thoát nạn khi chọn nhà",
-      "topic": "Khảo sát chất lượng sống"
-    },
-    {
-      "slug": "cho-do-xe-khi-mua-nha",
-      "title": "Chỗ đỗ xe khi mua nhà: kiểm tra quyền sử dụng và chi phí",
-      "keyword": "chỗ đỗ xe khi mua nhà",
-      "topic": "Khảo sát chất lượng sống"
-    },
-    {
-      "slug": "khoang-cach-di-bo-den-tien-ich",
-      "title": "Khoảng cách đi bộ tới tiện ích: đo theo lối đi sử dụng được",
-      "keyword": "khoảng cách đi bộ tới tiện ích",
-      "topic": "Khảo sát chất lượng sống"
-    },
-    {
-      "slug": "khao-sat-khu-dan-cu-buoi-toi",
-      "title": "Khảo sát khu dân cư buổi tối: ánh sáng, an ninh và nhịp sống",
-      "keyword": "khảo sát khu dân cư buổi tối",
-      "topic": "Khảo sát chất lượng sống"
-    },
-    {
-      "slug": "truong-hoc-khi-chon-noi-o",
-      "title": "Trường học khi chọn nơi ở: tuyến đưa đón và điều kiện tiếp nhận",
-      "keyword": "trường học khi chọn nơi ở",
-      "topic": "Tiện ích theo nhu cầu"
-    },
-    {
-      "slug": "y-te-va-tiep-can-cham-soc",
-      "title": "Dịch vụ y tế khi chọn nhà: đánh giá theo nhu cầu chăm sóc",
-      "keyword": "dịch vụ y tế khi chọn nhà",
-      "topic": "Tiện ích theo nhu cầu"
-    },
-    {
-      "slug": "tien-ich-the-thao-cho-cu-dan",
-      "title": "Tiện ích thể thao: chọn theo lịch tập và quyền sử dụng",
-      "keyword": "tiện ích thể thao",
-      "topic": "Tiện ích theo nhu cầu"
-    },
-    {
-      "slug": "cong-vien-va-khong-gian-xanh",
-      "title": "Công viên và không gian xanh: kiểm tra khả năng sử dụng hàng ngày",
-      "keyword": "công viên và không gian xanh",
-      "topic": "Tiện ích theo nhu cầu"
-    },
-    {
-      "slug": "nha-o-phu-hop-nguoi-cao-tuoi",
-      "title": "Nhà ở cho người cao tuổi: tiếp cận, sinh hoạt và hỗ trợ",
-      "keyword": "nhà ở cho người cao tuổi",
-      "topic": "Tiện ích theo nhu cầu"
-    },
-    {
-      "slug": "khong-gian-cho-tre-em",
-      "title": "Không gian sống cho trẻ em: từ căn nhà tới sân chơi",
-      "keyword": "không gian sống cho trẻ em",
-      "topic": "Tiện ích theo nhu cầu"
-    },
-    {
-      "slug": "mua-sam-dich-vu-hang-ngay",
-      "title": "Mua sắm hàng ngày khi chọn nhà: đo tiện lợi từ nhu cầu thực",
-      "keyword": "mua sắm hàng ngày khi chọn nhà",
-      "topic": "Tiện ích theo nhu cầu"
-    },
-    {
-      "slug": "kiem-tra-anh-tien-do-du-an",
-      "title": "Ảnh tiến độ dự án: kiểm tra thời điểm, vị trí và phạm vi",
-      "keyword": "ảnh tiến độ dự án",
-      "topic": "Tiến độ và bàn giao"
-    },
-    {
-      "slug": "giai-phong-mat-bang-va-thi-cong",
-      "title": "Giải phóng mặt bằng và thi công: phân biệt các mốc tiến độ",
-      "keyword": "giải phóng mặt bằng và thi công",
-      "topic": "Tiến độ và bàn giao"
-    },
-    {
-      "slug": "ha-tang-ky-thuat-truoc-khi-o",
-      "title": "Hạ tầng kỹ thuật trước khi ở: điện, nước và thoát nước",
-      "keyword": "hạ tầng kỹ thuật trước khi ở",
-      "topic": "Tiến độ và bàn giao"
-    },
-    {
-      "slug": "phan-biet-mong-va-ket-cau",
-      "title": "Móng và kết cấu: hiểu đúng thông tin tiến độ xây dựng",
-      "keyword": "móng và kết cấu",
-      "topic": "Tiến độ và bàn giao"
-    },
-    {
-      "slug": "tieu-chuan-hoan-thien-nha",
-      "title": "Tiêu chuẩn hoàn thiện: đọc phụ lục trước khi tính nội thất",
-      "keyword": "tiêu chuẩn hoàn thiện",
-      "topic": "Tiến độ và bàn giao"
-    },
-    {
-      "slug": "cham-ban-giao-cach-theo-doi",
-      "title": "Theo dõi lịch bàn giao: lưu mốc và phản hồi bằng văn bản",
-      "keyword": "theo dõi lịch bàn giao",
-      "topic": "Tiến độ và bàn giao"
-    },
-    {
-      "slug": "van-hanh-khu-do-thi-giai-doan-dau",
-      "title": "Vận hành khu đô thị giai đoạn đầu: chuẩn bị trước khi chuyển về",
-      "keyword": "vận hành khu đô thị giai đoạn đầu",
-      "topic": "Tiến độ và bàn giao"
-    },
-    {
-      "slug": "mua-de-o-hay-dau-tu",
-      "title": "Mua để ở hay đầu tư: đặt tiêu chí trước khi xem căn",
-      "keyword": "mua để ở hay đầu tư",
-      "topic": "So sánh phương án mua"
-    },
-    {
-      "slug": "thap-tang-hay-can-ho",
-      "title": "Nhà thấp tầng hay căn hộ: so sánh theo cách sử dụng",
-      "keyword": "nhà thấp tầng hay căn hộ",
-      "topic": "So sánh phương án mua"
-    },
-    {
-      "slug": "nha-san-co-hay-hinh-thanh-tuong-lai",
-      "title": "Nhà sẵn có hay hình thành trong tương lai: so thời gian và rủi ro",
-      "keyword": "nhà sẵn có hay hình thành trong tương lai",
-      "topic": "So sánh phương án mua"
-    },
-    {
-      "slug": "thue-hay-mua-nha",
-      "title": "Thuê hay mua nhà: so dòng tiền và độ linh hoạt",
-      "keyword": "thuê hay mua nhà",
-      "topic": "So sánh phương án mua"
-    },
-    {
-      "slug": "dien-tich-dat-san-thong-thuy",
-      "title": "Diện tích đất, sàn và thông thủy: so đúng con số",
-      "keyword": "diện tích đất, sàn và thông thủy",
-      "topic": "So sánh phương án mua"
-    },
-    {
-      "slug": "tong-gia-tri-hay-don-gia",
-      "title": "Tổng giá trị hay đơn giá: cách so ngân sách mua nhà",
-      "keyword": "tổng giá trị hay đơn giá",
-      "topic": "So sánh phương án mua"
-    },
-    {
-      "slug": "ban-mo-ta-nhu-cau-mua-nha",
-      "title": "Bản mô tả nhu cầu mua nhà: giúp tư vấn chọn đúng phương án",
-      "keyword": "bản mô tả nhu cầu mua nhà",
-      "topic": "Quy trình mua và sử dụng"
-    },
-    {
-      "slug": "lap-danh-sach-can-so-sanh",
-      "title": "Lập danh sách căn so sánh: một bảng dữ liệu cho mỗi phương án",
-      "keyword": "lập danh sách căn so sánh",
-      "topic": "Quy trình mua và sử dụng"
-    },
-    {
-      "slug": "lich-di-xem-nha-hieu-qua",
-      "title": "Lịch đi xem nhà hiệu quả: chuẩn bị tuyến và câu hỏi",
-      "keyword": "lịch đi xem nhà hiệu quả",
-      "topic": "Quy trình mua và sử dụng"
-    },
-    {
-      "slug": "dam-phan-dieu-kien-mua-nha",
-      "title": "Đàm phán mua nhà: chuẩn bị điều kiện thay vì chỉ hỏi giảm giá",
-      "keyword": "đàm phán mua nhà",
-      "topic": "Quy trình mua và sử dụng"
-    },
-    {
-      "slug": "checklist-nhan-ban-giao-nha",
-      "title": "Checklist nhận bàn giao nhà: đối chiếu, thử và ghi biên bản",
-      "keyword": "checklist nhận bàn giao nhà",
-      "topic": "Quy trình mua và sử dụng"
-    },
-    {
-      "slug": "sau-khi-mua-nha-can-lam-gi",
-      "title": "Sau khi mua nhà: tổ chức hồ sơ, bảo trì và vận hành",
-      "keyword": "sau khi mua nhà",
-      "topic": "Quy trình mua và sử dụng"
+  "updated": "2026-10-30",
+  "method": "Editorial intent allocation; Google/PAA research unavailable in this environment",
+  "pages": [
+    {
+      "route": "/",
+      "title": "Vinhomes Olympic Thường Tín",
+      "mainKeyword": "Tìm thông tin nền tảng về Olympic Thường Tín",
+      "secondaryKeywords": [],
+      "action": "index"
+    },
+    {
+      "route": "/tong-quan/",
+      "title": "Vinhomes Olympic Thường Tín: Tổng quan dự án",
+      "mainKeyword": "Nhận diện dự án, tên hồ sơ và cấu trúc tổng thể",
+      "secondaryKeywords": [
+        "vinhomes olympic là gì",
+        "khu đô thị thể thao quốc tế hà nội",
+        "quy mô tổng thể olympic",
+        "chủ đầu tư phân khu b",
+        "tên gọi olympic thường tín",
+        "dự án phía nam hà nội"
+      ],
+      "action": "index"
+    },
+    {
+      "route": "/vi-tri/",
+      "title": "Vị trí Vinhomes Olympic Thường Tín và ranh phân khu B",
+      "mainKeyword": "Xác định địa bàn, ranh và tổ chức khảo sát đường tiếp cận",
+      "secondaryKeywords": [
+        "vinhomes olympic ở đâu",
+        "ranh giới phân khu b",
+        "đường vào olympic",
+        "olympic thường tín thuộc xã nào",
+        "kết nối phân khu b",
+        "đo đường đi olympic"
+      ],
+      "action": "index"
+    },
+    {
+      "route": "/quy-hoach/",
+      "title": "Quy hoạch Vinhomes Olympic: phân khu A, B, C, D",
+      "mainKeyword": "Đọc cấp quy hoạch, phân khu và phiên bản đồ án",
+      "secondaryKeywords": [
+        "quy hoạch olympic 1/500",
+        "quy hoạch olympic 1/2000",
+        "phân khu a b c d olympic",
+        "quyết định 6260",
+        "điều chỉnh đồ án olympic",
+        "chức năng đất phân khu b"
+      ],
+      "action": "index"
+    },
+    {
+      "route": "/san-pham/",
+      "title": "Sản phẩm Vinhomes Olympic: loại hình trong hồ sơ B",
+      "mainKeyword": "Chọn nhóm loại hình theo công năng sử dụng và dữ liệu sản phẩm",
+      "secondaryKeywords": [
+        "liền kề olympic trong hồ sơ",
+        "biệt thự olympic trong hồ sơ",
+        "chung cư olympic trong hồ sơ",
+        "thương mại dịch vụ olympic",
+        "chọn loại hình olympic",
+        "tiện ích quy hoạch olympic"
+      ],
+      "action": "index"
+    },
+    {
+      "route": "/gia-ban/",
+      "title": "Giá Vinhomes Olympic: kiểm tra báo giá và ngân sách",
+      "mainKeyword": "Chuẩn hóa báo giá và kiểm tra khả năng chi trả",
+      "secondaryKeywords": [
+        "bảng giá olympic cần kiểm tra",
+        "chi phí mua nhà olympic",
+        "giá đất và giá nhà olympic",
+        "chiết khấu báo giá olympic",
+        "ngân sách mua olympic",
+        "đơn giá sản phẩm olympic"
+      ],
+      "action": "index"
+    },
+    {
+      "route": "/mat-bang/",
+      "title": "Mặt bằng Vinhomes Olympic: đọc bản vẽ và diện tích",
+      "mainKeyword": "Đọc bản vẽ, ký hiệu và diện tích của ô đất hoặc căn",
+      "secondaryKeywords": [
+        "bản vẽ mặt bằng olympic",
+        "diện tích đô thị phân khu b",
+        "cơ cấu diện tích olympic b",
+        "đọc chú giải mặt bằng",
+        "mặt bằng căn olympic",
+        "tỷ lệ bản vẽ olympic"
+      ],
+      "action": "index"
+    },
+    {
+      "route": "/tien-do/",
+      "title": "Tiến độ Vinhomes Olympic: các mốc hồ sơ năm 2026",
+      "mainKeyword": "Theo dõi mốc triển khai theo ngày, địa bàn và hạng mục",
+      "secondaryKeywords": [
+        "tiến độ olympic tháng 10 2026",
+        "giải phóng mặt bằng dân hòa",
+        "thu hồi đất tri lễ olympic",
+        "nguồn gốc đất quế sơn",
+        "đường dẫn ước lễ",
+        "nhật ký xây dựng olympic"
+      ],
+      "action": "index"
+    },
+    {
+      "route": "/phap-ly/",
+      "title": "Pháp lý Vinhomes Olympic: hồ sơ và phạm vi áp dụng",
+      "mainKeyword": "Kiểm tra chuỗi hồ sơ và chủ thể của giao dịch cụ thể",
+      "secondaryKeywords": [
+        "quyết định 916 olympic",
+        "hồ sơ môi trường phân khu b",
+        "liên danh đầu tư olympic",
+        "điều kiện kinh doanh nhà olympic",
+        "kiểm tra bên ký olympic",
+        "hồ sơ pháp lý phân khu b"
+      ],
+      "action": "index"
+    },
+    {
+      "route": "/so-sanh/",
+      "title": "Có nên mua Vinhomes Olympic? Khung so sánh phương án",
+      "mainKeyword": "So phương án ở hoặc đầu tư trên cùng nhu cầu và ngân sách",
+      "secondaryKeywords": [
+        "có nên mua olympic",
+        "đánh giá nhu cầu ở olympic",
+        "so phương án mua olympic",
+        "rủi ro thời gian chờ olympic",
+        "quy mô và giá trị sử dụng",
+        "tiêu chí chọn olympic"
+      ],
+      "action": "index"
+    },
+    {
+      "route": "/gioi-thieu/",
+      "title": "Giới thiệu trang thông tin Vinhomes Olympic",
+      "mainKeyword": "Giới thiệu trang thông tin Vinhomes Olympic",
+      "secondaryKeywords": [],
+      "action": "index"
+    },
+    {
+      "route": "/lien-he/",
+      "title": "Liên hệ Mạnh Việt về thông tin Vinhomes Olympic",
+      "mainKeyword": "Liên hệ Mạnh Việt về thông tin Vinhomes Olympic",
+      "secondaryKeywords": [],
+      "action": "index"
+    },
+    {
+      "route": "/tac-gia-manh-viet/",
+      "title": "Mạnh Việt – người biên tập website Olympic",
+      "mainKeyword": "Mạnh Việt – người biên tập website Olympic",
+      "secondaryKeywords": [],
+      "action": "index"
+    },
+    {
+      "route": "/chinh-sach-bien-tap/",
+      "title": "Chính sách biên tập và kiểm chứng dữ kiện",
+      "mainKeyword": "Chính sách biên tập và kiểm chứng dữ kiện",
+      "secondaryKeywords": [],
+      "action": "index"
+    },
+    {
+      "route": "/tin-tuc/",
+      "title": "Tin Vinhomes Olympic theo sự kiện và ngày nguồn",
+      "mainKeyword": "Chọn đúng hướng dẫn theo câu hỏi của người đọc",
+      "secondaryKeywords": [],
+      "action": "index"
+    },
+    {
+      "route": "/chinh-sach-bao-mat/",
+      "title": "Chính sách bảo mật thông tin đăng ký tư vấn",
+      "mainKeyword": "Biết dữ liệu đăng ký tư vấn được dùng như thế nào",
+      "secondaryKeywords": [],
+      "action": "index"
+    },
+    {
+      "route": "/tin-tuc/tri-le-thu-hoi-dat-13-10-2026/",
+      "title": "Tri Lễ: công khai thu hồi đất ngày 13/10/2026",
+      "mainKeyword": "Bản tin theo sự kiện: Tri Lễ: công khai thu hồi đất ngày 13/10/2026",
+      "secondaryKeywords": [],
+      "action": "index"
+    },
+    {
+      "route": "/tin-tuc/que-son-nguon-goc-dat-28-09-2026/",
+      "title": "Quế Sơn: điều chỉnh nguồn gốc đất ngày 28/09/2026",
+      "mainKeyword": "Bản tin theo sự kiện: Quế Sơn: điều chỉnh nguồn gốc đất ngày 28/09/2026",
+      "secondaryKeywords": [],
+      "action": "index"
+    },
+    {
+      "route": "/tin-tuc/ngoc-hoi-lay-y-kien-10-02-2026/",
+      "title": "Ngọc Hồi lấy ý kiến quy hoạch Olympic ngày 10/02/2026",
+      "mainKeyword": "Bản tin theo sự kiện: Ngọc Hồi lấy ý kiến quy hoạch Olympic ngày 10/02/2026",
+      "secondaryKeywords": [],
+      "action": "index"
+    },
+    {
+      "route": "/tin-tuc/tham-dinh-moi-truong-b-13-04-2026/",
+      "title": "Phân khu B: quyết định môi trường ngày 13/04/2026",
+      "mainKeyword": "Bản tin theo sự kiện: Phân khu B: quyết định môi trường ngày 13/04/2026",
+      "secondaryKeywords": [],
+      "action": "index"
     }
   ]
 }

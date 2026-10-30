@@ -1,60 +1,47 @@
-# Vinhomes Olympic — V3, CMS và kiến trúc SEO
+# Vinhomes Olympic — website thông tin độc lập
 
-Website tư vấn độc lập của Mạnh Việt Real Estate tại `https://vinhomesthuongtin.vn`, Worker `royal-snow-1e06`.
+Website: https://vinhomesthuongtin.vn — Cloudflare Worker `royal-snow-1e06`.
 
-Bản hiện tại có **96 URL chuẩn trong sitemap**: trang chủ, 9 chuyên đề, 84 bài viết, danh mục cẩm nang và chính sách bảo mật. Bốn URL loại hình minh họa cũ được gộp bằng 301 vào chuyên đề sản phẩm/quy hoạch, không tiếp tục để trang mỏng trong sitemap. Số URL thực tế phụ thuộc nội dung CMS; không xóa bài riêng để ép số lượng.
+Bản biên tập 30/10/2026: **20 URL chuẩn**, gồm trang chủ, chín chuyên đề nền tảng, bốn bản tin sự kiện, bốn trang vận hành, mục tin và chính sách bảo mật. Gộp 84 bài mỏng bằng 301; bản gốc được giữ làm bản nháp trong CMS, cùng một bản nháp có từ trước. Không tiếp tục tạo bài ngắn để đạt chỉ tiêu 100 URL.
 
-**Đã phát hành và kiểm tra trên production ngày 27/10/2026.** Xem [báo cáo tối ưu SEO](BAO-CAO-SEO-2026-10-27.md). Bản phát hành V3 ban đầu có 100 URL được ghi nhận riêng trong [báo cáo phát hành](BAO-CAO-PHAT-HANH-2026-10-27.md).
+Đã phát hành và kiểm tra live: [báo cáo 30/10/2026](BAO-CAO-PHAT-HANH-2026-10-30.md).
 
-**Chuẩn biên tập đã áp dụng toàn bộ 96 trang:** mở đầu 2–3 câu, title ≤60, meta ≤160, ba FAQ và bốn liên kết trong nội dung; có sơ đồ minh họa theo chủ đề. Xem [báo cáo biên tập](BAO-CAO-BIEN-TAP-2026-10-27.md) và [chuẩn nội dung](CONTENT-STANDARD.md).
+Số liên hệ: **0989.294.744**, liên kết `tel:0989294744`. Xem [kiểm toán/kế hoạch](KIEM-TOAN-VA-KE-HOACH-2026-10-30.md), [nguồn và số liệu một nguồn](research/2026-10-30/DU-KIEN-CAN-DOI-CHIEU.md), [vận hành và checklist](VAN-HANH-VA-CHECKLIST-2026-10-30.md). Các báo cáo V3/96 URL ngày trước chỉ mô tả lịch sử.
 
-## Phát triển
+## Phát triển và kiểm tra
 
-Node.js 22 trở lên, npm và Chromium nếu chạy kiểm thử giao diện.
+Node.js ≥22, npm; Chromium `/usr/bin/chromium` và Pillow nếu dựng lại WebP từ sơ đồ SVG.
 
 ```sh
-cd /workspace/vinhomes-th-ng-t-n
 npm ci --no-audit --no-fund
 npm run dev:prepare
+npm run content:sync
+node scripts/render-editorial-images.mjs
 npm run check
-npm run dev -- --local --ip 127.0.0.1 --port 8787
+npm run dev -- --local --ip 127.0.0.1 --port 8791
 ```
 
-`dev:prepare` chỉ tạo `.dev.vars` ngẫu nhiên cho local khi chưa có, giữ file cũ, không in mật khẩu. File này được Git bỏ qua; không dùng nó để đặt lại mật khẩu production. Dùng checkout hiện có, không cần tạo worktree.
+Trong terminal khác: `SMOKE_BASE=http://127.0.0.1:8791 npm run test:browser`. Smoke chỉ cho localhost, tạo lead kiểm thử, xác minh trong CMS rồi xóa đúng lead giả. Không chạy ghi dữ liệu thử ở production. Quét giao diện chỉ đọc: `node scripts/browser-readonly.mjs`; đặt `REVIEW_BASE=https://vinhomesthuongtin.vn` để kiểm tra live.
 
-Trong terminal khác, khi Wrangler đã báo sẵn sàng:
+`npm run check` dựng dữ liệu, chạy **38 kiểm thử**, preflight build, audit metadata/schema/ảnh/link/301/robots/404 và ít nhất ba trang khác liên kết tới mỗi URL. Bảng hiện tại có 20 URL; audit live mặc định theo sitemap thực, thêm `--expected-count=20` để ghim quy mô đợt này. Không dùng audit cú pháp để cam kết Google index/ranking hoặc Core Web Vitals.
 
-```sh
-npm run test:browser
-node scripts/audit-seo.js --base=http://127.0.0.1:8787
-npx wrangler deploy --dry-run --outdir dist/worker
-```
+## Nguồn nội dung
 
-Kiểm thử trình duyệt dùng Chromium tại `/usr/bin/chromium`; đặt `CHROMIUM_PATH` nếu máy khác. Nó chỉ cho phép chạy trên localhost, tạo lead giả, kiểm tra qua CMS rồi xóa lead giả. Không chạy smoke ghi dữ liệu trên production.
+- `content/journalism/*.md`: phần viết mới của chín chuyên đề.
+- `content/journalism/pages.json`: ý định, title/meta, sáu từ khóa phụ và năm FAQ dẫn nguồn ngoài cho mỗi chuyên đề.
+- `content/pre-journalism-seed.json`: bản nội dung công khai trước gộp, dùng để bảo toàn và tích hợp các hướng dẫn phù hợp; không có dữ liệu khách hàng.
+- `scripts/build-page-content.js`: tích hợp nội dung, tạo hồ sơ bài, bốn tin sự kiện và sơ đồ SVG; `scripts/render-editorial-images.mjs` tạo WebP nén theo chủ đề.
+- `src/page-content.js`, `src/journalism-release.js` và bộ JSON public là file sinh tự động. `content:sync` không ghi KV.
+- `scripts/export-editorial-review.mjs` xuất HTML, slug/title/meta/H1/FAQ/nguồn/schema vào `dist/editorial-review/`. Bảng 301 ở `content/redirect-map.json` và bốn trang sản phẩm cũ tại `src/editorial.js`.
 
-## Nội dung và audit
+Google/Bing bị proxy chặn trong đợt nghiên cứu này. Đã dùng trình duyệt đọc toàn site và nguồn Hà Nội, nhưng chưa có nghiên cứu top 6–8 đối thủ/PAA theo từng truy vấn. Số liệu một hồ sơ gốc được nêu đúng nguồn/ngày, không tự nhận đã xác nhận độc lập hai nguồn. Không bịa giá bán, thời gian chạy xe hoặc trải nghiệm thực địa.
 
-- Biên tập 74 bài mới tại `content/guides/74-bai-cam-nang.json`; 10 bài cũ ở `src/articles.js`.
-- `npm run content:sync` tạo `src/guides.js`, bộ nhập CMS `public/noi-dung-seo.json` và seed đồng nhất. Lệnh không kết nối hoặc ghi KV.
-- `npm run check` đồng bộ nội dung, chạy 32 kiểm thử, preflight build và audit các URL chuẩn trong sitemap.
-- Báo cáo tại `dist/seo-audit.json`, danh sách URL tại `dist/indexable-urls.txt`, ảnh kiểm tra ở `dist/screenshots/`.
-- Workflow `SEO audit` chạy khi push, chạy hằng ngày lúc **06:15 giờ Việt Nam**, hoặc chạy thủ công. Đây là kiểm tra và xuất báo cáo; không tự xuất bản hay sửa dữ kiện dự án. Audit production cũng chạy theo lịch hằng ngày; khi chạy thủ công có thể bật tùy chọn kiểm tra live.
-- Audit kiểm tra HTTP, title/description duy nhất, H1, canonical, JSON-LD, ảnh, liên kết và khả năng truy cập từ trang chủ. Đây không phải chứng nhận xếp hạng hoặc bằng chứng Google đã lập chỉ mục.
+## CMS, bảo mật và triển khai
 
-Nội dung công khai dùng chú thích “hình minh họa”, không nhận là phối cảnh chính thức. Các đường dẫn đối chiếu được giữ trong dữ liệu nghiên cứu nội bộ; nguồn đã kiểm tra được dẫn tại trang chủ và các nội dung có dữ kiện liên quan. Không tự tạo giá, ngày mở bán, quyền sở hữu hoặc cam kết lợi nhuận.
+Đường quản trị tại `src/admin-config.js`; `/admin/` và asset cũ trả 404, không còn link quản trị ở footer. Cookie HttpOnly/Secure/SameSite, kiểm tra Origin, giới hạn đăng nhập sai, honeypot ẩn và kiểm tra chữ ký ảnh. Có hỗ trợ TOTP theo RFC 6238; **chưa bật trên production** cho đến khi chủ tài khoản ghép ứng dụng và cấu hình secret qua kênh riêng. Đường dẫn kín và robots không thay thế xác thực. Bộ đếm KV không phải rate limiter nguyên tử toàn cầu.
 
-## CMS và dữ liệu hiện có
+Production dùng `ADMIN_PASSWORD` secret và KV `OLYMPIC_KV`; không lưu mật khẩu/API token trong Git hay báo cáo. `dev:prepare` chỉ tạo mật khẩu local nếu chưa có và giữ file cũ. Wrapper chọn Account ID đã xác minh từ `wrangler.jsonc`; không dùng giá trị môi trường sai để đổi tài khoản.
 
-KV binding: `OLYMPIC_KV`. Đăng nhập dùng Cloudflare secret `ADMIN_PASSWORD` tối thiểu 12 ký tự. Không có mật khẩu mặc định.
+Trước mỗi phát hành: backup read-only có checksum, xác minh domain/Worker và kiểm tra thay đổi CMS. `npm run deploy` kiểm thử rồi deploy nhưng **không tự migrate KV**. Đợt này dùng `content/journalism-migration-patch.json` qua `scripts/cloudflare-command.js seo-migrate`; patch có baseline, từ chối xung đột và giữ lead/nội dung riêng. Không tái dùng patch ngày này cho nội dung mới. Chi tiết và rollback: [hướng dẫn vận hành](VAN-HANH-VA-CHECKLIST-2026-10-30.md).
 
-CMS có nút **Nhập bộ 84 bài SEO**: chỉ thêm slug còn thiếu, giữ bài đã sửa và bài đã ẩn; cần bấm lưu sau khi nhập. Có thể có hơn hoặc ít hơn 100 URL nếu dữ liệu production có nội dung riêng. Không xóa bài riêng để ép số URL.
-
-## Phát hành
-
-Đọc [RELEASE-V3.md](RELEASE-V3.md). Bản V3 hiện đã được phát hành. Với các lần cập nhật tiếp theo, Cần xác thực Cloudflare, xác nhận đúng Worker/domain, sao lưu Worker và KV, cấu hình namespace thật, kiểm tra secret trước khi deploy. Không đổi nameserver.
-
-Các tài liệu bàn giao còn lại được giữ để tra lịch sử V2; số URL, số kiểm thử và nhãn nút cũ trong các tài liệu đó không đại diện V3.
-
-Tài khoản Cloudflare và namespace thật đã được xác minh và ghi trong `wrangler.jsonc` (đây không phải thông tin bí mật). Các lệnh deploy, backup và `audit:live` dùng wrapper để chọn đúng tài khoản và dùng HTTPS proxy của môi trường, ngay cả khi biến Account ID được nhập khác. Không lưu API token trong mã nguồn.
-
-FAQ, phần mở đầu, mô tả ảnh và liên kết trong nội dung có thể chỉnh trong CMS. Khi xuất bản, máy chủ kiểm tra các giới hạn nội dung; các mục chưa hoàn thiện có thể lưu ở trạng thái bản nháp. `npm run content:sync` dựng hồ sơ biên tập và SVG từ các file TSV rồi tạo seed, không ghi KV. Audit live kiểm tra nội dung thực trong sitemap, không ép số URL về 96 khi CMS có thay đổi hợp lệ; dùng `node scripts/cloudflare-command.js audit --expected-count=96` để xác minh riêng quy mô của đợt này.
+Workflow GitHub lưu audit theo push/lịch và cho phép quét production; đây là kiểm tra, không tự viết lại dữ kiện hay xuất bản nội dung.

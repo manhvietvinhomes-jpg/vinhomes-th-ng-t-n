@@ -11,6 +11,12 @@ async function read(){const r=await fetch(base+'/api/admin/content',{headers:aut
 const original=await read(),content=structuredClone(original),changes=[],conflicts=[];
 const equal=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 for(const operation of patch.operations){
+ if(operation.action==='append'){
+  const items=content[operation.array];if(!Array.isArray(items)){conflicts.push('Missing collection '+operation.array);continue;}
+  const key=operation.array==='pages'?'slug':'id';const current=items.find(x=>x[key]===operation.id);
+  if(current){if(!equal(current,operation.value))conflicts.push(operation.array+'/'+operation.id+': existing appended item differs');continue;}
+  items.push(structuredClone(operation.value));changes.push(operation.array+'/'+operation.id+': append');continue;
+ }
  const target=operation.array?content[operation.array]?.find(x=>(operation.array==='pages'?x.slug:x.id)===operation.id):content;
  if(!target){conflicts.push(`${operation.array}/${operation.id}: missing item`);continue;}
  const current=target[operation.field];if(equal(current,operation.value))continue;
@@ -21,8 +27,8 @@ for(const operation of patch.operations){
 if(conflicts.length)throw Error('Preserved conflicting CMS edits; no content was written. Fields: '+conflicts.join(', '));
 if(apply&&changes.length){
  const hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');if(hash(await read())!==hash(original))throw Error('CMS changed during preparation; retry after reviewing current edits.');
- const response=await fetch(base+'/api/admin/content',{method:'PUT',headers:auth,body:JSON.stringify(content)});if(!response.ok)throw Error('CMS save failed.');const returned=(await response.json()).content;
- for(const operation of patch.operations){const target=operation.array?returned[operation.array]?.find(x=>(operation.array==='pages'?x.slug:x.id)===operation.id):returned;if(!equal(target?.[operation.field],operation.value))throw Error('Saved content differs from intended patch. Inspect backup before continuing.');}
+ const response=await fetch(base+'/api/admin/content',{method:'PUT',headers:auth,body:JSON.stringify(content)});if(!response.ok){const failure=await response.json().catch(()=>({}));throw Error('CMS save failed: '+(failure.error||response.status));}const returned=(await response.json()).content;
+ for(const operation of patch.operations){const target=operation.array?returned[operation.array]?.find(x=>(operation.array==='pages'?x.slug:x.id)===operation.id):returned;if(!equal(operation.action==='append'?target:target?.[operation.field],operation.value))throw Error('Saved content differs from intended patch. Inspect backup before continuing.');}
 }
 const report={checkedAt:new Date().toISOString(),revision:patch.revision,mode:apply?'apply':'dry-run',changedFields:changes,publishedPostCount:content.posts.filter(p=>p.published).length,unrelatedItemsPreserved:true};
 await fs.mkdir('dist',{recursive:true});await fs.writeFile('dist/'+patch.revision+'-'+(apply?'applied':'dry-run')+'.json',JSON.stringify(report,null,2)+'\n');

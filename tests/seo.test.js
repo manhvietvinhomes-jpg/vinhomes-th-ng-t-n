@@ -26,7 +26,7 @@ test('SSR pages have unique canonical URLs, readable h1, and links',async()=>{
 });
 test('sitemap includes only published unique canonical URLs, robots protect admin',async()=>{
   const xml=await (await get('/sitemap.xml')).text();assert.ok(xml.includes(host+'/phap-ly/'));
-  assert.ok(xml.includes(host+'/tin-tuc/vinhomes-olympic-thuong-tin-tong-quan/'));
+  assert.ok(xml.includes(host+'/tin-tuc/tri-le-thu-hoi-dat-13-10-2026/'));
   assert.ok(!xml.includes('/admin/'));
   const robots=await (await get('/robots.txt')).text();assert.match(robots,/Disallow: \/admin\//);assert.match(robots,/Sitemap: https:\/\/vinhomesthuongtin.vn\/sitemap.xml/);
 });

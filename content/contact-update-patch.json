@@ -1,0 +1,15 @@
+{
+  "revision": "contact-2026-10-30",
+  "operations": [
+    {
+      "field": "phone",
+      "oldValue": "0986091222",
+      "value": "0989294744"
+    },
+    {
+      "field": "zalo",
+      "oldValue": "https://zalo.me/0986091222",
+      "value": "https://zalo.me/0989294744"
+    }
+  ]
+}

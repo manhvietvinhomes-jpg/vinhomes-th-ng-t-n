@@ -13,4 +13,4 @@ for(const p of INITIAL_CONTENT.pages){if(!p.title||!p.summary||!p.body||!p.seoTi
 fs.mkdirSync('dist',{recursive:true});
 fs.writeFileSync('dist/sitemap-preview.xml',sitemap(INITIAL_CONTENT));
 fs.writeFileSync('dist/build-report.json',JSON.stringify({builtAt:new Date().toISOString(),pages:routes.length,images:fs.readdirSync('public/assets',{withFileTypes:true}).reduce((sum,x)=>sum+(x.isDirectory()?fs.readdirSync('public/assets/'+x.name).length:1),0),worker:'royal-snow-1e06',note:'Đây là kiểm tra local; chỉ Wrangler deploy mới cập nhật website trực tuyến.'},null,2));
-console.log(`✓ Preflight build: ${routes.length} URL, ${INITIAL_CONTENT.pages.length} trang trụ cột. Chưa triển khai lên Cloudflare.`);
+console.log(`✓ Preflight build: ${routes.length} URL, ${INITIAL_CONTENT.pages.length} trang chuyên đề/vận hành. Chưa triển khai lên Cloudflare.`);

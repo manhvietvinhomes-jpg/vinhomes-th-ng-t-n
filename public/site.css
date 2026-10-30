@@ -12,3 +12,5 @@ footer{background:#041321;color:#aabbc8;padding:64px 0 20px}.footer-grid{display
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 
 .product-copy .product-link{display:inline-block;font-size:9px;letter-spacing:.07em;color:#f5d49a;font-weight:800;margin-top:8px}.news-more{text-decoration:none}.seo-home-news .guide-card{min-height:160px}@media(max-width:1190px){.header nav:not(.open){display:none}.navtoggle{display:block}.header nav.open{display:flex;position:absolute;left:0;right:0;top:75px;background:#081e31;padding:18px 26px;flex-direction:column;z-index:10;align-items:start}}
+
+.trap{display:none!important}

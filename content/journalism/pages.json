@@ -1,0 +1,745 @@
+{
+  "/tong-quan/": {
+    "heading": "Vinhomes Olympic Thường Tín: Tổng quan dự án",
+    "seoTitle": "Vinhomes Olympic Thường Tín: Tổng quan dự án",
+    "seoDescription": "Vinhomes Olympic là tên tìm kiếm của Khu đô thị thể thao Olympic phía Nam Hà Nội.",
+    "intro": "Vinhomes Olympic là tên tìm kiếm của Khu đô thị thể thao Olympic phía Nam Hà Nội. Dân Hòa nêu quy mô khoảng 9.171 ha ngày 22/04/2026. Hồ sơ phân khu B ngày 13/04/2026 xác định riêng 2.944,39 ha.",
+    "intent": "Nhận diện dự án, tên hồ sơ và cấu trúc tổng thể",
+    "topic": "tong-quan",
+    "keywords": [
+      "vinhomes olympic là gì",
+      "khu đô thị thể thao quốc tế hà nội",
+      "quy mô tổng thể olympic",
+      "chủ đầu tư phân khu b",
+      "tên gọi olympic thường tín",
+      "dự án phía nam hà nội"
+    ],
+    "faqs": [
+      {
+        "question": "Vinhomes Olympic được gọi thế nào trong văn bản?",
+        "answer": "Quyết định môi trường ngày 13/04/2026 ghi Khu đô thị thể thao Olympic; thông báo Tri Lễ ngày 13/10/2026 dùng tên Khu đô thị thể thao Quốc tế Hà Nội và chú thích tên trước đây.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          },
+          {
+            "label": "UBND xã Dân Hòa: Tri Lễ, 13/10/2026",
+            "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/thong-bao-2765261013100629618.htm",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Con số 9.171 ha là của toàn dự án hay phân khu B?",
+        "answer": "Nguồn Dân Hòa ngày 22/04/2026 dùng khoảng 9.171 ha cho dự án tổng thể; hồ sơ môi trường xác định riêng B là 2.944,39 ha.",
+        "sources": [
+          {
+            "label": "UBND xã Dân Hòa, 22/04/2026",
+            "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
+            "kind": "document"
+          },
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Dự án có bao nhiêu phân khu?",
+        "answer": "Nguồn Dân Hòa nêu bốn phân khu; thông báo hội nghị Ngọc Hồi ngày 10/02/2026 gọi cụ thể A, B, C, D.",
+        "sources": [
+          {
+            "label": "UBND xã Dân Hòa, 22/04/2026",
+            "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
+            "kind": "document"
+          },
+          {
+            "label": "UBND xã Ngọc Hồi, 10/02/2026",
+            "url": "https://ngochoi.hanoi.gov.vn/tin-tuc-su-kien/lay-y-kien-cong-dong-dan-cu-doi-voi-do-an-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-phan-khu-a-b-c-d-2724260210151416024.htm",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Công ty nào đại diện liên danh trong hồ sơ B?",
+        "answer": "Điều 1 Quyết định 916/QĐ-SNNMT ghi Công ty Cổ phần Vinhomes đại diện liên danh nhà đầu tư của dự án thành phần B.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Dân số 186.760 người thuộc phạm vi nào?",
+        "answer": "Đó là quy mô dân số dự kiến của phân khu B trong hồ sơ môi trường, không phải số cư dân hiện hữu của toàn dự án.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      }
+    ],
+    "sourceKeys": [
+      "dtm",
+      "trile",
+      "danhoa",
+      "ngochhoi"
+    ]
+  },
+  "/vi-tri/": {
+    "heading": "Vị trí Vinhomes Olympic Thường Tín và ranh phân khu B",
+    "seoTitle": "Vị trí Vinhomes Olympic Thường Tín và ranh phân khu B",
+    "seoDescription": "Phân khu B nằm tại Thường Tín, Thượng Phúc, Tam Hưng và Dân Hòa theo hồ sơ ngày 13/04/2026.",
+    "intro": "Phân khu B nằm tại Thường Tín, Thượng Phúc, Tam Hưng và Dân Hòa theo hồ sơ ngày 13/04/2026. Tài liệu mô tả ranh bắc giáp Vành đai 4. Thời gian đến từng lối vào cần đo bằng hành trình thực.",
+    "intent": "Xác định địa bàn, ranh và tổ chức khảo sát đường tiếp cận",
+    "topic": "vi-tri",
+    "keywords": [
+      "vinhomes olympic ở đâu",
+      "ranh giới phân khu b",
+      "đường vào olympic",
+      "olympic thường tín thuộc xã nào",
+      "kết nối phân khu b",
+      "đo đường đi olympic"
+    ],
+    "faqs": [
+      {
+        "question": "Phân khu B thuộc những xã nào?",
+        "answer": "Hồ sơ môi trường ghi bốn xã Thường Tín, Thượng Phúc, Tam Hưng và Dân Hòa, thành phố Hà Nội.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Phía bắc phân khu B giáp đâu?",
+        "answer": "Trang 4 hồ sơ kèm quyết định môi trường mô tả phía bắc giáp đường Vành đai 4; đây là mô tả ranh, không xác nhận lối vào của từng căn.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Ranh đông và tây của B được ghi thế nào?",
+        "answer": "Hồ sơ ghi phía đông theo tuyến đường sắt cao tốc Bắc Nam, phía tây giáp Quốc lộ 21C.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Có nguồn nào ghi nhận đường dẫn đang thi công?",
+        "answer": "Bài Dân Hòa ngày 22/04/2026 ghi nhận một trong ba tuyến dẫn vào sân vận động tại Ước Lễ đang thi công ở thời điểm đó.",
+        "sources": [
+          {
+            "label": "UBND xã Dân Hòa, 22/04/2026",
+            "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Tri Lễ 1 và Tri Lễ có phải cùng địa danh trong thông báo?",
+        "answer": "Thông báo ngày 13/10/2026 ghi Tri Lễ 1, nay là thôn Tri Lễ, xã Dân Hòa. Đây là cách gọi được dùng trong chính nguồn đó.",
+        "sources": [
+          {
+            "label": "UBND xã Dân Hòa: Tri Lễ, 13/10/2026",
+            "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/thong-bao-2765261013100629618.htm",
+            "kind": "document"
+          }
+        ]
+      }
+    ],
+    "sourceKeys": [
+      "dtm",
+      "danhoa",
+      "trile"
+    ]
+  },
+  "/quy-hoach/": {
+    "heading": "Quy hoạch Vinhomes Olympic: phân khu A, B, C, D",
+    "seoTitle": "Quy hoạch Vinhomes Olympic: phân khu A, B, C, D",
+    "seoDescription": "Ngọc Hồi tổ chức lấy ý kiến quy hoạch chi tiết 1/500 A, B, C, D ngày 10/02/2026.",
+    "intro": "Ngọc Hồi tổ chức lấy ý kiến quy hoạch chi tiết 1/500 A, B, C, D ngày 10/02/2026. Hồ sơ B dẫn quyết định quy hoạch 1/2000 ngày 16/12/2025. Mỗi lớp tài liệu cần được đọc đúng phạm vi và thời điểm.",
+    "intent": "Đọc cấp quy hoạch, phân khu và phiên bản đồ án",
+    "topic": "quy-hoach",
+    "keywords": [
+      "quy hoạch olympic 1/500",
+      "quy hoạch olympic 1/2000",
+      "phân khu a b c d olympic",
+      "quyết định 6260",
+      "điều chỉnh đồ án olympic",
+      "chức năng đất phân khu b"
+    ],
+    "faqs": [
+      {
+        "question": "Hội nghị lấy ý kiến 1/500 diễn ra ngày nào?",
+        "answer": "Thông tin xã Ngọc Hồi ghi ngày 10/02/2026, đối với đồ án A, B, C, D.",
+        "sources": [
+          {
+            "label": "UBND xã Ngọc Hồi, 10/02/2026",
+            "url": "https://ngochoi.hanoi.gov.vn/tin-tuc-su-kien/lay-y-kien-cong-dong-dan-cu-doi-voi-do-an-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-phan-khu-a-b-c-d-2724260210151416024.htm",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Số quyết định quy hoạch 1/2000 của B là gì?",
+        "answer": "Hồ sơ môi trường dẫn Quyết định 6260/QĐ-UBND ngày 16/12/2025; số hiệu hiện được kiểm tra qua dẫn chiếu này.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Bốn phân khu có được hai nguồn cùng nêu không?",
+        "answer": "Có. Nguồn Ngọc Hồi tháng 2/2026 nêu A, B, C, D; nguồn Dân Hòa tháng 4/2026 nêu bốn phân khu.",
+        "sources": [
+          {
+            "label": "UBND xã Ngọc Hồi, 10/02/2026",
+            "url": "https://ngochoi.hanoi.gov.vn/tin-tuc-su-kien/lay-y-kien-cong-dong-dan-cu-doi-voi-do-an-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-phan-khu-a-b-c-d-2724260210151416024.htm",
+            "kind": "document"
+          },
+          {
+            "label": "UBND xã Dân Hòa, 22/04/2026",
+            "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Có phải hồ sơ 1/500 đồng nghĩa đã phê duyệt chi tiết?",
+        "answer": "Không đồng nhất hai trạng thái. Ngọc Hồi ghi bước lấy ý kiến, còn Dân Hòa ngày 22/04/2026 nêu vướng mắc phê duyệt chi tiết tại thời điểm bài viết.",
+        "sources": [
+          {
+            "label": "UBND xã Ngọc Hồi, 10/02/2026",
+            "url": "https://ngochoi.hanoi.gov.vn/tin-tuc-su-kien/lay-y-kien-cong-dong-dan-cu-doi-voi-do-an-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-phan-khu-a-b-c-d-2724260210151416024.htm",
+            "kind": "document"
+          },
+          {
+            "label": "UBND xã Dân Hòa, 22/04/2026",
+            "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Phần liên hợp thể thao trong B có diện tích bao nhiêu?",
+        "answer": "Hồ sơ môi trường ghi 411,29 ha; phần đô thị ghi 2.533,1 ha. Đây là cơ cấu của B.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      }
+    ],
+    "sourceKeys": [
+      "ngochhoi",
+      "dtm",
+      "danhoa"
+    ]
+  },
+  "/phap-ly/": {
+    "heading": "Pháp lý Vinhomes Olympic: hồ sơ và phạm vi áp dụng",
+    "seoTitle": "Pháp lý Vinhomes Olympic: hồ sơ và phạm vi áp dụng",
+    "seoDescription": "Quyết định 916/QĐ-SNNMT ngày 13/04/2026 thẩm định môi trường dự án thành phần B.",
+    "intro": "Quyết định 916/QĐ-SNNMT ngày 13/04/2026 thẩm định môi trường dự án thành phần B. Hồ sơ nêu Vinhomes đại diện liên danh nhà đầu tư. Điều kiện giao dịch cần kiểm tra theo đúng sản phẩm và bên ký.",
+    "intent": "Kiểm tra chuỗi hồ sơ và chủ thể của giao dịch cụ thể",
+    "topic": "phap-ly",
+    "keywords": [
+      "quyết định 916 olympic",
+      "hồ sơ môi trường phân khu b",
+      "liên danh đầu tư olympic",
+      "điều kiện kinh doanh nhà olympic",
+      "kiểm tra bên ký olympic",
+      "hồ sơ pháp lý phân khu b"
+    ],
+    "faqs": [
+      {
+        "question": "Quyết định 916/QĐ-SNNMT được ban hành khi nào?",
+        "answer": "Ngày 13/04/2026, về kết quả thẩm định báo cáo đánh giá tác động môi trường của dự án thành phần B.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Quyết định môi trường áp dụng toàn dự án không?",
+        "answer": "Đối tượng được ghi rõ là dự án thành phần phân khu B, tại bốn xã trong hồ sơ. Không đổi phạm vi đó thành toàn bộ A, B, C, D.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Quyết định chủ trương nào được dẫn trong hồ sơ B?",
+        "answer": "Phần thông tin chung dẫn Quyết định 6277/QĐ-UBND ngày 17/12/2025. Bản đầy đủ của quyết định này cần được đọc riêng khi phân tích từng điều khoản.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Tra danh sách dự án đủ điều kiện kinh doanh ở đâu?",
+        "answer": "Tại mục công khai tương ứng của Sở Xây dựng Hà Nội; cần tìm đúng tên dự án thành phần và phạm vi sản phẩm, không coi sự tồn tại của mục tra cứu là xác nhận Olympic đã có tên.",
+        "sources": [
+          {
+            "label": "Sở Xây dựng Hà Nội: danh sách dự án đủ điều kiện kinh doanh",
+            "url": "https://soxaydung.hanoi.gov.vn/danh-sach-du-an-nha-o-du-dieu-kien-dua-vao-kinh-doanh",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Thông báo Tri Lễ ngày 13/10/2026 thuộc loại công việc nào?",
+        "answer": "Đó là thông báo công khai thu hồi đất tại Tri Lễ, đợt 6, ba hộ; không phải giấy xác nhận quyền sở hữu nhà của người mua.",
+        "sources": [
+          {
+            "label": "UBND xã Dân Hòa: Tri Lễ, 13/10/2026",
+            "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/thong-bao-2765261013100629618.htm",
+            "kind": "document"
+          }
+        ]
+      }
+    ],
+    "sourceKeys": [
+      "dtm",
+      "sxd",
+      "trile"
+    ]
+  },
+  "/tien-do/": {
+    "heading": "Tiến độ Vinhomes Olympic: các mốc hồ sơ năm 2026",
+    "seoTitle": "Tiến độ Vinhomes Olympic: các mốc hồ sơ năm 2026",
+    "seoDescription": "Dân Hòa đăng thông báo thu hồi đất tại Tri Lễ ngày 13/10/2026.",
+    "intro": "Dân Hòa đăng thông báo thu hồi đất tại Tri Lễ ngày 13/10/2026. Trước đó có thông tin điều chỉnh nguồn gốc đất Quế Sơn ngày 28/09/2026. Đây là các mốc đất đai theo địa bàn, không phải tỷ lệ xây dựng toàn dự án.",
+    "intent": "Theo dõi mốc triển khai theo ngày, địa bàn và hạng mục",
+    "topic": "tien-do",
+    "keywords": [
+      "tiến độ olympic tháng 10 2026",
+      "giải phóng mặt bằng dân hòa",
+      "thu hồi đất tri lễ olympic",
+      "nguồn gốc đất quế sơn",
+      "đường dẫn ước lễ",
+      "nhật ký xây dựng olympic"
+    ],
+    "faqs": [
+      {
+        "question": "Nguồn mới nhất đã đọc trong đợt rà soát là mốc nào?",
+        "answer": "Thông báo Dân Hòa ngày 13/10/2026 về Tri Lễ, đợt 6, ba hộ; đây là mốc nguồn, không phải cam kết không còn tài liệu mới hơn.",
+        "sources": [
+          {
+            "label": "UBND xã Dân Hòa: Tri Lễ, 13/10/2026",
+            "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/thong-bao-2765261013100629618.htm",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Thông tin Quế Sơn tháng 9 nói về việc gì?",
+        "answer": "Nguồn ngày 28/09/2026 công khai danh sách điều chỉnh xác nhận nguồn gốc đất nông nghiệp tại Quế Sơn, đợt 1.",
+        "sources": [
+          {
+            "label": "UBND xã Dân Hòa: Quế Sơn, 28/09/2026",
+            "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/danh-sach-dieu-chinh-xac-nhan-nguon-goc-dat-nong-nghiep-duoc-giao-theo-nghi-dinh-64-1993-cp-cua-2765260929093308487.htm",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Diện tích GPMB tại Dân Hòa được công bố thế nào?",
+        "answer": "Bài ngày 22/04/2026 nêu khoảng 1.932,9 ha, liên quan khoảng 9.600 hộ thuộc 23 thôn; đây là số liệu một nguồn tại thời điểm bài viết.",
+        "sources": [
+          {
+            "label": "UBND xã Dân Hòa, 22/04/2026",
+            "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "757,4 ha có phải toàn bộ phân khu B?",
+        "answer": "Không. Nguồn Dân Hòa nêu khoảng 757,4 ha thuộc B tại xã; hồ sơ môi trường nêu toàn B là 2.944,39 ha.",
+        "sources": [
+          {
+            "label": "UBND xã Dân Hòa, 22/04/2026",
+            "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
+            "kind": "document"
+          },
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Có thể suy ngày bàn giao từ thông báo thu hồi đất không?",
+        "answer": "Thông báo Tri Lễ công khai công việc đất đai của nhóm hộ cụ thể, không ấn định ngày bàn giao một sản phẩm nhà ở.",
+        "sources": [
+          {
+            "label": "UBND xã Dân Hòa: Tri Lễ, 13/10/2026",
+            "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/thong-bao-2765261013100629618.htm",
+            "kind": "document"
+          }
+        ]
+      }
+    ],
+    "sourceKeys": [
+      "trile",
+      "queson",
+      "danhoa",
+      "dtm"
+    ]
+  },
+  "/gia-ban/": {
+    "heading": "Giá Vinhomes Olympic: kiểm tra báo giá và ngân sách",
+    "seoTitle": "Giá Vinhomes Olympic: kiểm tra báo giá và ngân sách",
+    "seoDescription": "Báo giá Olympic cần có mã sản phẩm, diện tích tính giá và ngày hiệu lực.",
+    "intro": "Báo giá Olympic cần có mã sản phẩm, diện tích tính giá và ngày hiệu lực. Hồ sơ môi trường B ngày 13/04/2026 là tài liệu quy mô, không phải bảng giá. So sánh ngân sách phải tính cả lịch trả và chi phí sử dụng.",
+    "intent": "Chuẩn hóa báo giá và kiểm tra khả năng chi trả",
+    "topic": "gia-ban",
+    "keywords": [
+      "bảng giá olympic cần kiểm tra",
+      "chi phí mua nhà olympic",
+      "giá đất và giá nhà olympic",
+      "chiết khấu báo giá olympic",
+      "ngân sách mua olympic",
+      "đơn giá sản phẩm olympic"
+    ],
+    "faqs": [
+      {
+        "question": "Quyết định môi trường B có phải bảng giá bán không?",
+        "answer": "Không. Quyết định 916/QĐ-SNNMT ngày 13/04/2026 phê duyệt kết quả thẩm định môi trường và mô tả dự án; đó không phải văn bản báo giá sản phẩm.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Diện tích 9.171 ha có dùng để suy đơn giá nhà không?",
+        "answer": "Nguồn Dân Hòa dùng khoảng 9.171 ha cho quy mô tổng thể, không nêu đó là mẫu số để định giá một căn.",
+        "sources": [
+          {
+            "label": "UBND xã Dân Hòa, 22/04/2026",
+            "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Số liệu 411,29 ha có phải diện tích hàng bán?",
+        "answer": "Đó là phần liên hợp thể thao trong B theo hồ sơ môi trường, không phải diện tích một giỏ hàng.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Thông báo đất Quế Sơn có phải bảng giá nhà?",
+        "answer": "Nguồn ngày 28/09/2026 nói về điều chỉnh xác nhận nguồn gốc đất nông nghiệp, không phải báo giá nhà ở.",
+        "sources": [
+          {
+            "label": "UBND xã Dân Hòa: Quế Sơn, 28/09/2026",
+            "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/danh-sach-dieu-chinh-xac-nhan-nguon-goc-dat-nong-nghiep-duoc-giao-theo-nghi-dinh-64-1993-cp-cua-2765260929093308487.htm",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Mục tra cứu của Sở Xây dựng xác nhận giá từng căn không?",
+        "answer": "Mục công khai dự án đủ điều kiện đưa vào kinh doanh phục vụ tra cứu điều kiện theo tài liệu cụ thể; không thay bảng giá của một sản phẩm.",
+        "sources": [
+          {
+            "label": "Sở Xây dựng Hà Nội: danh sách dự án đủ điều kiện kinh doanh",
+            "url": "https://soxaydung.hanoi.gov.vn/danh-sach-du-an-nha-o-du-dieu-kien-dua-vao-kinh-doanh",
+            "kind": "document"
+          }
+        ]
+      }
+    ],
+    "sourceKeys": [
+      "dtm",
+      "danhoa",
+      "queson",
+      "sxd"
+    ]
+  },
+  "/mat-bang/": {
+    "heading": "Mặt bằng Vinhomes Olympic: đọc bản vẽ và diện tích",
+    "seoTitle": "Mặt bằng Vinhomes Olympic: đọc bản vẽ và diện tích",
+    "seoDescription": "Hồ sơ B xác định 2.533,1 ha khu đô thị và 411,29 ha liên hợp thể thao.",
+    "intro": "Hồ sơ B xác định 2.533,1 ha khu đô thị và 411,29 ha liên hợp thể thao. Tổng là 2.944,39 ha theo tài liệu ngày 13/04/2026. Sơ đồ cấp phân khu không thay mặt bằng thiết kế từng căn.",
+    "intent": "Đọc bản vẽ, ký hiệu và diện tích của ô đất hoặc căn",
+    "topic": "mat-bang",
+    "keywords": [
+      "bản vẽ mặt bằng olympic",
+      "diện tích đô thị phân khu b",
+      "cơ cấu diện tích olympic b",
+      "đọc chú giải mặt bằng",
+      "mặt bằng căn olympic",
+      "tỷ lệ bản vẽ olympic"
+    ],
+    "faqs": [
+      {
+        "question": "Hai phần diện tích B cộng lại được bao nhiêu?",
+        "answer": "2.533,1 ha cộng 411,29 ha bằng 2.944,39 ha, theo các số cùng hồ sơ ĐTM.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Tỷ lệ khoảng 14% được tính từ đâu?",
+        "answer": "Đó là 411,29 chia 2.944,39 rồi nhân 100, làm tròn; là tỷ trọng phần liên hợp thể thao trong B, không phải mật độ xây dựng.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "186.760 người có phải số căn trong mặt bằng?",
+        "answer": "Không. Hồ sơ gọi đây là quy mô dân số dự kiến của B, khác đơn vị số căn.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Hồ sơ có nêu chung cư trong B không?",
+        "answer": "Có. Phần hạng mục đô thị liệt kê nhà liền kề, biệt thự và chung cư; không kèm bảng mã căn mở bán.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Thông tin 1/500 ngày 10/02/2026 thuộc bước nào?",
+        "answer": "Nguồn Ngọc Hồi ghi hội nghị lấy ý kiến đồ án chi tiết A, B, C, D, không phải thiết kế căn cho người mua lựa chọn.",
+        "sources": [
+          {
+            "label": "UBND xã Ngọc Hồi, 10/02/2026",
+            "url": "https://ngochoi.hanoi.gov.vn/tin-tuc-su-kien/lay-y-kien-cong-dong-dan-cu-doi-voi-do-an-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-phan-khu-a-b-c-d-2724260210151416024.htm",
+            "kind": "document"
+          }
+        ]
+      }
+    ],
+    "sourceKeys": [
+      "dtm",
+      "ngochhoi"
+    ]
+  },
+  "/san-pham/": {
+    "heading": "Sản phẩm Vinhomes Olympic: loại hình trong hồ sơ B",
+    "seoTitle": "Sản phẩm Vinhomes Olympic: loại hình trong hồ sơ B",
+    "seoDescription": "Hồ sơ B ngày 13/04/2026 nêu nhà liền kề, biệt thự và chung cư.",
+    "intro": "Hồ sơ B ngày 13/04/2026 nêu nhà liền kề, biệt thự và chung cư. Tài liệu cũng có thương mại dịch vụ, trường học và y tế. Danh mục chức năng cần phân biệt với bảng hàng và tình trạng vận hành.",
+    "intent": "Chọn nhóm loại hình theo công năng sử dụng và dữ liệu sản phẩm",
+    "topic": "san-pham",
+    "keywords": [
+      "liền kề olympic trong hồ sơ",
+      "biệt thự olympic trong hồ sơ",
+      "chung cư olympic trong hồ sơ",
+      "thương mại dịch vụ olympic",
+      "chọn loại hình olympic",
+      "tiện ích quy hoạch olympic"
+    ],
+    "faqs": [
+      {
+        "question": "Ba nhóm nhà ở nào được nêu trong hồ sơ B?",
+        "answer": "Nhà ở liền kề, nhà ở biệt thự và nhà ở chung cư được liệt kê trong phần hạng mục đô thị.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Hồ sơ môi trường có phải bảng mã sản phẩm?",
+        "answer": "Đây là hồ sơ dự án thành phần B, liệt kê chức năng và hạng mục; không phải bảng mã căn và giá bán.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Có nhóm trường học và y tế trong danh mục không?",
+        "answer": "Có, tài liệu nêu trường học, y tế và các hạ tầng xã hội; danh mục đó không xác nhận dịch vụ đã vận hành.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Có thể gọi toàn bộ thương mại dịch vụ là shophouse không?",
+        "answer": "Tài liệu dùng nhóm chức năng thương mại dịch vụ du lịch; cần hồ sơ sản phẩm cụ thể trước khi đổi thành danh mục nhà phố mở bán.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Hạng mục thể thao có nằm chung trong phần đô thị không?",
+        "answer": "Hồ sơ tách phần đô thị 2.533,1 ha và phần liên hợp thể thao 411,29 ha của B.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      }
+    ],
+    "sourceKeys": [
+      "dtm"
+    ]
+  },
+  "/so-sanh/": {
+    "heading": "Có nên mua Vinhomes Olympic? Khung so sánh phương án",
+    "seoTitle": "Có nên mua Vinhomes Olympic? Khung so sánh phương án",
+    "seoDescription": "Đánh giá Olympic cần cùng lúc so nhu cầu ở, nguồn tiền, hồ sơ và thời gian chờ.",
+    "intro": "Đánh giá Olympic cần cùng lúc so nhu cầu ở, nguồn tiền, hồ sơ và thời gian chờ. Hồ sơ B ghi dân số dự kiến 186.760 người ngày 13/04/2026. Quy mô dự án không thay dữ liệu của sản phẩm đang cân nhắc.",
+    "intent": "So phương án ở hoặc đầu tư trên cùng nhu cầu và ngân sách",
+    "topic": "so-sanh",
+    "keywords": [
+      "có nên mua olympic",
+      "đánh giá nhu cầu ở olympic",
+      "so phương án mua olympic",
+      "rủi ro thời gian chờ olympic",
+      "quy mô và giá trị sử dụng",
+      "tiêu chí chọn olympic"
+    ],
+    "faqs": [
+      {
+        "question": "Dân số dự kiến có phải lượng khách thuê chắc chắn?",
+        "answer": "Hồ sơ B ghi quy mô dân số dự kiến 186.760 người; đây không phải hợp đồng thuê hay số cư dân đã chuyển đến.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Quy mô toàn dự án có thay được dữ liệu căn nhà không?",
+        "answer": "Nguồn Dân Hòa nêu tổng thể khoảng 9.171 ha; hồ sơ B có phạm vi riêng. Các số liệu cấp dự án không xác định công năng và chi phí của một căn.",
+        "sources": [
+          {
+            "label": "UBND xã Dân Hòa, 22/04/2026",
+            "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
+            "kind": "document"
+          },
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Mốc đất đai tháng 10 có phải lịch nhận nhà?",
+        "answer": "Thông báo Tri Lễ ngày 13/10/2026 nói về công khai thu hồi đất của ba hộ, không ấn định lịch bàn giao nhà.",
+        "sources": [
+          {
+            "label": "UBND xã Dân Hòa: Tri Lễ, 13/10/2026",
+            "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/thong-bao-2765261013100629618.htm",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Tiện ích trong danh mục có đồng nghĩa đang phục vụ cư dân?",
+        "answer": "Hồ sơ B liệt kê các công trình dự án, không phải danh sách dịch vụ đã khai trương. Trạng thái vận hành cần nguồn riêng.",
+        "sources": [
+          {
+            "label": "Quyết định 916/QĐ-SNNMT, 13/04/2026, trang 2–4",
+            "url": "https://sotnmt.hanoi.gov.vn/images/pdf/Nam2026/document%202.pdf",
+            "kind": "document"
+          }
+        ]
+      },
+      {
+        "question": "Vì sao phải phân biệt quy hoạch và trải nghiệm hiện tại?",
+        "answer": "Nguồn Ngọc Hồi tháng 2/2026 là bước lấy ý kiến quy hoạch; nguồn Dân Hòa tháng 4/2026 phản ánh cả công tác GPMB và thi công cục bộ. Mỗi dữ liệu thuộc một trạng thái khác nhau.",
+        "sources": [
+          {
+            "label": "UBND xã Ngọc Hồi, 10/02/2026",
+            "url": "https://ngochoi.hanoi.gov.vn/tin-tuc-su-kien/lay-y-kien-cong-dong-dan-cu-doi-voi-do-an-quy-hoach-chi-tiet-ty-le-1-500-khu-do-thi-the-thao-olympic-phan-khu-a-b-c-d-2724260210151416024.htm",
+            "kind": "document"
+          },
+          {
+            "label": "UBND xã Dân Hòa, 22/04/2026",
+            "url": "https://danhoa.hanoi.gov.vn/cac-du-an-trong-diem/xa-dan-hoa-quyet-tam-hoan-thanh-tien-do-giai-phong-mat-bang-khu-do-thi-the-thao-olympic-2765260422103124797.htm",
+            "kind": "document"
+          }
+        ]
+      }
+    ],
+    "sourceKeys": [
+      "dtm",
+      "danhoa",
+      "trile",
+      "ngochhoi"
+    ]
+  }
+}

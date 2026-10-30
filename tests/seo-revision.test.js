@@ -9,23 +9,20 @@ test('home has searchable H1 text, original document links and gallery without J
  for(const source of VERIFIED_SOURCES)assert.ok(html.includes(source.url));
  assert.ok(!html.includes('16.093'));assert.ok(!/href="#"/.test(html));
  const faq=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'].find(x=>x['@type']==='FAQPage');
- assert.equal(faq.mainEntity.length,3);for(const item of faq.mainEntity)assert.ok(html.includes(item.acceptedAnswer.text));
+ assert.equal(faq.mainEntity.length,5);for(const item of faq.mainEntity)assert.ok(html.includes(item.acceptedAnswer.text));
 });
 test('concept product URLs redirect once and are excluded from the sitemap',async()=>{
- const urls=visibleUrls(INITIAL_CONTENT);assert.equal(urls.length,96);
+ const urls=visibleUrls(INITIAL_CONTENT);assert.equal(urls.length,20);
  for(const [from,to] of Object.entries(PRODUCT_REDIRECTS)){
   assert.ok(!urls.includes(from));const response=await worker.fetch(new Request(DOMAIN+from+'?utm_source=test'),{});
   const expected=new URL(DOMAIN+to);expected.search='?utm_source=test';assert.equal(response.status,301);assert.equal(response.headers.get('location'),expected.href);
   const parent=renderSeo(expected.pathname,INITIAL_CONTENT);assert.ok(parent);if(expected.hash)assert.ok(parent.includes('id="'+expected.hash.slice(1)+'"'));
  }
 });
-test('analysis articles have a distinct intent, link to a pillar and preserve publication dates',()=>{
- for(const id of ['olympic-guide-01','olympic-guide-02','olympic-guide-03','olympic-guide-06']){
-  const post=INITIAL_CONTENT.posts.find(x=>x.id===id),pillar=INITIAL_CONTENT.pages.find(x=>x.slug===post.topic);
-  const html=renderSeo('/tin-tuc/'+post.slug+'/',normalize(INITIAL_CONTENT));
-  assert.notEqual(post.title,pillar.title);assert.ok(html.includes('class="article-parent"'));assert.ok(html.includes('href="/'+pillar.slug+'/"'));
-  const graph=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
-  const article=graph.find(x=>x['@type']==='Article');assert.equal(article.datePublished,'2026-10-21');assert.equal(article.dateModified,'2026-10-27');
+test('new event summaries separate publication date from source event date',()=>{
+ for(const post of INITIAL_CONTENT.posts.filter(p=>p.published)){
+ const html=renderSeo('/tin-tuc/'+post.slug+'/',normalize(INITIAL_CONTENT));assert.ok(html.includes('class="article-parent"'));assert.ok(html.includes('href="/'+post.topic+'/"'));
+ const graph=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];const article=graph.find(x=>x['@type']==='Article');assert.equal(article.datePublished,'2026-10-30');assert.equal(article.dateModified,'2026-10-30');assert.ok(post.eventDate<post.date);
  }
 });
 

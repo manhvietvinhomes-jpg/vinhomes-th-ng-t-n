@@ -23,7 +23,12 @@
       "/phap-ly/*",
       "/so-sanh/*",
       "/tin-tuc/*",
-      "/chinh-sach-bao-mat/*"
+      "/chinh-sach-bao-mat/*",
+      "/quan-tri-mv-7f3a/*",
+      "/gioi-thieu/*",
+      "/lien-he/*",
+      "/tac-gia-manh-viet/*",
+      "/chinh-sach-bien-tap/*"
     ]
   },
   "kv_namespaces": [

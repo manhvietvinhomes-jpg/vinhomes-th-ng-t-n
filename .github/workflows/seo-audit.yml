@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       check_live:
-        description: 'Crawl production after the 100-URL release is deployed'
+        description: 'Crawl current published canonical URLs'
         type: boolean
         default: false
 permissions:

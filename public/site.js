@@ -11,8 +11,8 @@ function href(id,url){const el=document.getElementById(id);if(el)el.href=url}
 function socialLink(ids,url,defaultUrl){for(const id of ids){const el=document.getElementById(id);if(!el)continue;el.classList.toggle('hidden',!url);if(url)el.href=safeLink(url,defaultUrl||'#')}}
 function apply(site){
   website=site;
-  const phone=(site.phone||'0986091222').replace(/[^+\d]/g,'');
-  const displayPhone=phone.replace(/^(\d{4})(\d{3})(\d{3})$/,'$1 $2 $3');
+  const phone=(site.phone||'0989294744').replace(/[^+\d]/g,'');
+  const displayPhone=phone.replace(/^(\d{4})(\d{3})(\d{3})$/,'$1.$2.$3');
   const phoneUri='tel:'+phone;
   field('heroHeadingDetail',site.heroHeadingDetail);field('heroBadge',site.badge);field('heroTitle',site.heroTitle);field('heroAccent',site.heroAccent);field('heroSubtitle',site.heroSubtitle);
   field('heroNote',site.heroNote);field('overviewTitle',site.overviewTitle);field('overviewText',site.overviewText);
@@ -41,9 +41,9 @@ function apply(site){
   $('#gallery').querySelectorAll('figure').forEach(f=>f.addEventListener('click',()=>{window.open(f.querySelector('img').src,'_blank','noopener')}));
   $('#leadExtra').innerHTML=(site.formQuestions||[]).map(q=>`<label>${esc(q.label)}${q.required?' *':''}<input data-question-id="${esc(q.id)}" placeholder="${esc(q.placeholder)}" ${q.required?'required':''} maxlength="180"></label>`).join('');
   const posts=(site.posts||[]).filter(p=>p.published!==false).slice(0,6);
-  $('#news').innerHTML=posts.length?posts.map(p=>`<article class="news-card">${!p.id?.startsWith('olympic-cam-nang-')?`<img src="${esc(safeImg(p.image)||'/assets/olympic-concept.webp')}" width="1000" height="720" loading="lazy" alt="${esc(p.imageAlt||imageDescription(p.image,p.title))}">`:''}<div class="news-content"><span class="news-date">${esc(displayDate(p.updated||p.date))}</span><h3><a class="descriptive-link" href="/tin-tuc/${esc(slugify(p.slug||p.title))}/">${esc(p.title)}</a></h3><p>${esc(p.excerpt)}</p></div></article>`).join(''):'<p>Chưa có bài viết mới.</p>';
+  $('#news').innerHTML=posts.length?posts.map(p=>`<article class="news-card">${!p.id?.startsWith('olympic-cam-nang-')?`<img src="${esc(safeImg(p.image)||'/assets/olympic-concept.webp')}" width="1000" height="650" loading="lazy" alt="${esc(p.imageAlt||imageDescription(p.image,p.title))}">`:''}<div class="news-content"><span class="news-date">${esc(displayDate(p.updated||p.date))}</span><h3><a class="descriptive-link" href="/tin-tuc/${esc(slugify(p.slug||p.title))}/">${esc(p.title)}</a></h3><p>${esc(p.excerpt)}</p></div></article>`).join(''):'<p>Chưa có bài viết mới.</p>';
 }
-function displayDate(date){const d=new Date((date||'')+'T12:00:00');return !Number.isNaN(d.getTime())?new Intl.DateTimeFormat('vi-VN').format(d):''}
+function displayDate(date){return /^\d{4}-\d{2}-\d{2}$/.test(date||'')?date.slice(8,10)+'/'+date.slice(5,7)+'/'+date.slice(0,4):''}
 function renderProducts(type){const products=(website.products||[]).filter(p=>p.published!==false&&p.type!=='Khác').filter(p=>type==='all'||p.type===type);
  $('#products').innerHTML=products.map(p=>`<article class="product-card product-guide"><div class="product-copy"><div class="category">Tiêu chí lựa chọn</div><h3><a class="descriptive-link" href="${productTarget(p)}">${esc(p.title)}: cần kiểm tra gì?</a></h3><p>${esc(p.short)}</p></div></article>`).join('');
 }
@@ -54,7 +54,7 @@ $('#closeDialog').onclick=()=>$('#articleDialog').close();
 $('#articleDialog').addEventListener('click',e=>{if(e.target===$('#articleDialog'))$('#articleDialog').close()});
 $('#navToggle').onclick=()=>{$('#nav').classList.toggle('open');$('#navToggle').setAttribute('aria-expanded',$('#nav').classList.contains('open'))};
 $('#nav').querySelectorAll('a').forEach(a=>a.onclick=()=>{$('#nav').classList.remove('open');$('#navToggle').setAttribute('aria-expanded','false')});
-$('#year').textContent=new Date().getFullYear();
+field('year',String(new Date().getFullYear()));
 async function load(){
   try{const resp=await fetch('/api/site',{cache:'no-store'});if(!resp.ok)throw Error('KV not configured');const data=await resp.json();apply(data.content)}
   catch{try{const resp=await fetch('/seed.json');apply(await resp.json())}catch(e){console.warn('Không tải được dữ liệu website',e)}}

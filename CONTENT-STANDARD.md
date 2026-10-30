@@ -1,20 +1,17 @@
-# Chuẩn nội dung tiếng Việt
+# Chuẩn nội dung hiện hành — 30/10/2026
 
-Áp dụng cho phần nội dung chính của trang, không tính menu, chân trang và điều hướng danh mục như bài viết riêng.
+Mỗi URL có một ý định chính. Trang trụ cột trả lời nền tảng bằng 1.800–2.500 từ đếm theo khoảng trắng, không tính FAQ/menu; tin là bản tổng hợp sự kiện ngắn có ngày nguồn và ngày biên tập riêng. Không tạo bài mỏng để tăng số URL. Nội dung cũ được gộp phải có 301 đúng chuyên đề, bỏ khỏi sitemap và giữ bản gốc trong CMS.
 
-- Mỗi trang giải quyết một câu hỏi hoặc công việc riêng. Dùng bản đồ ý định trong `content/editorial-pages.json`; không tạo URL mới chỉ bằng đổi cách viết từ khóa.
-- Mở đầu bằng 2–3 câu trả lời trực tiếp. Sau đó dùng H2/H3 phù hợp câu hỏi; không lặp tên dự án ở mọi heading.
-- Title tối đa 60 ký tự, meta tối đa 160; một H1; slug không dấu. Không tự cập nhật ngày khi nội dung và nguồn chưa được kiểm tra lại.
-- Ba đến năm FAQ ngắn, có căn cứ. Dữ kiện dự án dẫn tài liệu gốc có phạm vi rõ. Lời khuyên biên tập dẫn phần giải thích tương ứng trong bài và được ghi rõ là biên tập, không mạo nhận là khuyến cáo của ngân hàng hoặc cơ quan nhà nước.
-- Ba đến năm liên kết trong bài, anchor mô tả nội dung đích. Các nguồn trỏ tới cùng bài và mục lục không tính như liên kết sang trang khác.
-- Ảnh phù hợp chủ đề, alt mô tả đúng hình, có kích thước và chú thích. Sơ đồ biên tập không phải bản vẽ quy hoạch, mặt bằng bán hàng hoặc ảnh hiện trường. Không lấy một ảnh đẹp làm bằng chứng về sản phẩm.
-- Mỗi trang có lưu ý: trang độc lập, hình minh họa, cần đối chiếu thông báo và hồ sơ chính thức của đúng tài sản.
-- Văn trung lập, tránh lời hứa về giá, lợi nhuận, ngày bán hoặc pháp lý khi chưa có tài liệu tương ứng. Viết ngắn khi dữ kiện ít; không kéo dài bằng câu quảng cáo hoặc thông tin trùng trang khác.
+Title ≤60, meta ≤160, một H1, mở đầu 3–4 câu có thông tin trực tiếp cho bài mới. H2/H3 tự nhiên; không chèn ngày hoặc số vô nghĩa chỉ để có từ khóa. Mỗi trụ cột có sáu nhóm từ khóa phụ được phân vai; chưa coi là dữ liệu PAA hay lượng tìm kiếm khi chưa lấy được công cụ.
 
-## Quy trình cập nhật
+Bài dự án có năm FAQ ngắn dẫn nguồn ngoài phù hợp, bốn liên kết nội bộ mô tả và nguồn gốc công khai. Không dùng chính bài làm chứng cứ. Trang giới thiệu/liên hệ/tác giả/chính sách và mục lục không được nhồi FAQ giả chỉ để đủ số. Không dùng nguồn chính thức cho một lời khuyên mà nguồn không chứa.
 
-74 bài cẩm nang có phần mở đầu và FAQ tại `content/handbook-notes.tsv`; các chuyên đề, bài dự án và trang chức năng tại `content/section-notes.tsv`. Nội dung thân của sáu bài đã viết lại lưu ở `content/section-bodies.json`. Chạy `npm run content:sync` để dựng hồ sơ, SVG và seed; kết quả không tác động production KV.
+Ưu tiên ít nhất hai nguồn cho dữ kiện quan trọng. Nếu chỉ đọc được một hồ sơ gốc, ghi đúng nguồn và ngày, đánh dấu trong bảng nghiên cứu; bản đăng lại và phép cộng không tạo ra nguồn độc lập mới. Mâu thuẫn được giữ theo phạm vi/thời điểm, không chọn con số thuận lợi hơn. Giá chưa có tài liệu và thời gian chạy xe chưa đo không được điền số đoán.
 
-Khi cập nhật CMS đang có dữ liệu, tạo patch theo từng trường từ baseline đã xác minh; dry-run trước, dừng khi có chỉnh sửa xung đột, không nạp đè seed. Nguồn chính quyền dùng cho số liệu đã được đọc trong đợt trước; không mở rộng phạm vi kết luận chỉ vì một tài liệu có cùng tên dự án.
+Nguồn, phép tính và hướng dẫn biên tập được phân biệt. Mục thực địa giữ `[MẠNH VIỆT BỔ SUNG: ảnh, ghi chú thực tế]` trước khi có ghi chép thật; hành trình chưa đo giữ khung Google Maps. Một dòng lưu ý chung ở cuối trang; caption vẫn mô tả đúng bản chất ảnh.
 
-`npm run check` kiểm tra source. `npm run test:browser` chạy local, gồm sửa/khôi phục FAQ qua UI, lưu dữ liệu và luồng form thử. `npm run audit:live` kiểm tra sitemap thực tế; có thể truyền `--expected-count` qua wrapper để xác minh số lượng cụ thể. Không dùng số URL để thay cho kiểm tra chất lượng hoặc bằng chứng Google đã index.
+Ảnh WebP nén theo chủ đề, có alt, width/height, preload ảnh đầu trang, lazy-load ảnh phía dưới; không lấy ảnh sân vận động làm ảnh sản phẩm shophouse. Mỗi trang con có og:image riêng, không nhận sơ đồ biên tập là bản vẽ chính thức. Ngày hiển thị dd/mm/yyyy; ngày máy đọc ISO hợp lệ.
+
+Tác giả và thông tin vận hành phải dựa trên dữ kiện thật. Không tự thêm MST, địa chỉ đăng ký, chứng chỉ hay số năm kinh nghiệm. Có trang giới thiệu, liên hệ, tác giả và chính sách biên tập. Schema không được dùng để tự nhận quan hệ với chủ đầu tư hoặc cơ quan chính phủ.
+
+Chạy `npm run check`, smoke localhost, audit/browser chỉ đọc production sau triển khai. Không cam kết index, rich result, tăng giá hay lợi nhuận. Checklist tài khoản Google và hồ sơ cần bổ sung nằm trong VAN-HANH-VA-CHECKLIST-2026-10-30.md.
